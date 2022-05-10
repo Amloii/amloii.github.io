@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/1kjTGOX.jpeg" alt="Project logo"></a>
+</p>
 
-You can use the [editor on GitHub](https://github.com/Amloii/amloii.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+<h1 align="center">No Faking Way</h1>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<div align="center">
 
-### Markdown
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+</div>
 
-```markdown
-Syntax highlighted code block
+---
 
-# Header 1
-## Header 2
-### Header 3
+<p align="center"> Project for detection of Fake Reviews and Spam in e-commerce
+    <br> 
+</p>
 
-- Bulleted
-- List
+## 📝 Table of Contents
 
-1. Numbered
-2. List
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Authors](#authors)
 
-**Bold** and _Italic_ and `Code` text
+## 🧐 About <a name = "about"></a>
 
-[Link](url) and ![Image](src)
+The Fake Reviews and the Spam are typically problems related to e-commerce platforms, such as Amazon or Yelp.
+
+This repository validates the review across multiple filters, removing different spam cases. At this moment, the applied filters are:
+- **Lang filter**: Mark the review as suspicious if it was written in another language different to Spanish, English, and french (You can modify the allowed languages in [this script](https://github.com/Amloii/NoFakingWay/blob/cc20ec70e375f67482cc96c620442fa6b0aba753/filters/Lang/Lang_filter.py)), or the words don't correspond to any language (for example, jsdfisefbijfd adifaio)
+- **PII filter**: Mark the review as Spam suspicious if includes Personal Information, such as Telephone numbers or ID credentials.
+- **URL filter**: Mark any review with URL as Spam.
+
+## 🎬 Getting Started
+
+You can use this repo installing the requeried libraries with
+
+```
+pip install -r requirements.txt
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## 🎈 Usage <a name="usage"></a>
 
-### Jekyll Themes
+You can use the App created by StreamLit, with the command:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Amloii/amloii.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
+python streamlit run {LOCAL_FILE}/streamlit/demo_streamlit
+```
 
-### Support or Contact
+Or, if you prefer, you can use the cloud app [**here**](https://share.streamlit.io/amloii/nofakingway/main/streamlit/demo_streamlit.py)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@Amloii](https://github.com/Amloii/) - Idea & Initial work
