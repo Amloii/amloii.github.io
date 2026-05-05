@@ -1,0 +1,43 @@
+featured:
+  - title: Articles (Spanish national press)
+    outlet: La Razón
+    lang: es
+    year: "2019"
+    url: https://www.larazon.es/autor/dgdominguez/
+    tags: [SciComm, Neuroscience]
+
+  - title: Neural science writing & video
+    outlet: Amloii (YouTube)
+    lang: es
+    year: ongoing
+    url: https://www.youtube.com/c/Amloii
+    tags: [SciComm]
+
+items:
+  - title: Periodic columns & analysis
+    outlet: La Razón
+    lang: es
+    year: "2019"
+    url: https://www.larazon.es/autor/dgdominguez/
+    tags: [Press]
+
+  - title: Matemáticas y Neurociencia
+    outlet: Editorial
+    lang: es
+    year: "2016"
+    url: "#"
+    tags: [Books]
+
+  - title: Neurociencia · Estructura y funciones del cerebro
+    outlet: Editorial
+    lang: es
+    year: "2017"
+    url: "#"
+    tags: [Books]
+
+  - title: Essays & notebooks (canonical)
+    outlet: Medium
+    lang: en
+    year: ongoing
+    url: https://medium.com/
+    tags: [Essays]

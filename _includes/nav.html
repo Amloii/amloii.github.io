@@ -1,0 +1,53 @@
+{% assign lg = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lg] %}
+{% assign brand_href = '/' %}
+{% if lg == 'es' %}
+  {% assign brand_href = '/es/' %}
+{% endif %}
+
+<header class="site-nav" role="banner">
+  <div class="container site-nav__inner">
+    <a class="site-nav__brand" href="{{ brand_href | relative_url }}">{{ site.title }}</a>
+
+    <button class="site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-panel">
+      Menu
+    </button>
+
+    <div class="site-nav__panel" id="nav-panel" data-nav-panel data-open="false">
+      <nav aria-label="Main navigation" style="flex:1">
+        <ul class="site-nav__links">
+          {% for row in site.data.nav_manifest.items %}
+            {% if row.ref == 'home' %}{% continue %}{% endif %}
+            {% assign path = row.en %}
+            {% if lg == 'es' %}{% assign path = row.es %}{% endif %}
+            {% assign label_key = row.ref %}
+            {% assign lbl = nil %}
+            {% if label_key == 'work' %}
+              {% assign lbl = t.nav.work %}
+            {% elsif label_key == 'writing' %}
+              {% assign lbl = t.nav.writing %}
+            {% elsif label_key == 'cv' %}
+              {% assign lbl = t.nav.cv %}
+            {% elsif label_key == 'speaking' %}
+              {% assign lbl = t.nav.speaking %}
+            {% elsif label_key == 'now' %}
+              {% assign lbl = t.nav.now %}
+            {% elsif label_key == 'about' %}
+              {% assign lbl = t.nav.about %}
+            {% elsif label_key == 'contact' %}
+              {% assign lbl = t.nav.contact %}
+            {% endif %}
+            <li>
+              <a
+                href="{{ path | relative_url }}"
+                class="{% if page.ref == row.ref %}is-active{% endif %}"
+              >{{ lbl }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      {% include lang-toggle.html %}
+    </div>
+  </div>
+</header>

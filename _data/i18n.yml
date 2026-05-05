@@ -1,0 +1,143 @@
+en:
+  nav:
+    skip_main: Skip to content
+    work: Work
+    writing: Writing
+    cv: CV
+    speaking: Speaking & Press
+    now: Now
+    about: About
+    contact: Contact
+  footer:
+    rights: © {year} Daniel Gómez Domínguez
+  meta:
+    home_title: Architecting agentic AI for production organizations
+    home_description: Portfolio, essays, and track record — AI Director specializing in agents, LLM infrastructure, RAG, and generative AI.
+  home:
+    hero_kicker: AI Director · Systems architecture
+    read_essay: Read the latest essay
+    selected_work: Selected work
+    view_all_work: Full index
+    writing: Writing
+    view_writing_hub: Essays & external work
+    work_with_me: Working together
+    subs_title: Essays by email
+    subs_blurb: "New essays on agents, infra, and leadership — no fluff. Cross-post rule: canonical URL always stays on this site."
+    marginalia_intro: Snapshot
+    cta_cv: Hiring? View full résumé
+  work:
+    index_title: Work index
+    index_desc: Case studies spanning agentic AI, multimodal retrieval, recommendation, fraud & vision.
+    context: Context
+    approach: Approach
+    outcomes: Outcomes
+    stack: Stack
+    role: Role
+    metric: Highlight
+    links: Links
+    related_posts: Related writing
+  writing:
+    index_title: Writing
+    index_desc: Essays, notebooks, and work published elsewhere — grouped by editorial pillars.
+    essays: Essays
+    external: External writing
+    pillars: Editorial pillars
+    read: Read
+  cv:
+    download: Download PDF (EN)
+    download_es: Descargar PDF (ES)
+    print: Print this page
+    snapshot: Snapshot
+    capabilities: Capabilities
+    experience: Experience
+    education: Education
+    certifications: Certifications
+    publications: Publications & speaking
+    beyond: Beyond work
+    hire: Working together
+    book_call: Book a 20-minute intro
+    linkedin: LinkedIn
+  speaking:
+    index_title: Speaking & press
+    bio_short: Short bio
+    bio_medium: Medium bio
+    bio_long: Long bio
+    copy: Copy
+    headshots: Headshots
+    topics: Suggested topics
+    booking: Booking & contact
+  now:
+    title: Now
+    updated: Last updated
+
+es:
+  nav:
+    skip_main: Saltar al contenido
+    work: Trabajo
+    writing: Escritos
+    cv: Trayectoria
+    speaking: Charlas & prensa
+    now: Ahora
+    about: Sobre mí
+    contact: Contacto
+  footer:
+    rights: © {year} Daniel Gómez Domínguez
+  meta:
+    home_title: Diseño sistemas de IA agéntica para organizaciones en producción
+    home_description: Portfolio, ensayos y trayectoria — Director de IA especializado en agentes, infra LLM, RAG e IA generativa.
+  home:
+    hero_kicker: Director de IA · Arquitectura de sistemas
+    read_essay: Leer el último ensayo
+    selected_work: Trabajo seleccionado
+    view_all_work: Índice completo
+    writing: Escritos
+    view_writing_hub: Ensayos y trabajo externo
+    work_with_me: Colaborar
+    subs_title: Ensayos por correo
+    subs_blurb: "Ensayos sobre agentes, infra y liderazgo editorial. La URL canónica permanece aquí antes de reproducir en Substack."
+    marginalia_intro: Resumen
+    cta_cv: ¿Contratar? Ver CV completo
+  work:
+    index_title: Índice de trabajo
+    index_desc: Casos de uso de IA agéntica, recuperación multimodal, recomendación, fraude y visión.
+    context: Contexto
+    approach: Enfoque
+    outcomes: Resultados
+    stack: Stack
+    role: Rol
+    metric: Highlight
+    links: Enlaces
+    related_posts: Escritos relacionados
+  writing:
+    index_title: Escritos
+    index_desc: Ensayos, notas y publicaciones fuera — agrupadas por pilares editoriales.
+    essays: Ensayos
+    external: Fuera del sitio
+    pillars: Pilares editoriales
+    read: Leer
+  cv:
+    download: Download PDF (EN)
+    download_es: Descargar PDF (ES)
+    print: Imprimir esta página
+    snapshot: Resumen ejecutivo
+    capabilities: Aptitudes por dominio
+    experience: Experiencia
+    education: Educación
+    certifications: Certificaciones
+    publications: Publicaciones y comunicación
+    beyond: Fuera del trabajo
+    hire: Modalidades de colaboración
+    book_call: Reserva una intro de 20 minutos
+    linkedin: LinkedIn
+  speaking:
+    index_title: Charlas y prensa
+    bio_short: Bio corta
+    bio_medium: Bio media
+    bio_long: Bio larga
+    copy: Copiar
+    headshots: Retratos
+    topics: Temas propuestos
+    booking: Reservas & contacto
+  now:
+    title: Ahora
+    updated: Última actualización

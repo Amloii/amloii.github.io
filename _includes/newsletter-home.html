@@ -1,0 +1,18 @@
+<section class="container section newsletter-card no-print">
+  {% assign lg = page.lang | default: site.lang %}
+  {% assign t = site.data.i18n[lg].home %}
+
+  <h3 class="caps-label" style="margin-top:0">{{ t.subs_title }}</h3>
+  <p class="lead" style="max-width:none">{{ t.subs_blurb }}</p>
+
+  {% assign src = site.substack_embed_url %}
+  {% unless src %}
+    {% assign src = "https://REPLACE.substack.com/embed" %}
+  {% endunless %}
+  {% if src contains 'REPLACE' %}
+    <p class="caps-label" style="opacity:.74">Substituye <code>substack_embed_url</code> en <code>_config.yml</code> para cargar tu widget.</p>
+  {% endif %}
+  <div class="embed-substack">
+    <iframe src="{{ src }}" scrolling="no" title="Newsletter signup"></iframe>
+  </div>
+</section>

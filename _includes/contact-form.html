@@ -1,0 +1,14 @@
+<form class="contact-form" action="{{ site.formspree_endpoint }}" method="POST">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label for="contact-name">{{ include.name_label }}</label>
+  <input id="contact-name" type="text" name="name" required autocomplete="name">
+
+  <label for="contact-email">{{ include.email_label }}</label>
+  <input id="contact-email" type="email" name="email" required autocomplete="email">
+
+  <label for="contact-msg">{{ include.message_label }}</label>
+  <textarea id="contact-msg" name="message" required></textarea>
+
+  <button class="btn btn--accent" type="submit">{{ include.submit }}</button>
+  <p style="opacity:.73;font-size:var(--fs-small);max-width:48ch">{{ include.note }}</p>
+</form>

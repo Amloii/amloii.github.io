@@ -1,0 +1,19 @@
+# amloii.github.io
+
+> Human-facing site for Daniel Gómez Domínguez (AI Director).
+
+## Site
+
+- Home: `/`
+- Canonical essays: `/writing/`
+- Structured CV: `/resume.json` (JSON Resume)
+- Languages: English default, Spanish mirrored under `/es/`
+
+## Allowed use
+
+- Humans may browse normally.
+- LLM indexing: respect `robots.txt` (if configured) and do not circumvent paywalls — this site has none, but scraping should be considerate (rate-limit, cache).
+
+## Contact
+
+`danigdominguez@gmail.com`

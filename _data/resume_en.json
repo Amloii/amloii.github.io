@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json.schemastore.org/resume.json",
+  "basics": {
+    "name": "Daniel Gomez Dominguez",
+    "label": "Director of Artificial Intelligence",
+    "email": "danigdominguez@gmail.com",
+    "phone": "",
+    "url": "https://amloii.github.io/",
+    "summary": "AI Systems Architect directing agentic stacks on Large Language Models: orchestration, persistent semantic memory, hybrid RAG, generative multimodal production, reinforcement-informed recommenders.",
+    "location": {
+      "city": "Madrid",
+      "countryCode": "ES"
+    },
+    "profiles": [
+      { "network": "LinkedIn", "url": "https://es.linkedin.com/in/danigdominguez", "username": "danigdominguez" },
+      { "network": "GitHub", "url": "https://github.com/Amloii", "username": "Amloii" },
+      { "network": "YouTube", "url": "https://www.youtube.com/c/Amloii", "username": "Amloii" }
+    ]
+  },
+  "work": [
+    {
+      "name": "BillionHands / NextChance Invest",
+      "position": "Director of Artificial Intelligence",
+      "location": "Madrid",
+      "url": "",
+      "startDate": "2025-11",
+      "summary": "Autonomous LLM-backed acquisition & decision pipelines.",
+      "highlights": [
+        "Architected agentic workflows with durable memory contracts",
+        "Productionized multimodal tooling & cost-aware inference"
+      ]
+    },
+    {
+      "name": "Multimarkts",
+      "position": "Director of Artificial Intelligence",
+      "location": "Madrid",
+      "startDate": "2023-07",
+      "endDate": "2026-02",
+      "summary": "Strategic roadmap + multimodal search platform.",
+      "highlights": [
+        "Operationalized multimodal embeddings at discovery scale",
+        "OpenSearch-backed vector infra with pragmatic SLO governance"
+      ]
+    },
+    {
+      "name": "NoFakes",
+      "position": "Lead Data Scientist",
+      "location": "Madrid",
+      "startDate": "2022-03",
+      "endDate": "2023-07",
+      "summary": "Fraud & synthetic content detection pipelines.",
+      "highlights": [
+        "Hybrid NLP detectors for GPT-class synthetic narratives",
+        "Behaviour-aware bot scoring for marketplace abuse"
+      ]
+    },
+    {
+      "name": "BillionHands AI Fashion",
+      "position": "Senior Data Scientist",
+      "location": "Madrid",
+      "startDate": "2021-01",
+      "endDate": "2022-03",
+      "summary": "Fashion vision + multimodal NLP.",
+      "highlights": [
+        "CNN + NLP garment tagging tuned for chaotic retail photography"
+      ]
+    },
+    {
+      "name": "Dive.tech",
+      "position": "Data Scientist",
+      "location": "Madrid",
+      "startDate": "2019-04",
+      "endDate": "2020-12",
+      "summary": "Consulting deployments across domains.",
+      "highlights": [
+        "Recommendation & vision pipelines on AWS"
+      ]
+    },
+    {
+      "name": "Instituto Cajal (CSIC)",
+      "position": "Predoctoral Researcher · Computational neuroscience",
+      "location": "Madrid",
+      "startDate": "2012-02",
+      "endDate": "2017-12",
+      "summary": "Brain rhythm modelling, massive electrophysiology processing.",
+      "highlights": [
+        "Interpretable ML for neural field recordings"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Autonoma de Madrid",
+      "area": "Biofísica · Electrofisiología",
+      "studyType": "M.Sc.",
+      "startDate": "2011",
+      "endDate": "2012"
+    },
+    {
+      "institution": "Universidad Autonoma de Madrid",
+      "area": "Bioquímica",
+      "studyType": "B.Sc.",
+      "startDate": "2009",
+      "endDate": "2011"
+    },
+    {
+      "institution": "Universidad Autonoma de Madrid",
+      "area": "Química",
+      "studyType": "Diploma",
+      "startDate": "2006",
+      "endDate": "2009"
+    }
+  ],
+  "skills": [
+    { "name": "Agent orchestration LLM infra", "level": "", "keywords": ["LangGraph-esque patterns", "Tool routing"] },
+    { "name": "RAG & vector stores", "level": "", "keywords": ["OpenSearch", "Hybrid retrieval"] },
+    { "name": "Generative AI production", "level": "", "keywords": ["Images", "Multimodal"] }
+  ],
+  "languages": [
+    { "language": "English", "fluency": "Full professional proficiency" },
+    { "language": "Spanish", "fluency": "Native" }
+  ],
+  "certificates": [
+    { "name": "Deep Learning Specialisation (DeepLearning.ai)", "date": "", "issuer": "Coursera" }
+  ],
+  "projects": [],
+  "publications": [],
+  "interests": [
+    {
+      "name": "SciComm legacy",
+      "keywords": ["YouTube neuroscience channel", "La Razón columns"]
+    }
+  ]
+}

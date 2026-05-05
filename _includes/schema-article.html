@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": {"@type": "Person", "name": "{{ site.author.name }}"},
+  "publisher": {"@type": "Organization", "name": "{{ site.title }}", "url": "{{ '/' | absolute_url }}"},
+  "description": {{ page.description | default: site.description | jsonify }},
+  {% if page.image %}
+  "image": "{{ page.image | absolute_url }}",
+  {% endif %}
+  "mainEntityOfPage": "{{ page.url | absolute_url }}"
+}
+</script>

@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+{% assign lg = page.lang | default: site.lang %}
+{% assign sp = site.data.speaking %}
+{% if lg == 'es' %}
+  {% assign bio = sp.bios.es %}
+  {% assign topics = sp.topics.es %}
+  {% assign talks = sp.speaking_press.talks.es %}
+{% else %}
+  {% assign bio = sp.bios.en %}
+  {% assign topics = sp.topics.en %}
+  {% assign talks = sp.speaking_press.talks.en %}
+{% endif %}
+{% assign t = site.data.i18n[lg].speaking %}
+
+<div class="container section stack">
+  <header>
+    <h1>{{ t.index_title }}</h1>
+    <p class="lead">
+      {% if lg == 'es' %}
+        Bio descargable, temas sugeridos y kit mínimo para producción de eventos.
+      {% else %}
+        Speaker kit for briefings, panels, and technical keynotes — bios, topics, and assets.
+      {% endif %}
+    </p>
+  </header>
+
+  <section class="split" style="align-items:flex-start">
+    <div>
+      <h2>{{ t.bio_short }}</h2>
+      <pre class="section--tight" style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.fifty }}</pre>
+    </div>
+    <div>
+      <h2>{{ t.bio_medium }}</h2>
+      <pre class="section--tight" style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.one_twenty }}</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>{{ t.bio_long }}</h2>
+    <pre style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.two_eighty }}</pre>
+    <p class="caps-label" style="margin-top:.75rem">{{ t.copy }} — selecciona el texto y pega en Notion o Google Docs.</p>
+  </section>
+
+  <section class="split">
+    <div>
+      <h2>{{ t.topics }}</h2>
+      <ul>
+        {% for topic in topics %}
+          <li>{{ topic }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2>{{ t.booking }}</h2>
+      <p><a class="btn btn--accent" href="{{ site.book_call_url }}">{{ site.data.i18n[lg].cv.book_call }}</a></p>
+      <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>{{ t.headshots }}</h2>
+    <p class="caps-label" style="opacity:.75">{{ sp.assets.headshots.placeholder_note }}</p>
+    <div class="split" style="margin-top:1rem">
+      <figure class="newsletter-card">
+        <img src="{{ sp.assets.headshots.square_placeholder | relative_url }}" width="320" height="320" alt="Headshot square placeholder" loading="lazy">
+        <figcaption class="caps-label">Square</figcaption>
+      </figure>
+      <figure class="newsletter-card">
+        <img src="{{ sp.assets.headshots.wide_placeholder | relative_url }}" width="480" height="270" alt="Headshot wide placeholder" loading="lazy">
+        <figcaption class="caps-label">Horizontal</figcaption>
+      </figure>
+    </div>
+    <p><a href="{{ sp.assets.logos.mark_svg | relative_url }}">Download mark (SVG)</a></p>
+  </section>
+
+  <section>
+    <h2 class="caps-label">Talks / sessions</h2>
+    <ul>
+      {% for row in talks %}
+        <li><strong>{{ row.title }}</strong> — {{ row.event }} · <em>{{ row.status }}</em></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {{ content }}
+</div>

@@ -1,0 +1,30 @@
+{% assign lg = page.lang | default: site.lang %}
+{% assign yr = site.time | date: "%Y" %}
+{% assign t = site.data.i18n[lg] %}
+<footer class="site-footer" role="contentinfo">
+  <div class="container stack">
+    <div class="split">
+      <div>
+        <p class="caps-label">{{ site.title }}</p>
+        <p class="lead" style="max-width:none">
+          {% if lg == 'es' %}
+            Director de IA · Arquitectura de sistemas agénticos, infra LLM y RAG multimodal — Madrid · EU-remote.
+          {% else %}
+            AI Director · Agentic architectures, multimodal embeddings, production LLM infra — Madrid · EU-remote.
+          {% endif %}
+        </p>
+      </div>
+      <div>
+        <p class="caps-label">Links</p>
+        <ul class="social">
+          {% for net in site.data.socials %}
+            <li><a href="{{ net.url }}" rel="me">{{ net.name }}</a></li>
+          {% endfor %}
+          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="caps-label" style="margin-top:2rem">{{ t.footer.rights | replace: "{year}", yr }}</p>
+  </div>
+</footer>

@@ -1,0 +1,69 @@
+speaking_press:
+  talks:
+    en:
+      - title: Agentic architectures for regulated knowledge retrieval
+        event: Invite-only CTO roundtables
+        status: Planned
+      - title: Operationalizing multimodal embeddings at catalogue scale
+        event: Portfolio internal tech weeks
+        status: Delivered
+    es:
+      - title: Arquitecturas agénticas con memoria endurecida
+        event: Mesas privadas CTO
+        status: Planned
+      - title: Producción multimodal en buscadores de inspiración B2C
+        event: Seminarios Multimarkts
+        status: Delivered
+
+bios:
+  en:
+    fifty: >-
+      Daniel Gómez Domínguez is an AI Systems Architect directing agentic stacks on LLMs —
+      specialising in retrieval, multimodal infra, generative rollout, and cost-aware inference.
+    one_twenty: >-
+      Daniel directs AI programmes where agentic tooling must survive production constraints.
+      He leads architecture for LLM-backed acquisition systems, multimodal embeddings, reinforcement-flavoured
+      recommenders and safety-sensitive fraud workloads. Earlier he spent six years modelling brain rhythms inside CSIC before
+      moving through classical ML deployments and frontier generative workloads.
+    two_eighty: >-
+      Daniel splits his craft between BillionHands-level agent design and multimodal retrieval platforms —
+      marrying neuroscientific rigor with ruthless product pacing. Highlights include multimodal embeddings co-existing with reinforcement-style recsys across consumer search,
+      antifraud GPT detectors, multimodal garment recognisers resilient to showroom-quality shifts, RL trading experiments for banks, electrophysiology workloads at Cajal-scale,
+      plus a parallel career translating technical depth for national press and flagship YouTube documentaries. Comfortable presenting to CFOs down to infra ICs —
+      multilingual, Madrid-based but EU-remote friendly.
+
+  es:
+    fifty: >-
+      Daniel Gómez Domínguez diseña infraestructura agéntica con LLMs: memoria endurecida, recuperación robusta,
+      coste/latencia bajo restricciones reales — de la neurociencia computacional hasta producto B2C.
+    one_twenty: >-
+      Lideró equipos donde la IA deja de ser demo para convertirse en cartera ejecutable — desde multimodal embeddings con OpenSearch hasta agentes decisorios con memoria contractual.
+      Formación Cajal previa garantiza método científico; docencia financiera garantiza comunicación ejecutiva clarísima en castellano o inglés.
+    two_eighty: >-
+      Daniel impulsa plataformas agénticas y buscadores inspiracionales con IA generativa y refuerzo. Ha protegido redes frente a contenido sintético, entrenado visión+NLP ante fashion real-world,
+      y entregado proyectos industriales Dive/Novabase con SLA agresivos. Divulgador con columnas para La Razón, canal Neuro/Matemáticas 10k+, y libro impreso sobre anatomía cerebral.
+      Oratoria profesional tras años de sala teatral permite traducir riesgos y retornos a stakeholders no-técnicos.
+
+topics:
+  en:
+    - Designing agent memory you'll trust in prod
+    - Multimodal RAG sans infinite spend
+    - Reinforcement-informed recommenders vs pure LLMs
+    - From CSIC rigs to hyperscale infra — lessons in rigor vs velocity
+    - Fraud & synthetic-media detection narratives for banks and marketplaces
+
+  es:
+    - Memorias persistentes observables sobre LLMs
+    - RAG multimodal sin incendiar el presupuesto
+    - Recomendar con refuerzo vs sólo prompting
+    - Del laboratorio Cajal a la nube soberana española/EU
+
+assets:
+  headshots:
+    placeholder_note: >-
+      Replace with professional photography (square ≥ 1200px + horizontal editorial crop). Place PNGs at
+      `/assets/img/headshots/` and refresh links below once ready.
+    square_placeholder: "/assets/img/headshot-square.svg"
+    wide_placeholder: "/assets/img/headshot-wide.svg"
+  logos:
+    mark_svg: "/assets/img/logo-amloii.svg"

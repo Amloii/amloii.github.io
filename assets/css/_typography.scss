@@ -1,0 +1,95 @@
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  background: var(--bone);
+}
+
+h1,
+.h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-sm);
+}
+
+h2,
+.h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 1.22;
+  margin: var(--space-lg) 0 var(--space-sm);
+  letter-spacing: -0.015em;
+}
+
+h3,
+.h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: var(--space-md) 0 var(--space-xs);
+  color: var(--muted);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+  max-width: 65ch;
+}
+
+.lead {
+  font-size: 1.2rem;
+  max-width: 52ch;
+}
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose h2 {
+  margin-top: var(--space-xl);
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+pre {
+  padding: var(--space-sm);
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--rule) 12%, transparent);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.num-index {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  color: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+
+.caps-label {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}

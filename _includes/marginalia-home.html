@@ -1,0 +1,27 @@
+{% assign lg = page.lang | default: site.lang %}
+{% assign cv = site.data.cv[lg] %}
+{% assign now_path = "/now/" %}
+{% if lg == "es" %}{% assign now_path = "/es/ahora/" %}{% endif %}
+
+<aside class="marginalia" aria-label="{{ site.data.i18n[lg].home.marginalia_intro }}">
+  <span class="caps-label">{{ site.data.i18n[lg].home.marginalia_intro }}</span>
+  <ol>
+    {% if lg == 'es' %}
+      <li>{{ cv.basics.label }} — {{ cv.basics.location }}</li>
+      <li>Trayectoria 7+ años: neurociencia computacional · ML clásico · GenAI multimodal · agentic stacks</li>
+      <li>Columnas/La Razón + canal Neurociencia 10k+ suscriptores</li>
+    {% else %}
+      <li>{{ cv.basics.label }} — {{ cv.basics.location }}</li>
+      <li>Seven years shipping models from Cajal rigs to multimodal/agentic fleets</li>
+      <li>Science columns + bilingual technical storytelling pedigree</li>
+    {% endif %}
+  </ol>
+  <pre class="sparkline" aria-hidden="true">agentic ──▷ prod</pre>
+  <p style="margin-top:1rem;margin-bottom:0;font-size:var(--fs-small)">
+    {% if lg == 'es' %}
+      <a class="caps-label riso-accent" href="{{ now_path | relative_url }}">{{ site.data.i18n[lg].now.title }}</a>
+    {% else %}
+      Tracking momentum on <a class="caps-label riso-accent" href="{{ now_path | relative_url }}">{{ site.data.i18n[lg].now.title }}</a>
+    {% endif %}
+  </p>
+</aside>

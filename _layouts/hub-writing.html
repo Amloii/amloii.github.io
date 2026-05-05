@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+{% assign tg = site.data.i18n[page.lang].writing %}
+
+<div class="container section stack">
+  <header>
+    <h1>{{ tg.index_title }}</h1>
+    <p class="lead">{{ tg.index_desc }}</p>
+    {% if page.lang == 'es' %}
+      <p class="caps-label" style="opacity:0.78">
+        Los ensayos canónicos viven primero en inglés · <a href="{{ '/writing/' | relative_url }}">Índice EN</a>
+      </p>
+    {% endif %}
+  </header>
+
+  {% include newsletter-home.html %}
+
+  <section aria-labelledby="pillars">
+    <h2 id="pillars">{{ tg.pillars }}</h2>
+    <div class="split" style="margin-top:1rem">
+      {% assign ps = site.data.pillars %}
+      {% for pillar in ps %}
+        <article class="newsletter-card section--tight">
+          {% if page.lang == 'es' %}
+            <p class="caps-label pillar-tag">{{ pillar.id }}</p>
+            <h3 style="margin-top:0.25rem">{{ pillar.title_es }}</h3>
+            <p>{{ pillar.blurb_es }}</p>
+          {% else %}
+            <p class="caps-label pillar-tag">{{ pillar.id }}</p>
+            <h3 style="margin-top:0.25rem">{{ pillar.title_en }}</h3>
+            <p>{{ pillar.blurb_en }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="essays">
+    <h2 id="essays" style="margin-top:2rem">{{ tg.essays }}</h2>
+    <p style="opacity:0.74;font-size:var(--fs-small);max-width:60ch;margin-top:.35rem;">
+      Canonical URL siempre aquí; si republicas en Substack, marca la canonical hacia estos posts.</p>
+
+    {% for pillar in ps %}
+      {% assign pid = pillar.id %}
+      {% assign bucket_posts = site.posts | where: "pillar", pid %}
+      {% if bucket_posts.size > 0 %}
+        <h3 class="caps-label" style="margin-top:1.75rem">
+          {% if page.lang == 'es' %}{{ pillar.title_es }}{% else %}{{ pillar.title_en }}{% endif %}
+        </h3>
+        {% assign ix = 0 %}
+        {% for post in bucket_posts %}
+          {% assign ix = ix | plus: 1 %}
+          <a class="idx-row" href="{{ post.url | relative_url }}">
+            <span class="idx-row__num">{% if ix < 10 %}0{% endif %}{{ ix }}</span>
+            <span>
+              <span class="idx-row__title">{{ post.title }}</span><br>
+              <span style="opacity:0.78;font-size:var(--fs-small)">{{ post.excerpt | strip_html | truncate: 220 }}</span>
+            </span>
+            <span class="caps-label">{{ pillar.id }}</span>
+            <span class="caps-label">{{ post.date | date: '%Y' }}</span>
+          </a>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign unassigned = site.posts | where_exp: 'p', 'p.pillar == nil' %}
+    {% if unassigned.size > 0 %}
+      <h3 class="caps-label" style="margin-top:1.75rem">Notebook</h3>
+      {% assign ixu = 0 %}
+      {% for post in unassigned %}
+        {% assign ixu = ixu | plus: 1 %}
+        <a class="idx-row" href="{{ post.url | relative_url }}">
+          <span class="idx-row__num">{% if ixu < 10 %}0{% endif %}{{ ixu }}</span>
+          <span><span class="idx-row__title">{{ post.title }}</span></span>
+          <span class="caps-label">—</span>
+          <span class="caps-label">{{ post.date | date: '%Y' }}</span>
+        </a>
+      {% endfor %}
+    {% endif %}
+  </section>
+
+  {% assign ew = site.data.external_writing %}
+  <section aria-labelledby="external" style="margin-top:2rem">
+    <h2 id="external">{{ tg.external }}</h2>
+    {% if ew.featured %}
+      <div class="split" style="margin-top:1rem">
+        {% for item in ew.featured %}
+          <article class="newsletter-card">
+            <p class="caps-label">{{ item.outlet }} · {{ item.year }}</p>
+            <h3 style="margin-top:.35rem"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+            {% if item.tags %}
+              <ul class="chips">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if ew.items %}
+      <div style="margin-top:2rem">
+        {% for item in ew.items %}
+          {% if item.url == '#' %}
+            <div class="idx-row">
+              <span class="idx-row__num">&nbsp;</span>
+              <span>
+                <span class="idx-row__title">{{ item.title }}</span><br>
+                <span style="opacity:0.75;font-size:var(--fs-small)">{{ item.outlet }}</span>
+              </span>
+              <span class="caps-label">{{ item.lang }}</span>
+              <span class="caps-label">{{ item.year }}</span>
+            </div>
+          {% else %}
+            <a class="idx-row" href="{{ item.url }}">
+              <span class="idx-row__num">&nbsp;</span>
+              <span>
+                <span class="idx-row__title">{{ item.title }}</span><br>
+                <span style="opacity:0.75;font-size:var(--fs-small)">{{ item.outlet }}</span>
+              </span>
+              <span class="caps-label">{{ item.lang }}</span>
+              <span class="caps-label">{{ item.year }}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+</div>

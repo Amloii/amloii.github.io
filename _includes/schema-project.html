@@ -1,0 +1,9 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": {{ page.title | jsonify }},
+  "abstract": {{ page.summary | strip_newlines | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>

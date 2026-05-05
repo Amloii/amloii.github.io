@@ -1,0 +1,20 @@
+{% assign lg = page.lang | default: site.lang %}
+
+<div class="marginalia" aria-label="Career arc">
+  <span class="caps-label">
+    {% if lg == 'es' %}Trayectoria{% else %}Career arc{% endif %}
+  </span>
+  <ol style="font-style:normal;margin-top:.5rem">
+    {% if lg == 'es' %}
+      <li>Cajal · electrofisiología + ML interpretable</li>
+      <li>ML industrial · recomendadores · visión · finanzas</li>
+      <li>IA generativa multimodal en prod</li>
+      <li>Orquestación agéntica hoy</li>
+    {% else %}
+      <li>Cajal · electrophysiology + interpretable ML</li>
+      <li>Industrial ML · recsys · vision · finance stacks</li>
+      <li>Multimodal generative platforms</li>
+      <li>Agentic orchestration at scale</li>
+    {% endif %}
+  </ol>
+</div>

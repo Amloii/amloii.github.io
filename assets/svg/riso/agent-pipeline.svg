@@ -1,0 +1,19 @@
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t">
+  <title id="t">Agent pipeline diagram</title>
+  <rect width="480" height="240" fill="#F5F1EA"/>
+  <g fill="#1E3A8A" opacity=".9">
+    <rect x="30" y="96" width="86" height="56" rx="10"/>
+    <rect x="190" y="88" width="110" height="72" rx="12"/>
+    <rect x="364" y="96" width="86" height="56" rx="10"/>
+  </g>
+  <g fill="#E0492F" opacity=".88">
+    <circle cx="140" cy="124" r="14"/>
+    <circle cx="260" cy="76" r="12"/>
+    <circle cx="320" cy="168" r="12"/>
+  </g>
+  <path d="M116 124h56" stroke="#0F0E0C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M300 124h52" stroke="#0F0E0C" stroke-width="3" stroke-linecap="round"/>
+  <text x="34" y="84" font-family="Inter" font-size="13" fill="#0F0E0C">Input</text>
+  <text x="198" y="72" font-family="Inter" font-size="13" fill="#0F0E0C">Orchestrator</text>
+  <text x="368" y="84" font-family="Inter" font-size="13" fill="#0F0E0C">Answer</text>
+</svg>

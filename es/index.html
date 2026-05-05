@@ -1,30 +1,29 @@
 ---
 layout: home
-lang: en
+lang: es
 ref: home
-title: "Daniel Gómez Domínguez · AI Director"
-description: "AI Director & systems architect — agentic AI, LLM infrastructure, RAG, multimodal generative systems, and technical leadership from Madrid / EU-remote."
+title: "Daniel Gómez Domínguez · Director de IA"
+description: "Director de IA y arquitecto de sistemas — IA agéntica, infra LLM, RAG, IA generativa multimodal y liderazgo técnico desde Madrid / remoto UE."
 featured_projects:
-  - in-a-few-words
-  - agentic-knowledge-studio
-  - enterprise-rag-gateway
+  - es-in-a-few-words
+  - es-agentic-knowledge-studio
+  - es-enterprise-rag-gateway
 ---
 
-{% assign t = site.data.i18n['en'].home %}
-{% assign cv = site.data.cv.en %}
+{% assign t = site.data.i18n['es'].home %}
 
 <section class="section">
   <div class="container grid-12" style="align-items:start">
     <div class="col-span-7 stack" style="gap:var(--space-md)">
       <p class="caps-label">{{ t.hero_kicker }}</p>
-      <h1 style="margin:0">{{ site.data.i18n.en.meta.home_title }}</h1>
-      <p class="lead" style="max-width:52ch">{{ site.description }}</p>
+      <h1 style="margin:0">{{ site.data.i18n.es.meta.home_title }}</h1>
+      <p class="lead" style="max-width:52ch">{{ site.data.i18n.es.meta.home_description }}</p>
       <div class="stack" style="gap:.75rem">
         {% assign latest = site.posts | first %}
         {% if latest %}
           <a class="btn btn--accent" href="{{ latest.url | relative_url }}">{{ t.read_essay }} →</a>
         {% endif %}
-        <a class="caps-label" href="{{ '/cv/' | relative_url }}">{{ t.cta_cv }} →</a>
+        <a class="caps-label" href="{{ '/es/trayectoria/' | relative_url }}">{{ t.cta_cv }} →</a>
       </div>
     </div>
     <div class="col-span-5">
@@ -40,13 +39,13 @@ featured_projects:
     <header class="stack" style="gap:.5rem;margin-bottom:1.5rem">
       <span class="caps-label">{{ t.selected_work }}</span>
       <h2 style="margin:0">{{ t.selected_work }}</h2>
-      <p class="lead">{{ site.data.i18n.en.work.index_desc }}</p>
+      <p class="lead">{{ site.data.i18n.es.work.index_desc }}</p>
     </header>
 
     <div class="stack" style="gap:var(--space-md)">
       {% assign slugs = page.featured_projects %}
       {% for slug in slugs %}
-        {% assign proj = site.projects | where: 'slug', slug | where: 'lang', 'en' | first %}
+        {% assign proj = site.projects | where: 'slug', slug | where: 'lang', 'es' | first %}
         {% if proj %}
           <a class="idx-row" href="{{ proj.url | relative_url }}">
             <span class="idx-row__num">{% assign idx = forloop.index %}{% if idx < 10 %}0{% endif %}{{ idx }}</span>
@@ -65,7 +64,7 @@ featured_projects:
     </div>
 
     <p style="margin-top:1.5rem">
-      <a class="btn btn--ghost" href="{{ '/work/' | relative_url }}">{{ t.view_all_work }}</a>
+      <a class="btn btn--ghost" href="{{ '/es/trabajo/' | relative_url }}">{{ t.view_all_work }}</a>
     </p>
   </div>
 </section>
@@ -74,7 +73,7 @@ featured_projects:
   <div class="container split">
     <div>
       <span class="caps-label">{{ t.writing }}</span>
-      <h2 style="margin-top:.35rem">Fresh essays</h2>
+      <h2 style="margin-top:.35rem">Últimos ensayos (EN)</h2>
       {% for post in site.posts limit:2 %}
         <article style="margin-top:1rem">
           <p class="caps-label">{{ post.date | date: "%Y-%m-%d" }} · {% if post.pillar %}{{ post.pillar }}{% else %}essay{% endif %}</p>
@@ -82,11 +81,11 @@ featured_projects:
           <p>{{ post.excerpt | strip_html | truncate: 260 }}</p>
         </article>
       {% endfor %}
-      <p style="margin-top:1rem"><a href="{{ '/writing/' | relative_url }}">{{ t.view_writing_hub }} →</a></p>
+      <p style="margin-top:1rem"><a href="{{ '/es/escritos/' | relative_url }}">{{ t.view_writing_hub }} →</a></p>
     </div>
     <div>
-      <span class="caps-label">External spotlight</span>
-      <h2 style="margin-top:.35rem">Elsewhere</h2>
+      <span class="caps-label">Destacados externos</span>
+      <h2 style="margin-top:.35rem">Fuera del sitio</h2>
       {% assign spotlight = site.data.external_writing.featured | slice: 0, 2 %}
       {% for item in spotlight %}
         <article style="margin-top:1rem">
@@ -101,22 +100,22 @@ featured_projects:
 <section class="section section--paper">
   <div class="container">
     <span class="caps-label">{{ t.work_with_me }}</span>
-    <h2 style="margin-top:.35rem">Three lanes</h2>
+    <h2 style="margin-top:.35rem">Formas de colaborar</h2>
     <div class="split" style="margin-top:1rem">
       <article class="newsletter-card section--tight">
-        <h3>Advisory</h3>
-        <p>Steer agentic roadmap, infra picks, evaluations, procurement — short, sharp cycles.</p>
-        <p><a class="btn btn--ghost" href="{{ site.book_call_url }}">{{ site.data.i18n.en.cv.book_call }}</a></p>
+        <h3>Asesoría</h3>
+        <p>Hoja de ruta agéntica, evaluaciones, sourcing de modelos/proveedor, gobernanza de costes.</p>
+        <p><a class="btn btn--ghost" href="{{ site.book_call_url }}">{{ site.data.i18n.es.cv.book_call }}</a></p>
       </article>
       <article class="newsletter-card section--tight">
-        <h3>Implementation</h3>
-        <p>Architect + hands-on prototyping for ambiguous 0→1 workloads where slide decks stall.</p>
-        <p><a class="btn btn--ghost" href="mailto:{{ site.author.email }}">Ping engineering</a></p>
+        <h3>Implementación</h3>
+        <p>Diseño y prototipado con foco operativo cuando el equipo está saturado pero el proyecto no puede esperar.</p>
+        <p><a class="btn btn--ghost" href="mailto:{{ site.author.email }}">Escribir a ingeniería</a></p>
       </article>
       <article class="newsletter-card section--tight">
         <h3>Speaking</h3>
-        <p>Panels, CTO briefings, and classroom-style deep dives bridging science + systems.</p>
-        <p><a class="btn btn--ghost" href="{{ '/speaking-press/' | relative_url }}">Press kit</a></p>
+        <p>Charlas, talleres CTO y comunicación técnica pública manteniendo exactitud sin burocracia.</p>
+        <p><a class="btn btn--ghost" href="{{ '/es/charlas-prensa/' | relative_url }}">Kit para medios</a></p>
       </article>
     </div>
   </div>

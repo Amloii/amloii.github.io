@@ -1,0 +1,25 @@
+items:
+  - ref: home
+    en: /
+    es: /es/
+  - ref: work
+    en: /work/
+    es: /es/trabajo/
+  - ref: writing
+    en: /writing/
+    es: /es/escritos/
+  - ref: cv
+    en: /cv/
+    es: /es/trayectoria/
+  - ref: speaking
+    en: /speaking-press/
+    es: /es/charlas-prensa/
+  - ref: now
+    en: /now/
+    es: /es/ahora/
+  - ref: about
+    en: /about/
+    es: /es/sobre/
+  - ref: contact
+    en: /contact/
+    es: /es/contacto/

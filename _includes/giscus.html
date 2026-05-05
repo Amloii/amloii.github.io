@@ -1,0 +1,24 @@
+{% assign giscus = site.giscus %}
+<section class="giscus container section no-print">
+  {% if giscus.repo_id contains "XXXX" %}
+    <p style="opacity:.72;font-size:var(--fs-small)">
+      Configure <code>_config.yml › giscus</code> (IDs desde <a href="https://giscus.app">giscus.app</a>) para activar los comentarios en posts.</p>
+  {% else %}
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="{{ giscus.repo }}"
+      data-repo-id="{{ giscus.repo_id }}"
+      data-category="{{ giscus.category }}"
+      data-category-id="{{ giscus.category_id }}"
+      data-mapping="{{ giscus.mapping }}"
+      data-strict="0"
+      data-reactions-enabled="{{ giscus.reactions_enabled }}"
+      data-emit-metadata="0"
+      data-input-position="{{ giscus.input_position }}"
+      data-theme="{{ giscus.theme }}"
+      data-lang="{{ giscus.lang }}"
+      crossorigin="anonymous"
+      async>
+    </script>
+  {% endif %}
+</section>

@@ -1,0 +1,23 @@
+- id: building-agents
+  title_en: Building agents in production
+  title_es: Agentes en producción
+  blurb_en: Patterns, pitfalls, orchestration choices, eval discipline.
+  blurb_es: Patrones, anti-patrones, orquestación y evaluación.
+
+- id: research-to-prod
+  title_en: From research to production
+  title_es: De la investigación a producción
+  blurb_en: Neuroscience → classical ML → generative → agentic stacks.
+  blurb_es: Neurociencia → ML clásico → generativo → agentes.
+
+- id: ai-leadership
+  title_en: AI leadership
+  title_es: Liderazgo de IA
+  blurb_en: Roadmaps, hiring, portfolio decisions, vendor vs build.
+  blurb_es: Roadmaps, hiring, cartera y decisiones build vs buy.
+
+- id: operators-notebook
+  title_en: Operator's notebook
+  title_es: Cuaderno del operador
+  blurb_en: Short field notes, TILs, release notes from the field.
+  blurb_es: Notas cortas, TILs y bitácoras operativas.

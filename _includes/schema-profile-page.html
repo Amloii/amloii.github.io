@@ -1,0 +1,13 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "{{ page.title | escape }} · {{ site.title }}",
+  "url": "{{ page.url | absolute_url }}",
+  "inLanguage": "{{ page.lang | default: site.lang }}",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "{{ site.data.cv.en.basics.name }}"
+  }
+}
+</script>

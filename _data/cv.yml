@@ -1,0 +1,463 @@
+en:
+  basics:
+    name: "Daniel Gómez Domínguez"
+    label: "AI Systems Architect · Director of Artificial Intelligence"
+    email: "danigdominguez@gmail.com"
+    location: "Madrid, Spain"
+    headline: "Architect & Director of AI — 7+ years shipping AI in production."
+    subhead: "Agentic AI · LLM infrastructure · RAG · Generative AI · Computational neuroscience foundation."
+    summary: >-
+      I design and ship autonomous agentic systems on top of LLMs: orchestration,
+      persistent semantic memory, hybrid RAG over vector stores, generative image
+      production, and cost/latency optimization. I blend rigorous scientific thinking
+      with product-minded execution across single- and multi-agent architectures.
+    pdf_en: "/assets/cv/daniel-gomez-dominguez-en.pdf"
+    pdf_es: "/assets/cv/daniel-gomez-dominguez-es.pdf"
+    linkedin: "https://es.linkedin.com/in/danigdominguez"
+
+  availability:
+    status: selective
+    headline: "Selectively open to senior AI leadership roles"
+    roles:
+      - Director of AI
+      - Head of AI / ML
+      - AI Architect
+      - Principal AI Engineer
+      - Strategic AI Advisor
+    modes:
+      - Remote (EU)
+      - Hybrid (Madrid)
+      - On-site (Madrid)
+    timezone: "CET"
+    book_call: "https://cal.com/dgdominguez/intro"
+
+  languages:
+    - { name: "English", level: "Full professional" }
+    - { name: "Spanish", level: "Native / bilingual" }
+
+  core_skills:
+    - Public speaking
+    - Scientific communication
+    - Technical writing
+
+  capabilities:
+    - group: "Agentic AI"
+      items:
+        - Single & multi-agent architectures
+        - Task decomposition & agent routing
+        - Persistent semantic memory design
+        - Agent interfaces (advanced chat & non-chat copilots)
+    - group: "LLM infrastructure"
+      items:
+        - Orchestration stacks
+        - Latency / throughput / spend optimization
+        - Production rollout & versioning
+    - group: "RAG & retrieval"
+      items:
+        - Hybrid retrieval pipelines
+        - Vector databases (OpenSearch & similar)
+        - Embeddings pipelines (multimodal when needed)
+    - group: "Generative AI"
+      items:
+        - Image generation in production
+        - Multimodal classification & grounding
+        - Fine-tuning for in-the-wild scenarios
+    - group: "Classical ML / vision"
+      items:
+        - Recommendation & reinforcement-learning systems
+        - CNN / NLP classification & anomaly detection
+        - Fraud detection & synthetic-content detection pipelines
+
+  experience:
+    - company: "BillionHands · NextChance Invest"
+      role: "Director of Artificial Intelligence"
+      start: "2025-11"
+      end_display: "Present"
+      tenure: "~7 mo"
+      location: "Greater Madrid Area"
+      summary: "Designing and implementing autonomous LLM-backed agent stacks for structured knowledge acquisition and automated decision pipelines."
+      bullets:
+        - "Agentic AI architectures (single- and multi-agent)."
+        - "Orchestration kits: task decomposition, routing, durable memory contracts."
+        - "Hybrid RAG over vector backends with pragmatic eval harnesses."
+        - "Interfaces that feel like assistants, copilots, and internal tooling — not gimmicks."
+        - "Generative image models productionized alongside LLM infra."
+        - "Latency/cost knobs for inference and routing across providers."
+      tags: ["Agentic AI", "LLM", "RAG", "GenAI"]
+
+    - company: "Multimarkts"
+      role: "Director of Artificial Intelligence"
+      start: "2023-07"
+      end_display: "2026-02"
+      tenure: "2 yrs · 8 mo"
+      location: "Madrid"
+      summary: "AI strategy plus hands-on platforms for multimodal search, inspiration retrieval, contextual content."
+      bullets:
+        - "Company-wide IA roadmap anchored to monetizable search moments."
+        - "Multimodal embeddings (image + text) at scale."
+        - "Operationalized OpenSearch + vector backends."
+        - "Generative image & motion experiments moved into production pipelines."
+        - "Reinforcement-learning inspired recommenders powering discovery."
+      tags: ["Multimodal", "OpenSearch", "RecSys", "GenAI"]
+
+    - company: "NoFakes"
+      role: "Lead Data Scientist"
+      start: "2022-03"
+      end_display: "2023-07"
+      tenure: "1 yr · 5 mo"
+      location: "Madrid"
+      summary: "Fraud, synthetic-media, abusive-content detection backed by NLP + behavioral signals."
+      bullets:
+        - "Semantic NLP classifiers tuned for nuanced policy targets."
+        - "Behavioural anomalies for detecting coordinated bot activity."
+        - "Synthetic-text attribution models (GPT-like generators)."
+        - "End-to-end detection/classification pipelines for fraud ops."
+      tags: ["NLP", "Safety", "Fraud"]
+
+    - company: "BillionHands AI Fashion"
+      role: "Senior Data Scientist"
+      start: "2021-01"
+      end_display: "2022-03"
+      tenure: "1 yr · 3 mo"
+      location: "Madrid"
+      summary: "Vision + NLP product models for garment understanding in the wild."
+      bullets:
+        - "CNN + NLP garment recognition architectures."
+        - "Multimodal classification (visual + textual metadata)."
+        - "Bayesian hyperparameter optimisation for latency-sensitive ensembles."
+      tags: ["Computer Vision", "Multimodal"]
+
+    - company: "Dive.tech"
+      role: "Data Scientist"
+      start: "2019-04"
+      end_display: "2020-12"
+      tenure: "1 yr · 9 mo"
+      location: "Madrid"
+      summary: "Consulting-grade delivery of predictive & vision workloads."
+      bullets:
+        - "Personalised recommender stacks (sequence + topic hybrids)."
+        - "Industrial QA vision for defect spotting."
+        - "Person-identification workloads with privacy guardrails."
+        - "Streaming video analytics pipelines on AWS."
+      tags: ["RecSys", "Vision", "AWS"]
+
+    - company: "Afi Escuela de Finanzas"
+      role: "Professor of Artificial Intelligence"
+      start: "2020-02"
+      end_display: "2020-07"
+      tenure: "~6 mo"
+      location: "Madrid"
+      bullets:
+        - "Teaching CNN + RNN blocks inside the formative AI syllabus."
+      tags: ["Teaching"]
+
+    - company: "Novabase"
+      role: "Data Scientist · Financial Client"
+      start: "2018-03"
+      end_display: "2018-11"
+      tenure: "~9 mo"
+      location: "Madrid"
+      bullets:
+        - "Reinvestment RL strategies for discretionary desks."
+        - "NLP on scanned contractual packages."
+        - "Signature authenticity via CNN ensembles."
+      tags: ["Finance", "RL", "CNN"]
+
+    - company: "Freelance / portfolio"
+      role: "Science communication & broadcasting"
+      start: "2010-10"
+      end_display: "2018-10"
+      tenure: "~8 yrs"
+      location: "Madrid"
+      bullets:
+        - ">10k YouTube subscribers, >100k views on educational neurochemistry/neurophysics content."
+        - "Weekly columns via national publishers (La Razón & peers)."
+      tags: ["SciComm"]
+
+    - company: "Instituto Cajal · CSIC"
+      role: "Predoctoral researcher · Computational neuroscience"
+      start: "2012-02"
+      end_display: "2017-12"
+      tenure: "~6 yrs"
+      location: "Madrid"
+      bullets:
+        - "Brain rhythmopathies modelling + EEG / field-potential pipelines."
+        - "Large-scale spike sorting + preprocessing at scale."
+        - "Interpretable ML for electrophysiology datasets."
+      tags: ["Research", "ML"]
+
+    - company: "Independent"
+      role: "Stage magician & lecturer"
+      start: "2007-07"
+      end_display: "2013-06"
+      tenure: "~6 yrs"
+      location: "Madrid"
+      bullets:
+        - "Theatre illusions plus large-format kids shows sharpened narration and stage presence."
+      tags: ["Oratory"]
+
+  education:
+    - school: "Universidad Autónoma de Madrid"
+      degree: "M.Sc. Biofísica · Electrofisiología"
+      start: "2011"
+      end: "2012"
+    - school: "Universidad Autónoma de Madrid"
+      degree: "B.Sc. Bioquímica"
+      start: "2009"
+      end: "2011"
+    - school: "Universidad Autónoma de Madrid"
+      degree: "Diplomatura · Química"
+      start: "2006"
+      end: "2009"
+
+  certifications:
+    - issuer: "DeepLearning.ai / Coursera"
+      items:
+        - Structuring Machine Learning Projects
+        - Neural Networks & Deep Learning
+        - Improving Deep Neural Networks
+        - Sequence Models
+        - Deep Learning Essentials
+
+  publications:
+    books:
+      - "Matemáticas y Neurociencia"
+      - "Neurociencia · Estructura y funciones del cerebro"
+    notes:
+      - "SciComm spanning national press columns, long-form neuroscience explainers, and video essays."
+
+  beyond:
+    title: "Beyond the keyboard"
+    body: >-
+      Earlier career as a touring stage magician honed storytelling, improvisation,
+      and audience calibration — competencies that map cleanly to stakeholder comms today.
+
+es:
+  basics:
+    name: "Daniel Gómez Domínguez"
+    label: "Arquitecto de Sistemas de IA · Director de Inteligencia Artificial"
+    email: "danigdominguez@gmail.com"
+    location: "Madrid y alrededores"
+    headline: "Arquitecto y Director de IA — +7 años llevando IA a producción."
+    subhead: "IA Agéntica · Infra LLM · RAG · IA generativa · Base en neurociencia computacional."
+    summary: >-
+      Diseño sistemas autónomos basados en LLM: memoria persistente semántica, RAG híbrido,
+      infraestructura generativa multimodal y optimización de latencia/coste. Una mano apoyada en la ingeniería
+      y la otra en la narrativa ejecutiva orientada al producto.
+    pdf_en: "/assets/cv/daniel-gomez-dominguez-en.pdf"
+    pdf_es: "/assets/cv/daniel-gomez-dominguez-es.pdf"
+    linkedin: "https://es.linkedin.com/in/danigdominguez"
+
+  availability:
+    status: selective
+    headline: "Abierto selectivamente a roles senior de IA"
+    roles:
+      - Director de IA
+      - Head de IA / ML
+      - Arquitecto(a) IA
+      - Principal AI Engineer
+      - Asesor estratégico de IA
+    modes:
+      - Remoto (UE)
+      - Híbrido (Madrid)
+      - Presencial (Madrid)
+    timezone: "CET"
+    book_call: "https://cal.com/dgdominguez/intro"
+
+  languages:
+    - { name: "Inglés", level: "Profesional completo" }
+    - { name: "Español", level: "Nativo / bilingual" }
+
+  core_skills:
+    - Oratoria
+    - Comunicación científica
+    - Redacción técnica
+
+  capabilities:
+    - group: "IA agéntica"
+      items:
+        - Arquitecturas single/multi agente
+        - Descomposición de tareas y routing inteligente
+        - Gestión durable de la memoria
+        - Interfaces agénticas (chat avanzado y copilotos)
+    - group: "Infra LLM"
+      items:
+        - Orquestación de modelos proveedor y privados
+        - Optimización de latencia/coste
+        - Puesta en producción y versionado seguro
+    - group: "RAG y recuperación"
+      items:
+        - RAG y recuperación híbrida
+        - Infra vectorial (OpenSearch y similares)
+        - Pipelines multimodales de embeddings
+    - group: "IA generativa"
+      items:
+        - Imagen y video generativos en producción
+        - Clasificación multimodal contextual
+        - Fine tuning para datos reales fuera del laboratorio
+    - group: "ML / visión tradicional"
+      items:
+        - Sistemas de recomendación y refuerzo
+        - NLP y clasificación multimodal
+        - Modelos antifraud/antibots ante contenido sintético
+
+  experience:
+    - company: "BillionHands · NextChance Invest"
+      role: "Director de Inteligencia Artificial"
+      start: "2025-11"
+      end_display: "Actualidad"
+      tenure: "~7 meses"
+      location: "Madrid"
+      summary: "Diseño, arquitectura e implementación de sistemas autónomos basados en LLM para adquisición de conocimiento estructurada y decisiones automatizadas."
+      bullets:
+        - "Arquitecturas Agentic AI (single y multiagente)."
+        - "Marcos de orquestación centrales: descomposición, routing de agentes y memoria gestionada."
+        - "Implementación RAG híbrida sobre bases vectoriales."
+        - "Memoria persistente semántica y contratos observables entre agentes y herramientas."
+        - "Interfaces agénticas (chat avanzados y copilotos no sólo conversacionales)."
+        - "Productivización de modelos IA generativa (imagen) con disciplina ops."
+      tags: ["Agentic IA", "LLM", "RAG", "GenAI"]
+
+    - company: "Multimarkts"
+      role: "Director de Inteligencia Artificial"
+      start: "2023-07"
+      end_display: "2026-02"
+      tenure: "2 años · 8 meses"
+      location: "Madrid"
+      summary: "Estrategia y ejecución de IA dentro de una plataforma de búsqueda inspiracional y contextualización de contenidos."
+      bullets:
+        - "Plan estratégico de IA alineado a outcome de negocio."
+        - "Embeddings multimodales texto-imagen en producción."
+        - "OpenSearch/Bases vectoriales operadas con SLO definidos."
+        - "Pipeline generativo multimedia (imagen y video)."
+        - "Sistemas de recomendación con aprendizaje por refuerzo."
+      tags: ["Multimodal", "OpenSearch", "RecSys"]
+
+    - company: "NoFakes"
+      role: "Lead Data Scientist"
+      start: "2022-03"
+      end_display: "2023-07"
+      tenure: "1 año · 5 meses"
+      location: "Madrid"
+      summary: "Detección de fraude digital, contenido sintético y reviews falsificadas mediante NLP conductual."
+      bullets:
+        - "Análisis semántico de discursos de alto riesgo (odio/coordinación)."
+        - "Detección de bots con anomalía + señales de comportamiento."
+        - "Modelado de texto generado por IA (familias GPT y similares)."
+        - "Pipelines clasificadores integrados en operaciones de fraude."
+      tags: ["NLP", "Seguridad", "Antifraude"]
+
+    - company: "BillionHands AI Fashion"
+      role: "Senior Data Scientist"
+      start: "2021-01"
+      end_display: "2022-03"
+      tenure: "1 año · 3 meses"
+      location: "Madrid"
+      summary: "Visión + NLP combinados para clasificar prendas reales fuera del estudio."
+      bullets:
+        - "Algoritmos CNN + NLP para prendas textiles."
+        - "Clasificación multimodal texto+imagen."
+        - "Optimización bayesiana de modelos resilientes outdoors."
+      tags: ["Visión", "Multimodal"]
+
+    - company: "Dive.tech"
+      role: "Científico de Datos"
+      start: "2019-04"
+      end_display: "2020-12"
+      tenure: "1 año · 9 meses"
+      location: "Madrid"
+      summary: "Productivización de modelos IA en proyectos paralelos multidominio."
+      bullets:
+        - "Recomendadores personalizados (RNN + topic modeling)."
+        - "Vision industrial QA."
+        - "Reconocimiento de personas videográfico sobre AWS."
+      tags: ["RecSys", "AWS", "Visión"]
+
+    - company: "Afi Escuela de Finanzas"
+      role: "Profesor de Inteligencia Artificial"
+      start: "2020-02"
+      end_display: "2020-07"
+      tenure: "~6 meses"
+      location: "Madrid"
+      bullets:
+        - "CNN y redes recurrentes dentro del programa formativo oficial."
+      tags: ["Docencia"]
+
+    - company: "Novabase"
+      role: "Científico de Datos · Cliente financiero"
+      start: "2018-03"
+      end_display: "2018-11"
+      tenure: "~9 meses"
+      location: "Madrid"
+      bullets:
+        - "Agentes RL para estrategias de inversión."
+        - "NLP para contratos escaneados y firmas mediante CNN."
+      tags: ["Finanzas", "RL"]
+
+    - company: "Varios · Comunicación científica"
+      role: "Divulgador científico multimedia"
+      start: "2010-10"
+      end_display: "2018-10"
+      tenure: "~8 años"
+      location: "Madrid"
+      bullets:
+        - "Canal propio (>10k suscriptores · >100k visualizaciones totales)."
+        - "Piezas recurrentes para medios nacionales (La Razón & co)."
+      tags: ["Comunicación"]
+
+    - company: "Instituto Cajal · CSIC"
+      role: "Investigador predoctoral · Neurociencia computacional"
+      start: "2012-02"
+      end_display: "2017-12"
+      tenure: "~6 años"
+      location: "Madrid"
+      bullets:
+        - "Electrofisiología masiva · ritmopatías."
+        - "ML interpretable aplicado a señales."
+      tags: ["Investigación"]
+
+    - company: "Profesional independiente"
+      role: "Ilusionista · espectáculo escénico"
+      start: "2007-07"
+      end_display: "2013-06"
+      tenure: "~6 años"
+      location: "Madrid"
+      bullets:
+        - "Shows infantiles/teatrales enfocados en comunicación física persuasiva."
+      tags: ["Oratoria"]
+
+  education:
+    - school: "Universidad Autónoma de Madrid"
+      degree: "Máster de Biofísica · Electrofisiología"
+      start: "2011"
+      end: "2012"
+    - school: "Universidad Autónoma de Madrid"
+      degree: "Licenciatura en Bioquímica"
+      start: "2009"
+      end: "2011"
+    - school: "Universidad Autónoma de Madrid"
+      degree: "Diplomatura en Química"
+      start: "2006"
+      end: "2009"
+
+  certifications:
+    - issuer: "DeepLearning.ai / Coursera"
+      items:
+        - Structuring Machine Learning Projects
+        - Neural Networks & Deep Learning
+        - Mejora de Redes Profundas
+        - Modelos Secuenciales
+        - Deep Learning Essentials
+
+  publications:
+    books:
+      - "Matemáticas y Neurociencia"
+      - "Neurociencia · Estructura y funciones del cerebro"
+    notes:
+      - "Combinación única entre redacción científica, video educativo largo y prensa generalista."
+
+  beyond:
+    title: "Fuera del teclado"
+    body: >-
+      Una década combinando comunicación técnica pública + experiencia como ilusionista aseguran que pueda moverme entre salas ejecutivas,
+      ingeniería y público mainstream sin diluir mensajes.

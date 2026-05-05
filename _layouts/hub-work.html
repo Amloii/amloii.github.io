@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% assign t = site.data.i18n[page.lang].work %}
+{% assign list = site.projects | where: "lang", page.lang | sort: "year" | reverse %}
+
+<div class="container section">
+  <header>
+    <h1>{{ t.index_title }}</h1>
+    <p class="lead">{{ t.index_desc }}</p>
+  </header>
+
+  <div style="margin-top:2rem">
+    {% for proj in list %}
+      <a class="idx-row" href="{{ proj.url | relative_url }}">
+        <span class="idx-row__num">{% assign idx = forloop.index %}{% if idx < 10 %}0{% endif %}{{ idx }}</span>
+        <span>
+          <span class="idx-row__title">{{ proj.title }}</span><br>
+          <span style="opacity:.76;font-size:var(--fs-small)">{{ proj.summary }}</span>
+        </span>
+        <span class="caps-label">{{ proj.domain }}</span>
+        <span class="caps-label">{{ proj.year }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>

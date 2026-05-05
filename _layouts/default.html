@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">
+  {% include head.html %}
+  <body id="top">
+    {% assign lk = page.lang | default: site.lang | default: 'en' %}
+    <a href="#main" class="skip-link">{{ site.data.i18n[lk].nav.skip_main | default: 'Skip to content' }}</a>
+    {% include nav.html %}
+
+    <main id="main" tabindex="-1">
+      {{ content }}
+    </main>
+
+    {% unless page.hide_footer %}
+      {% include footer.html %}
+    {% endunless %}
+
+    {% include schema-person.html %}
+    {% include scripts.html %}
+  </body>
+</html>

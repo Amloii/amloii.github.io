@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amloii.github.io/sitemap.xml

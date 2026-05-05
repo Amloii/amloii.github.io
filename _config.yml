@@ -1,3 +1,88 @@
-theme: jekyll-theme-architect
-title: Daniel Gomez's Proyects
-description: Bookmark this to keep an eye on my project updates!
+# Site — change site.url when using a custom domain
+url: "https://amloii.github.io"
+baseurl: ""
+lang: en
+title: "Daniel Gómez Domínguez"
+description: "AI Director & systems architect. Agentic AI, LLM infrastructure, RAG, and production ML — from strategy to deployment."
+author:
+  name: "Daniel Gómez Domínguez"
+  email: "danigdominguez@gmail.com"
+  twitter: "amloii"
+  github: "Amloii"
+  linkedin: "danigdominguez"
+
+# Third-party (fill with your IDs)
+formspree_endpoint: "https://formspree.io/f/REPLACE_ME" # crear formulario en formspree.io y pegar URL
+substack_embed_url: "https://amloii.substack.com/embed" # replace with your Substack embed base
+book_call_url: "https://cal.com/dgdominguez/intro"
+cloudflare_analytics:
+  token: "" # optional: Cloudflare Web Analytics token
+
+giscus:
+  repo: "Amloii/amloii.github.io"
+  repo_id: "R_kgDOXXXXXX" # replace with your repo id from giscus.app
+  category: "Announcements"
+  category_id: "DIC_kwDOXXXXXX" # replace
+  mapping: "pathname"
+  reactions_enabled: "1"
+  input_position: "bottom"
+  theme: "noborder_light"
+  lang: "en"
+
+twitter:
+  username: amloii
+  card: summary_large_image
+
+logo: "/assets/img/og-default.svg"
+
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      lang: en
+      comments: true
+      ref: writing
+  - scope:
+      path: "_projects"
+    values:
+      layout: project
+      ref: work
+  - scope:
+      path: "es"
+    values:
+      lang: es
+
+feed:
+  path: feed.xml
+  posts_limit: 20
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - uploads
+  - .cursor
+
+sass:
+  sass_dir: assets/css
+  style: compressed

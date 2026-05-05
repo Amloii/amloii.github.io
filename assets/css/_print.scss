@@ -1,0 +1,41 @@
+// Print-friendly CV (Ctrl+P)
+
+@media print {
+  .site-nav,
+  .site-footer,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    font-size: 11pt;
+    color: #000 !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  .marginalia,
+  .availability-box {
+    border-color: #ccc !important;
+  }
+
+  .section {
+    padding-block: 1rem !important;
+    break-inside: avoid;
+  }
+
+  .tl-item {
+    break-inside: avoid;
+  }
+}

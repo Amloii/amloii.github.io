@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="container section">
+  {% if page.title %}
+    <h1>{{ page.title }}</h1>
+  {% endif %}
+  {% if page.intro %}
+    <p class="caps-label" style="margin-top:.5rem">{{ page.intro }}</p>
+  {% endif %}
+  <div class="prose">
+    {{ content }}
+  </div>
+</div>

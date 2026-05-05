@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+{% include schema-article.html %}
+
+<article class="container section">
+  <p class="pillar-tag">
+    {% assign pl = site.data.pillars | where_exp: "pillar", "pillar.id == page.pillar" | first %}
+    {% if pl %}
+      {% if page.lang == 'es' %}
+        {{ pl.title_es }}
+      {% else %}
+        {{ pl.title_en }}
+      {% endif %}
+    {% else %}
+      Essay
+    {% endif %}
+  </p>
+
+  {% if page.hero_illustration %}
+    <figure class="riso-frame riso-muted" style="max-height:16rem;width:100%;margin:0 0 1.5rem">
+      <img src="{{ '/assets/svg/riso/' | append: page.hero_illustration | append: '.svg' | relative_url }}" alt="" width="480" height="240" loading="lazy" decoding="async">
+    </figure>
+  {% endif %}
+
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="caps-label" style="opacity:.8;margin-top:.5rem">
+      {{ page.date | date: "%Y-%m-%d" }} · {{ site.author.name }}
+    </p>
+  </header>
+
+  <div class="prose section--tight" style="margin-top:1.5rem">
+    {{ content }}
+  </div>
+
+  {% include newsletter-footer.html %}
+  {% if page.comments %}
+    {% include giscus.html %}
+  {% endif %}
+</article>

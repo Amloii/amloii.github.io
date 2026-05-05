@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+{% include schema-project.html %}
+
+{% assign t = site.data.i18n[page.lang | default: 'en'].work %}
+
+<article class="container section">
+  {% if page.hero_illustration %}
+    <figure class="riso-frame" style="margin:0 0 1.75rem">
+      <img src="{{ '/assets/svg/riso/' | append: page.hero_illustration | append: '.svg' | relative_url }}" alt="" width="480" height="240" loading="eager" decoding="async">
+    </figure>
+  {% endif %}
+
+  <header>
+    <p class="caps-label">{{ page.domain }} · {{ page.year }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}
+      <p class="lead" style="max-width:none">{{ page.summary }}</p>
+    {% endif %}
+  </header>
+
+  <dl class="stack" style="margin-top:1.5rem;font-size:var(--fs-small)">
+    {% if page.role %}<dt class="caps-label">{{ t.role }}</dt><dd>{{ page.role }}</dd>{% endif %}
+    {% if page.stack %}<dt class="caps-label">{{ t.stack }}</dt><dd>{{ page.stack }}</dd>{% endif %}
+    {% if page.featured_metric %}<dt class="caps-label">{{ t.metric }}</dt><dd><strong>{{ page.featured_metric }}</strong></dd>{% endif %}
+  </dl>
+
+  <hr class="hairline">
+
+  <section>
+    <h2>{{ t.context }}</h2>
+    {{ page.context | markdownify }}
+  </section>
+  <section>
+    <h2>{{ t.approach }}</h2>
+    {{ page.approach | markdownify }}
+  </section>
+  <section>
+    <h2>{{ t.outcomes }}</h2>
+    {{ page.outcomes | markdownify }}
+  </section>
+
+  {% if page.links %}
+    <section>
+      <h2>{{ t.links }}</h2>
+      <ul>
+        {% for link in page.links %}
+          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if page.tags %}
+    <ul class="chips" aria-label="tags">
+      {% for tag in page.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

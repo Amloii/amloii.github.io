@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% include fonts.html %}
+
+  {% seo %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% if page.image %}
+  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  {% else %}
+  <meta property="og:image" content="{{ site.logo | absolute_url }}">
+  {% endif %}
+
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+
+  {% assign cf = site.cloudflare_analytics.token %}
+  {% if cf != "" %}
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;{{ cf }}&quot;}"></script>
+  {% endif %}
+
+  {% if page.extra_head %}{{ page.extra_head }}{% endif %}
+</head>

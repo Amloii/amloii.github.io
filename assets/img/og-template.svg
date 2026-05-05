@@ -1,0 +1,7 @@
+<!-- Export to PNG (1200x630) for richer social previews; keep svg as blueprint -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbf8f2" stroke="#1f1b16" stroke-width="4"/>
+  <text x="60" y="120" fill="#b0552b" font-family="Georgia,serif" font-size="56">Post title</text>
+  <text x="60" y="200" fill="#0f0e0c" font-family="system-ui" font-size="32">Daniel Gómez Domínguez</text>
+  <text x="60" y="260" fill="#5c564c" font-family="system-ui" font-size="24">pillar · date</text>
+</svg>

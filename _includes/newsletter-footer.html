@@ -1,0 +1,12 @@
+<hr class="hairline">
+
+<section class="container section">
+  {% assign lg = page.lang | default: site.lang %}
+  {% assign t = site.data.i18n[lg].home %}
+
+  <h3 class="caps-label">{{ t.subs_title }}</h3>
+  {% assign src = site.substack_embed_url | default: "https://REPLACE.substack.com/embed" %}
+  <div class="embed-substack" style="min-height:120px;margin-top:.75rem">
+    <iframe src="{{ src }}" scrolling="no" title="Newsletter signup"></iframe>
+  </div>
+</section>
