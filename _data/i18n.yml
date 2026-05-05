@@ -9,7 +9,7 @@ en:
     about: About
     contact: Contact
   footer:
-    rights: © {year} Daniel Gómez Domínguez
+    rights: © %YEAR% Daniel Gómez Domínguez
   meta:
     home_title: Architecting agentic AI for production organizations
     home_description: Portfolio, essays, and track record — AI Director specializing in agents, LLM infrastructure, RAG, and generative AI.
@@ -81,7 +81,7 @@ es:
     about: Sobre mí
     contact: Contacto
   footer:
-    rights: © {year} Daniel Gómez Domínguez
+    rights: © %YEAR% Daniel Gómez Domínguez
   meta:
     home_title: Diseño sistemas de IA agéntica para organizaciones en producción
     home_description: Portfolio, ensayos y trayectoria — Director de IA especializado en agentes, infra LLM, RAG e IA generativa.
