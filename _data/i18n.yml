@@ -74,6 +74,7 @@ en:
     hire: Working together
     book_call: Book a 20-minute intro
     linkedin: LinkedIn
+    sticky_cta: "Hiring? Book intro call"
   speaking:
     index_title: Speaking & press
     bio_short: Short bio
@@ -163,6 +164,7 @@ es:
     hire: Modalidades de colaboración
     book_call: Reserva una intro de 20 minutos
     linkedin: LinkedIn
+    sticky_cta: "¿Contratar? Reserva una intro"
   speaking:
     index_title: Charlas y prensa
     bio_short: Bio corta
