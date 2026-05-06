@@ -9,7 +9,7 @@ layout: default
 {% assign t = site.data.i18n[lg].cv %}
 
 <article class="container section cv-page">
-  <header class="stack" style="margin-bottom: var(--space-lg);">
+  <header class="stack" style="margin-bottom: var(--space-md);">
     <p class="caps-label">{{ cv.basics.label }}</p>
     <h1>{{ cv.basics.headline }}</h1>
     <p class="lead">{{ cv.basics.subhead }}</p>
@@ -50,37 +50,38 @@ layout: default
     <p class="caps-label no-print" style="text-align:right">Research → Agents</p>
   </header>
 
+  {% if cv.availability %}
+  <aside class="cv-availability-stripe no-print" aria-labelledby="availability">
+    <div>
+      <p class="cv-availability-stripe__headline" id="availability">{{ cv.availability.headline }}</p>
+      <p class="cv-availability-stripe__title">{% for r in cv.availability.roles %}{{ r }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+      <p class="cv-availability-stripe__meta">{% for m in cv.availability.modes %}{{ m }}{% unless forloop.last %} · {% endunless %}{% endfor %} · TZ {{ cv.availability.timezone }}</p>
+    </div>
+    <div class="cv-availability-stripe__cta">
+      <a class="btn btn--accent" href="{{ site.book_call_url }}">{{ t.book_call }}</a>
+    </div>
+  </aside>
+  {% endif %}
+
   {% if lg == 'es' %}
   <p class="no-print caps-label"><a href="{{ '/resume.json' | relative_url }}"><code>/resume.json</code></a> · JSON Résumé canonical</p>
   {% else %}
   <p class="no-print caps-label">Machine-readable résumé: <a href="{{ '/resume.json' | relative_url }}"><code>/resume.json</code></a></p>
   {% endif %}
+
   <section aria-labelledby="capabilities">
     <h2 id="capabilities">{{ t.capabilities }}</h2>
-    <div class="split" style="margin-top:1rem">
+    <div class="cv-capabilities-grid">
       {% for grp in cv.capabilities %}
-        <section>
-          <h3>{{ grp.group }}</h3>
-          <ul style="margin:0;padding-inline-start:1.1rem">
-            {% for it in grp.items %}
-              <li>{{ it }}</li>
-            {% endfor %}
+        <section class="cv-capabilities-grid__group">
+          <h3 class="cv-capabilities-grid__title">{{ grp.group }}</h3>
+          <ul class="cv-capabilities-grid__list">
+            {% for it in grp.items %}<li>{{ it }}</li>{% endfor %}
           </ul>
         </section>
       {% endfor %}
     </div>
   </section>
-
-  {% if cv.availability %}
-  <section class="availability-box" aria-labelledby="availability">
-    <h2 id="availability" class="caps-label" style="margin-top:0">{{ cv.availability.headline }}</h2>
-    <ul class="chips" style="margin-top:.5rem;margin-bottom:.75rem">
-      {% for r in cv.availability.roles %}<li>{{ r }}</li>{% endfor %}
-    </ul>
-    <p style="font-size:var(--fs-small);margin:.25rem 0">{% for m in cv.availability.modes %}{{ m }}{% unless forloop.last %} · {% endunless %}{% endfor %} · TZ {{ cv.availability.timezone }}</p>
-    <a class="btn btn--accent" href="{{ site.book_call_url }}">{{ t.book_call }}</a>
-  </section>
-  {% endif %}
 
   <section aria-labelledby="experience">
     <h2 id="experience">{{ t.experience }}</h2>
@@ -94,14 +95,12 @@ layout: default
           <div class="tl-item__meta">
             {{ row.start }} — {{ row.end_display }} {% if row.tenure %}· {{ row.tenure }}{% endif %} · {{ row.location }}
           </div>
-          <h3 style="font-family:var(--font-display);font-size:1.45rem">{{ row.role }}</h3>
-          <p class="lead" style="font-size:1rem;margin:.35rem 0">{{ row.company }}</p>
-          <p>{{ row.summary }}</p>
+          <h3 class="tl-item__role">{{ row.role }}</h3>
+          <p class="tl-item__company">{{ row.company }}</p>
+          {% if row.summary %}<p>{{ row.summary }}</p>{% endif %}
           {% if row.bullets %}
             <ul style="margin-top:.5rem;margin-bottom:.5rem">
-              {% for b in row.bullets %}
-                <li>{{ b }}</li>
-              {% endfor %}
+              {% for b in row.bullets %}<li>{{ b }}</li>{% endfor %}
             </ul>
           {% endif %}
           {% if row.tags %}
@@ -127,9 +126,7 @@ layout: default
       {% for cert in cv.certifications %}
         <p style="margin:0 0 .25rem">{{ cert.issuer }}</p>
         <ul style="margin-top:0">
-          {% for c in cert.items %}
-            <li>{{ c }}</li>
-          {% endfor %}
+          {% for c in cert.items %}<li>{{ c }}</li>{% endfor %}
         </ul>
       {% endfor %}
     </div>
@@ -138,9 +135,7 @@ layout: default
   <section aria-labelledby="pubs">
     <h2 id="pubs">{{ t.publications }}</h2>
     <ul style="columns: 1;">
-      {% for bk in cv.publications.books %}
-        <li>{{ bk }}</li>
-      {% endfor %}
+      {% for bk in cv.publications.books %}<li>{{ bk }}</li>{% endfor %}
     </ul>
     {% for note in cv.publications.notes %}
       <p style="opacity:.85">{{ note }}</p>
@@ -152,18 +147,20 @@ layout: default
     <p>{{ cv.beyond.body }}</p>
   </section>
 
-  <footer class="availability-box section--tight" style="margin-top:var(--space-lg)">
-    <h3 class="caps-label" style="margin-top:0">{{ t.hire }}</h3>
-    <div class="split" style="margin-top:.75rem">
-      <div>
-        <strong>Advisory</strong><br>{{ site.book_call_url }}
-      </div>
-      <div>
-        <strong>Implementation</strong><br><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-      </div>
-      <div>
-        <strong>Speaking</strong><br><a href="{% if lg == 'es' %}{{ '/es/charlas-prensa/' | relative_url }}{% else %}{{ '/speaking-press/' | relative_url }}{% endif %}">Press kit →</a>
-      </div>
+  <footer class="cv-hire-footer-micro section--tight" style="margin-top:var(--space-lg)">
+    <div class="cv-hire-footer-micro__lane">
+      <strong>Advisory</strong>
+      <a href="{{ site.book_call_url }}">{{ site.book_call_url | replace: 'https://', '' | replace: 'http://', '' }}</a>
+    </div>
+    <div class="cv-hire-footer-micro__lane">
+      <strong>Implementation</strong>
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </div>
+    <div class="cv-hire-footer-micro__lane">
+      <strong>Speaking</strong>
+      <a href="{% if lg == 'es' %}{{ '/es/charlas-prensa/' | relative_url }}{% else %}{{ '/speaking-press/' | relative_url }}{% endif %}">{% if lg == 'es' %}Kit para medios →{% else %}Press kit →{% endif %}</a>
     </div>
   </footer>
+
+  <a class="cv-sticky-cta no-print" href="{{ site.book_call_url }}">{{ t.sticky_cta }} →</a>
 </article>
