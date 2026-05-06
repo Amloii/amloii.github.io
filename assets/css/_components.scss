@@ -1341,3 +1341,63 @@
 .error-404__links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 .post-pager__next { text-align: right; }
+
+// Home — portrait + stamp arrangement (replaces stamp pack now that real photo exists)
+.home-hero-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-sm);
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.home-hero-portrait__photo {
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 1 / 1;
+}
+
+.home-hero-portrait__stamp {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transform: rotate(-3.5deg);
+}
+
+// CV — calm-mode header photo (no Riso, simple B&W)
+.cv-header-portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--rule) 22%, transparent);
+}
+
+.cv-header-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.cv-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-block: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .cv-header-portrait { width: 72px; height: 72px; }
+}
+
+// About — small portrait at top
+.about-portrait {
+  width: 100%;
+  max-width: 12rem;
+  aspect-ratio: 1 / 1;
+  margin-bottom: var(--space-md);
+}

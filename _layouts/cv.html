@@ -10,9 +10,16 @@ layout: default
 
 <article class="container section cv-page">
   <header class="stack" style="margin-bottom: var(--space-md);">
-    <p class="caps-label">{{ cv.basics.label }}</p>
-    <h1>{{ cv.basics.headline }}</h1>
-    <p class="lead">{{ cv.basics.subhead }}</p>
+    <div class="cv-header-row">
+      <figure class="cv-header-portrait" aria-hidden="true" style="margin:0">
+        <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="" loading="lazy" decoding="async" width="96" height="96">
+      </figure>
+      <div class="stack" style="gap:.4rem">
+        <p class="caps-label">{{ cv.basics.label }}</p>
+        <h1 style="margin:0">{{ cv.basics.headline }}</h1>
+        <p class="lead">{{ cv.basics.subhead }}</p>
+      </div>
+    </div>
     <p style="opacity:.82;max-width:65ch">{{ cv.basics.summary }}</p>
 
     <div class="split" style="align-items:flex-start;margin-top:var(--space-md)">
