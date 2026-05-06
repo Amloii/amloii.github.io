@@ -1,0 +1,33 @@
+en:
+  updated: "2026-05-06"
+  status:
+    - "shipping · agents v3"
+    - "writing · 04 essays in flight"
+    - "advisory · selectively open"
+  blocks:
+    building:
+      - "Architecting multimodal ingestion hardening experiments for BillionHands-scale agent stacks — memory contracts + deterministic evaluators."
+      - "Prototyping evaluator-in-the-middle dashboards for hallucination hotspots (internal pilots only)."
+    reading:
+      - "Melanie Mitchell · *Artificial Intelligence* (second pass, Spanish edition for nuance swaps)."
+      - "Re-reading Russell & Norvig for teaching analogies aimed at CTO audiences."
+    writing:
+      - "Margin budgets for agent graphs — published 2026-05-05."
+    speaking: []
+
+es:
+  updated: "2026-05-06"
+  status:
+    - "shipping · agentes v3"
+    - "writing · 04 ensayos en marcha"
+    - "advisory · abierto selectivamente"
+  blocks:
+    building:
+      - "Diseño de ingestas multimodales y contratos observables sobre agentes corporativos (piloto interno)."
+      - "Paneles evaluator-in-the-middle para hotspots de alucinaciones (sólo labs internos)."
+    reading:
+      - "Mitchell · *Inteligencia artificial: un enfoque moderno*."
+      - "Reinterpretando Russell & Norvig para comunicación ejecutiva bilingüe."
+    writing:
+      - "Margin budgets para grafos de agentes — publicado 2026-05-05."
+    speaking: []

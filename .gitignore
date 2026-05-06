@@ -2,3 +2,6 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
+.superpowers/
+.claude/
+Gemfile.lock

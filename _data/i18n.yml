@@ -8,6 +8,8 @@ en:
     now: Now
     about: About
     contact: Contact
+    theme_toggle: Theme
+    search: Search
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
@@ -80,6 +82,8 @@ es:
     now: Ahora
     about: Sobre mí
     contact: Contacto
+    theme_toggle: Tema
+    search: Buscar
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
@@ -116,7 +120,7 @@ es:
     pillars: Pilares editoriales
     read: Leer
   cv:
-    download: Download PDF (EN)
+    download: Descargar PDF (EN)
     download_es: Descargar PDF (ES)
     print: Imprimir esta página
     snapshot: Resumen ejecutivo

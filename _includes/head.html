@@ -6,6 +6,19 @@
 
   {% seo %}
 
+  <script>
+    // Theme bootstrap — must run before stylesheet to avoid flicker.
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
   {% if page.image %}

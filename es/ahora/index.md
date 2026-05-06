@@ -4,10 +4,19 @@ lang: es
 ref: now
 title: Ahora
 permalink: /es/ahora/
-intro: Ritmo Mayo 2026
 ---
 
-- Diseño de ingestas multimodales y contratos observables sobre agent corporativos (piloto interno).
-- Reinterpretando clásicos tipo Russell & Norvig para comunicación ejecutiva bilingüe.
-- Paneles evaluator-in-the-middle para hotspot de hallucinations (solo labs internos).
-- **Lectura:** Mitchell · *Inteligencia artificial: un enfoque moderno.*
+{% assign n = site.data.now.es %}
+
+<p class="caps-label" style="margin-top:.5rem">Ritmo mensual · Última actualización {{ n.updated }}</p>
+
+{% assign keys = "building,reading,writing,speaking" | split: "," %}
+
+{% for key in keys %}
+  {% assign items = n.blocks[key] %}
+  {% if items and items.size > 0 %}
+    {% for it in items %}
+- {{ it }}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

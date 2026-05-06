@@ -47,6 +47,16 @@
         </ul>
       </nav>
 
+      <button
+        type="button"
+        class="nav-search"
+        data-search-trigger
+        aria-label="{{ t.nav.search }}"
+        title="{{ t.nav.search }} (/)"
+      >
+        <span aria-hidden="true">⌕</span>
+      </button>
+      {% include theme-toggle.html %}
       {% include lang-toggle.html %}
     </div>
   </div>

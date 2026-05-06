@@ -1,17 +1,129 @@
-// Risograph-inspired accents — use sparingly
+// Risograph-inspired utilities — CSS-only, no PNG textures.
+// Two-pace contract: ONLY .riso-paper is allowed inside .cv-page and in print.
 
+// 1. Paper texture — subtle diagonal noise on the background.
+.riso-paper {
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--rule) 4%, transparent) 0 1px,
+      transparent 1px 4px
+    );
+}
+
+[data-theme="dark"] .riso-paper {
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--rule) 8%, transparent) 0 1px,
+      transparent 1px 4px
+    );
+}
+
+// 2. Halftone — radial-gradient dot pattern, 30% opacity, used as decorative overlay.
+.riso-halftone {
+  position: relative;
+}
+
+.riso-halftone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      color-mix(in srgb, var(--riso-red) 28%, transparent) 1.5px,
+      transparent 2px
+    );
+  background-size: 10px 10px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+[data-theme="dark"] .riso-halftone::before { mix-blend-mode: screen; }
+
+// 3. Double-print — text-shadow misregistration. Apply to a single keyword, not full headlines.
+.riso-double-print {
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  88%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 70%, transparent);
+}
+
+[data-theme="dark"] .riso-double-print {
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  78%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 60%, transparent);
+}
+
+// 4. Stamp — rotated mono caps, used for "N°07 · Issue Q2 26" style decorations.
+.riso-stamp {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border: 1.5px solid var(--riso-red);
+  color: var(--riso-red);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+  background: transparent;
+}
+
+.riso-stamp--blue { border-color: var(--riso-blue); color: var(--riso-blue); }
+
+// 5. Photo duotone — apply via mix-blend-mode + filters.
+// Source image must be a normal photo (color or grayscale).
+.riso-photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.riso-photo > img,
+.riso-photo > picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.riso-photo::before,
+.riso-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.riso-photo::before {
+  background: var(--riso-red);
+  mix-blend-mode: lighten;
+  opacity: 0.55;
+}
+
+.riso-photo::after {
+  background: var(--riso-blue);
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+}
+
+[data-theme="dark"] .riso-photo::before { mix-blend-mode: screen; opacity: 0.4; }
+[data-theme="dark"] .riso-photo::after  { mix-blend-mode: lighten; opacity: 0.28; }
+
+// 6. Frame (kept from previous version, refined).
 .riso-frame {
   position: relative;
   border-radius: var(--radius-sm);
   overflow: hidden;
   aspect-ratio: 16 / 9;
   max-height: 18rem;
-  background: repeating-radial-gradient(
-    circle at 20% 30%,
-    rgba(224, 73, 47, 0.11) 0 1px,
-    transparent 2px 4px
-  );
-  mix-blend-mode: multiply;
+  background:
+    repeating-radial-gradient(
+      circle at 20% 30%,
+      color-mix(in srgb, var(--riso-red) 11%, transparent) 0 1px,
+      transparent 2px 4px
+    );
   border: 1px solid color-mix(in srgb, var(--riso-blue) 35%, transparent);
 }
 
@@ -23,10 +135,17 @@
   object-fit: contain;
 }
 
-.riso-muted {
-  color: var(--riso-blue);
+.riso-muted  { color: var(--riso-blue); }
+.riso-accent { color: var(--riso-red); }
+
+// Two-pace enforcement: silence decorative Riso utilities inside .cv-page.
+.cv-page .riso-double-print,
+.cv-page .riso-stamp,
+.cv-page .riso-halftone {
+  text-shadow: none !important;
+  border: none !important;
+  transform: none !important;
+  color: inherit !important;
 }
 
-.riso-accent {
-  color: var(--riso-red);
-}
+.cv-page .riso-halftone::before { display: none !important; }
