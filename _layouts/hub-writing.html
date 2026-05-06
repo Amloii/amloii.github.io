@@ -62,7 +62,7 @@ layout: default
 
     {% for pillar in ps %}
       {% assign pid = pillar.id %}
-      {% assign bucket_posts = site.posts | where: "pillar", pid %}
+      {% assign bucket_posts = site.posts | where: "pillar", pid | where_exp: "p", "p.draft != true" %}
       {% if bucket_posts.size > 0 %}
         <div class="writing-pillar-section" id="pillar-{{ pid }}">
           <h3 class="writing-pillar-section__heading">
@@ -85,7 +85,7 @@ layout: default
       {% endif %}
     {% endfor %}
 
-    {% assign unassigned = site.posts | where_exp: 'p', 'p.pillar == nil' %}
+    {% assign unassigned = site.posts | where_exp: 'p', 'p.pillar == nil' | where_exp: 'p', 'p.draft != true' %}
     {% if unassigned.size > 0 %}
       <div class="writing-pillar-section" id="pillar-notebook">
         <h3 class="writing-pillar-section__heading">{{ t.notebook_label }}</h3>

@@ -21,7 +21,7 @@ featured_projects:
       </h1>
       <p class="home-hero__lead">{{ t.lead }}</p>
       <div class="home-hero__cta-row">
-        {% assign latest = site.posts | first %}
+        {% assign latest = site.posts | where_exp: 'p', 'p.draft != true' | first %}
         {% if latest %}
           <a class="btn btn--accent" href="{{ latest.url | relative_url }}">{{ t.read_essay }} →</a>
         {% endif %}
@@ -78,7 +78,8 @@ featured_projects:
     <div>
       <span class="caps-label">{{ t.writing }}</span>
       <h2 style="margin-top:.35rem">{{ t.fresh_essays }}</h2>
-      {% for post in site.posts limit:2 %}
+      {% assign published_posts = site.posts | where_exp: 'p', 'p.draft != true' %}
+      {% for post in published_posts limit:2 %}
         <article style="margin-top:1rem">
           <p class="home-essay-meta">
             {{ post.date | date: "%Y-%m-%d" }}
