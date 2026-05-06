@@ -3,6 +3,7 @@ title: "From Cajal rigs to agent fleets — the personal arc as a technical argu
 layout: post
 lang: en
 ref: writing
+pair_key: from-cajal-rigs-to-agent-fleets
 description: "Twelve years from electrophysiology rigs at Cajal to multi-agent stacks in production. The instincts that transferred and the ones I had to unlearn."
 pillar: research-to-prod
 hero_illustration: rag-stack

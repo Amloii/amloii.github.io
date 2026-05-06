@@ -3,10 +3,11 @@ title: "Vendor vs. build para directores de IA — una hoja resumen"
 layout: post
 lang: es
 ref: writing
+pair_key: vendor-vs-build-cheatsheet-for-ai-directors
 description: "Un marco concreto para la decisión vendor-vs-build en stacks agénticos: tres preguntas antes de firmar, el camino híbrido que casi todos los equipos deberían tomar, y el veto de compras del que nadie te avisa."
 pillar: ai-leadership
 hero_illustration: decision-graph
-kicker: "Issue 04 · Compras como arquitectura"
+kicker: "Número 04 · Compras como arquitectura"
 draft: true
 comments: true
 image: /assets/img/og/es-vendor-vs-build-cheatsheet-for-ai-directors.svg

@@ -4,7 +4,7 @@ layout: default
 
 {% include schema-project.html %}
 
-{% assign lg = page.lang | default: 'en' %}
+{% assign lg = page.lang | default: site.lang %}
 {% assign t = site.data.i18n[lg].work %}
 
 <article class="container section">
@@ -58,7 +58,7 @@ layout: default
   {% endif %}
 
   {% if page.tags %}
-    <ul class="chips" aria-label="tags">
+    <ul class="chips" aria-label="{{ t.tags_aria }}">
       {% for tag in page.tags %}
         <li>{{ tag }}</li>
       {% endfor %}

@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => window.print());
   });
 
+  // Persist language preference when the user clicks the EN/ES toggle.
+  // Pairs with `_includes/lang-detect.html` which respects this value to
+  // skip the soft redirect on subsequent visits.
+  document.querySelectorAll("[data-lang-pref]").forEach((a) => {
+    a.addEventListener("click", () => {
+      try { localStorage.setItem("lang", a.dataset.langPref); } catch (_) {}
+    });
+  });
+
   // Theme toggle (new)
   const themeBtn = document.querySelector("[data-theme-toggle]");
   if (themeBtn) {

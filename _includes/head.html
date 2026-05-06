@@ -2,9 +2,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {% include lang-detect.html %}
+
   {% include fonts.html %}
 
   {% seo %}
+
+  {% include hreflang.html %}
 
   <script>
     // Theme bootstrap — must run before stylesheet to avoid flicker.

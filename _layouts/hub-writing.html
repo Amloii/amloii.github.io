@@ -10,9 +10,9 @@ layout: default
   <header>
     <h1>{{ t.index_title }}</h1>
     <p class="lead">{{ t.index_desc }}</p>
-    {% if lg == 'es' %}
+    {% if t.canonical_notice != "" %}
       <p class="caps-label" style="opacity:0.78">
-        Los ensayos canónicos viven primero en inglés · <a href="{{ '/writing/' | relative_url }}">Índice EN</a>
+        {{ t.canonical_notice }}<a href="{{ '/writing/' | relative_url }}">{{ t.canonical_notice_link }}</a>
       </p>
     {% endif %}
   </header>
@@ -57,7 +57,7 @@ layout: default
   <section class="writing-essays" aria-labelledby="essays">
     <h2 id="essays" style="margin-top:1rem">{{ t.essays }}</h2>
     <p style="opacity:0.74;font-size:var(--fs-small);max-width:60ch;margin-top:.35rem;">
-      {% if lg == 'es' %}URL canónica siempre aquí; si republicas en Substack, marca la canonical hacia estos posts.{% else %}Canonical URL stays here; if you republish on Substack, point the canonical back to this site.{% endif %}
+      {{ t.substack_canonical }}
     </p>
 
     {% for pillar in ps %}

@@ -3,6 +3,7 @@ title: "The questions I ask a CTO before touching their agent roadmap"
 layout: post
 lang: en
 ref: writing
+pair_key: agentic-roadmap-questions-i-ask-cto
 description: "Five questions that change the conversation when a CTO opens a deck with 'we want to build agents'."
 pillar: ai-leadership
 hero_illustration: ops-tower

@@ -1,11 +1,30 @@
 {% assign lg = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lg] %}
 
-<div class="lang-toggle no-print" role="navigation" aria-label="Language switcher">
+<div class="lang-toggle no-print" role="navigation" aria-label="{{ t.nav.aria_lang_switcher | default: 'Language switcher' }}">
   {% if page.collection == "posts" %}
+    {% assign post_en = nil %}
+    {% assign post_es = nil %}
+    {% if page.pair_key %}
+      {% for p in site.posts %}
+        {% if p.pair_key == page.pair_key %}
+          {% if p.lang == "en" %}{% assign post_en = p %}{% endif %}
+          {% if p.lang == "es" %}{% assign post_es = p %}{% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     {% assign hub_en = "/writing/" %}
     {% assign hub_es = "/es/escritos/" %}
-    <a {% if lg == "en" %}aria-current="true"{% endif %} href="{{ hub_en | relative_url }}">EN</a>
-    <a {% if lg == "es" %}aria-current="true"{% endif %} href="{{ hub_es | relative_url }}">ES</a>
+    <a
+      data-lang-pref="es"
+      {% if lg == "es" %}aria-current="true"{% endif %}
+      href="{% if post_es %}{{ post_es.url | relative_url }}{% else %}{{ hub_es | relative_url }}{% endif %}"
+      >ES</a>
+    <a
+      data-lang-pref="en"
+      {% if lg == "en" %}aria-current="true"{% endif %}
+      href="{% if post_en %}{{ post_en.url | relative_url }}{% else %}{{ hub_en | relative_url }}{% endif %}"
+      >EN</a>
 
   {% elsif page.collection == "projects" %}
     {% assign proj_en = nil %}
@@ -20,13 +39,15 @@
     {% assign hub_en_fallback = "/work/" %}
     {% assign hub_es_fallback = "/es/trabajo/" %}
     <a
-      {% if lg == "en" %}aria-current="true"{% endif %}
-      href="{% if proj_en %}{{ proj_en.url | relative_url }}{% else %}{{ hub_en_fallback | relative_url }}{% endif %}"
-      >EN</a>
-    <a
+      data-lang-pref="es"
       {% if lg == "es" %}aria-current="true"{% endif %}
       href="{% if proj_es %}{{ proj_es.url | relative_url }}{% else %}{{ hub_es_fallback | relative_url }}{% endif %}"
       >ES</a>
+    <a
+      data-lang-pref="en"
+      {% if lg == "en" %}aria-current="true"{% endif %}
+      href="{% if proj_en %}{{ proj_en.url | relative_url }}{% else %}{{ hub_en_fallback | relative_url }}{% endif %}"
+      >EN</a>
 
   {% else %}
     {% assign matched_item = nil %}
@@ -36,8 +57,8 @@
       {% endif %}
     {% endfor %}
     {% if matched_item %}
-      <a {% if lg == "en" %}aria-current="true"{% endif %} href="{{ matched_item.en | relative_url }}">EN</a>
-      <a {% if lg == "es" %}aria-current="true"{% endif %} href="{{ matched_item.es | relative_url }}">ES</a>
+      <a data-lang-pref="es" {% if lg == "es" %}aria-current="true"{% endif %} href="{{ matched_item.es | relative_url }}">ES</a>
+      <a data-lang-pref="en" {% if lg == "en" %}aria-current="true"{% endif %} href="{{ matched_item.en | relative_url }}">EN</a>
     {% endif %}
   {% endif %}
 </div>

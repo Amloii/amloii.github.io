@@ -1,7 +1,7 @@
 # Site — change site.url when using a custom domain
 url: "https://amloii.github.io"
 baseurl: ""
-lang: en
+lang: es
 title: "Daniel Gómez Domínguez"
 description: "AI Director & systems architect. Agentic AI, LLM infrastructure, RAG, and production ML — from strategy to deployment."
 author:

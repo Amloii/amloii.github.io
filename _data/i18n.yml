@@ -10,8 +10,14 @@ en:
     contact: Contact
     theme_toggle: Theme
     search: Search
+    menu: Menu
+    aria_main: Main navigation
+    aria_lang_switcher: Language switcher
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
+    tagline: AI Director · Agentic architectures, multimodal embeddings, production LLM infra — Madrid · EU-remote.
+    links_heading: Links
+    email: Email
   meta:
     home_title: Agentic AI, shipped.
     home_description: Portfolio, essays, and track record — AI Director specializing in agents, LLM infrastructure, RAG, and generative AI.
@@ -25,7 +31,6 @@ en:
     work_with_me: Working together
     subs_title: Essays by email
     subs_blurb: "New essays on agents, infra, and leadership — no fluff. Cross-post rule: canonical URL always stays on this site."
-    marginalia_intro: Snapshot
     cta_cv: Hiring? View full résumé
     lead: "AI Director architecting agent fleets, LLM infra, and RAG in production. Madrid · EU-remote."
     status_label: System status
@@ -42,6 +47,20 @@ en:
     speaking_title: Speaking
     speaking_proof: ">10k subs on neuroscience channel · national press columns."
     speaking_cta: Press kit
+    label_essay: essay
+    portrait_aria: Author portrait
+    stamp_availability: Available · CET
+    career_arc_aria: Career arc
+    career_arc_label: Career arc
+    career_arc_caption: Research → Agents
+    career_arc_steps:
+      - "Cajal · electrophysiology + interpretable ML"
+      - "Industrial ML · recsys · vision · finance stacks"
+      - "Multimodal generative platforms"
+      - "Agentic orchestration at scale"
+    newsletter_iframe_title: Newsletter signup
+    substack_not_configured: Substack embed not configured.
+    substack_replace_hint: "Replace `substack_embed_url` in `_config.yml` to load your widget."
   work:
     index_title: Work index
     index_desc: Case studies spanning agentic AI, multimodal retrieval, recommendation, fraud & vision.
@@ -50,19 +69,17 @@ en:
     outcomes: Outcomes
     stack: Stack
     role: Role
-    metric: Highlight
     links: Links
-    related_posts: Related writing
     case_study_label: "Case study"
     domain_filter_label: Filter by domain
     domain_filter_all: All domains
+    tags_aria: Tags
   writing:
     index_title: Writing
     index_desc: Essays, notebooks, and work published elsewhere — grouped by editorial pillars.
     essays: Essays
     external: External writing
     pillars: Editorial pillars
-    read: Read
     contents_label: On this page
     related_label: Related essays
     prev_label: Previous essay
@@ -73,6 +90,9 @@ en:
     notebook_label: Notebook
     filter_label: Filter by pillar
     filter_all: All pillars
+    canonical_notice: ""
+    canonical_notice_link: ""
+    substack_canonical: "Canonical URL stays here; if you republish on Substack, point the canonical back to this site."
   cv:
     download: Download CV (ES)
     print: Print this page
@@ -83,12 +103,15 @@ en:
     certifications: Certifications
     publications: Publications & speaking
     beyond: Beyond work
-    hire: Working together
     book_call: Book a 20-minute intro
     linkedin: LinkedIn
     sticky_cta: "Hiring? Book intro call"
+    resume_json_label: "Machine-readable résumé:"
+    resume_json_blurb: ""
+    press_kit_cta: "Press kit →"
   speaking:
     index_title: Speaking & press
+    index_lead: "Speaker kit for briefings, panels, and technical keynotes — bios, topics, and assets."
     bio_short: Short bio
     bio_medium: Medium bio
     bio_long: Long bio
@@ -96,6 +119,14 @@ en:
     headshots: Headshots
     topics: Suggested topics
     booking: Booking & contact
+    bios_heading: Bios
+    word_count_unit: words
+    headshot_riso: Riso duotone
+    headshot_bw: "B&W"
+    talks_heading: "Talks / sessions"
+    headshots_note: "B&W photo for editorial use. If you need a color or higher-resolution version, drop me a note."
+    download_photo: Download original photo
+    download_logo: Download mark (SVG)
   now:
     title: Now
     updated: Last updated
@@ -121,6 +152,8 @@ en:
     link_writing: Essay feed
     link_cv: CV
     link_contact: Send a note instead
+    meta_title_404: "404 · Page not found"
+    meta_desc_404: "Lost in hyperspace retrieval index."
 
 es:
   nav:
@@ -134,8 +167,14 @@ es:
     contact: Contacto
     theme_toggle: Tema
     search: Buscar
+    menu: Menú
+    aria_main: Navegación principal
+    aria_lang_switcher: Selector de idioma
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
+    tagline: Director de IA · Arquitectura de sistemas agénticos, infra LLM y RAG multimodal — Madrid · EU-remote.
+    links_heading: Enlaces
+    email: Email
   meta:
     home_title: IA agéntica, en producción.
     home_description: Portfolio, ensayos y trayectoria — Director de IA especializado en agentes, infra LLM, RAG e IA generativa.
@@ -149,7 +188,6 @@ es:
     work_with_me: Colaborar
     subs_title: Ensayos por correo
     subs_blurb: "Ensayos sobre agentes, infra y liderazgo editorial. La URL canónica permanece aquí antes de reproducir en Substack."
-    marginalia_intro: Resumen
     cta_cv: ¿Contratar? Ver CV completo
     lead: "Director de IA · arquitecto de flotas agénticas, infra LLM y RAG en producción. Madrid · EU-remote."
     status_label: Estado del sistema
@@ -166,6 +204,20 @@ es:
     speaking_title: Charlas
     speaking_proof: "+10k suscriptores en divulgación · columnas en prensa nacional."
     speaking_cta: Kit para medios
+    label_essay: ensayo
+    portrait_aria: Retrato del autor
+    stamp_availability: Disponible · CET
+    career_arc_aria: Trayectoria
+    career_arc_label: Trayectoria
+    career_arc_caption: Investigación → Agentes
+    career_arc_steps:
+      - "Cajal · electrofisiología + ML interpretable"
+      - "ML industrial · recomendadores · visión · finanzas"
+      - "IA generativa multimodal en prod"
+      - "Orquestación agéntica hoy"
+    newsletter_iframe_title: Alta a la newsletter
+    substack_not_configured: Embed de Substack sin configurar.
+    substack_replace_hint: "Sustituye `substack_embed_url` en `_config.yml` para cargar tu widget."
   work:
     index_title: Índice de trabajo
     index_desc: Casos de uso de IA agéntica, recuperación multimodal, recomendación, fraude y visión.
@@ -174,19 +226,17 @@ es:
     outcomes: Resultados
     stack: Stack
     role: Rol
-    metric: Métrica destacada
     links: Enlaces
-    related_posts: Escritos relacionados
     case_study_label: "Caso de estudio"
     domain_filter_label: Filtrar por dominio
     domain_filter_all: Todos los dominios
+    tags_aria: Etiquetas
   writing:
     index_title: Escritos
     index_desc: Ensayos, notas y publicaciones fuera — agrupadas por pilares editoriales.
     essays: Ensayos
     external: Fuera del sitio
     pillars: Pilares editoriales
-    read: Leer
     contents_label: En esta página
     related_label: Ensayos relacionados
     prev_label: Ensayo anterior
@@ -197,6 +247,9 @@ es:
     notebook_label: Cuaderno
     filter_label: Filtrar por pilar
     filter_all: Todos los pilares
+    canonical_notice: "Los ensayos canónicos viven primero en inglés · "
+    canonical_notice_link: "Índice EN"
+    substack_canonical: "URL canónica siempre aquí; si republicas en Substack, marca la canonical hacia estos posts."
   cv:
     download: Descargar CV (ES)
     print: Imprimir esta página
@@ -207,12 +260,15 @@ es:
     certifications: Certificaciones
     publications: Publicaciones y comunicación
     beyond: Fuera del trabajo
-    hire: Modalidades de colaboración
     book_call: Reserva una intro de 20 minutos
     linkedin: LinkedIn
     sticky_cta: "¿Contratar? Reserva una intro"
+    resume_json_label: ""
+    resume_json_blurb: "Currículum JSON canónico"
+    press_kit_cta: "Kit para medios →"
   speaking:
     index_title: Charlas y prensa
+    index_lead: "Bio descargable, temas sugeridos y kit mínimo para producción de eventos."
     bio_short: Bio corta
     bio_medium: Bio media
     bio_long: Bio larga
@@ -220,6 +276,14 @@ es:
     headshots: Retratos
     topics: Temas propuestos
     booking: Reservas & contacto
+    bios_heading: Bios
+    word_count_unit: palabras
+    headshot_riso: Duotono Riso
+    headshot_bw: "B&N"
+    talks_heading: "Charlas / sesiones"
+    headshots_note: "Foto B&N para uso editorial. Si necesitas una versión en color o en alta resolución, escríbeme."
+    download_photo: Descargar foto original
+    download_logo: Descargar logo (SVG)
   now:
     title: Ahora
     updated: Última actualización
@@ -245,3 +309,5 @@ es:
     link_writing: Feed de ensayos
     link_cv: Trayectoria
     link_contact: Enviar mensaje
+    meta_title_404: "404 · Página no encontrada"
+    meta_desc_404: "Perdido en el índice de recuperación del hiperespacio."

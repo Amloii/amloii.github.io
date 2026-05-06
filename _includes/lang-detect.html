@@ -1,0 +1,18 @@
+<script>
+  // Soft language detection: redirect `/` to `/es/` only on first visit
+  // when the browser language is Spanish and there is no stored preference.
+  // Must run before paint to avoid flash of EN content.
+  (function () {
+    try {
+      var p = location.pathname;
+      var pref = localStorage.getItem('lang');
+      if (pref) return;
+      if (p === '/' || p === '/index.html') {
+        var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (nav.indexOf('es') === 0) {
+          location.replace('/es/');
+        }
+      }
+    } catch (_) {}
+  })();
+</script>

@@ -3,10 +3,11 @@ title: "Los evaluadores son nodos del grafo, no notebooks de fin de semana"
 layout: post
 lang: es
 ref: writing
+pair_key: eval-harness-as-first-class-dag-node
 description: "Por qué los evaluadores deben estar dentro del DAG de agentes con los mismos SLO que las herramientas de producción — y qué se rompe cuando no es así."
 pillar: building-agents
 hero_illustration: eval-loop
-kicker: "Issue 02 · Notas desde producción"
+kicker: "Número 02 · Notas desde producción"
 draft: true
 comments: true
 image: /assets/img/og/es-eval-harness-as-first-class-dag-node.svg
