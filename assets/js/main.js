@@ -80,4 +80,45 @@ document.addEventListener("DOMContentLoaded", () => {
       openSearch();
     }
   });
+
+  // Post TOC — auto-built from H2s with id, with active-section highlighter.
+  // Runs only if the page has the TOC container; safely no-ops otherwise.
+  const tocList = document.querySelector('[data-post-toc]');
+  const tocMobile = document.querySelector('[data-post-toc-mobile]');
+  const proseHeadings = tocList || tocMobile
+    ? document.querySelectorAll('.post-prose h2[id]')
+    : [];
+
+  if (proseHeadings.length) {
+    const buildList = (target) => {
+      target.innerHTML = '';
+      proseHeadings.forEach((h) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        target.appendChild(li);
+      });
+    };
+    if (tocList) buildList(tocList);
+    if (tocMobile) buildList(tocMobile);
+
+    const setActive = (id) => {
+      [tocList, tocMobile].forEach((root) => {
+        if (!root) return;
+        root.querySelectorAll('a').forEach((a) => a.classList.remove('is-active'));
+        const link = root.querySelector('a[href="#' + id + '"]');
+        if (link) link.classList.add('is-active');
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-100px 0px -60% 0px' });
+
+    proseHeadings.forEach((h) => observer.observe(h));
+  }
 });
