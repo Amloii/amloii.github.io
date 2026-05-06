@@ -56,4 +56,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Search trigger placeholder — Pagefind modal lands in F5.
+  // Wired now so F1's home redesign doesn't have to revisit the nav.
+  const searchBtn = document.querySelector("[data-search-trigger]");
+  function openSearch() {
+    if (typeof window.__amloiiOpenSearch === "function") {
+      window.__amloiiOpenSearch();
+    } else {
+      console.info("[search] Pagefind modal not yet wired (F5).");
+    }
+  }
+  if (searchBtn) {
+    searchBtn.addEventListener("click", openSearch);
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      const t = e.target;
+      const tag = t && t.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || (t && t.isContentEditable)) return;
+      e.preventDefault();
+      openSearch();
+    }
+  });
 });

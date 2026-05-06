@@ -9,6 +9,7 @@ en:
     about: About
     contact: Contact
     theme_toggle: Theme
+    search: Search
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
@@ -82,6 +83,7 @@ es:
     about: Sobre mí
     contact: Contacto
     theme_toggle: Tema
+    search: Buscar
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:

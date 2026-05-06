@@ -388,3 +388,29 @@
 .btn--copy[data-copied="true"]::after {
   content: " ✓";
 }
+
+.nav-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid color-mix(in srgb, var(--rule) 22%, transparent);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.nav-search:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-search:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
