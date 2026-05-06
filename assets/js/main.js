@@ -57,19 +57,73 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Search trigger placeholder — Pagefind modal lands in F5.
-  // Wired now so F1's home redesign doesn't have to revisit the nav.
+  // Pagefind search modal — mounts lazily on first open.
   const searchBtn = document.querySelector("[data-search-trigger]");
-  function openSearch() {
-    if (typeof window.__amloiiOpenSearch === "function") {
-      window.__amloiiOpenSearch();
-    } else {
-      console.info("[search] Pagefind modal not yet wired (F5).");
-    }
+
+  function ensureSearchModal() {
+    let modal = document.getElementById('search-modal');
+    if (modal) return modal;
+    modal = document.createElement('div');
+    modal.id = 'search-modal';
+    modal.className = 'search-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.innerHTML = '<div class="search-modal__inner"><button type="button" class="search-modal__close" aria-label="Close" data-search-close>×</button><div id="search"></div></div>';
+    document.body.appendChild(modal);
+
+    // Close on click of overlay or close button
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || (e.target instanceof Element && e.target.matches('[data-search-close]'))) {
+        modal.setAttribute('data-open', 'false');
+      }
+    });
+
+    // Load Pagefind UI assets
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = '/assets/pagefind/pagefind-ui.css';
+    document.head.appendChild(cssLink);
+
+    const script = document.createElement('script');
+    script.src = '/assets/pagefind/pagefind-ui.js';
+    script.onload = function () {
+      try {
+        new window.PagefindUI({ element: '#search', showSubResults: true });
+      } catch (err) {
+        console.warn('[search] Pagefind UI init failed', err);
+      }
+    };
+    script.onerror = () => {
+      console.warn('[search] Pagefind UI bundle missing at /assets/pagefind/. Did you run `pagefind` after the Jekyll build?');
+    };
+    document.head.appendChild(script);
+
+    return modal;
   }
+
+  function openSearch() {
+    const modal = ensureSearchModal();
+    modal.setAttribute('data-open', 'true');
+    setTimeout(() => {
+      const input = modal.querySelector('input[type="search"]');
+      if (input) input.focus();
+    }, 50);
+  }
+
   if (searchBtn) {
     searchBtn.addEventListener("click", openSearch);
   }
+
+  // ESC closes the modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('search-modal');
+      if (modal && modal.getAttribute('data-open') === 'true') {
+        modal.setAttribute('data-open', 'false');
+      }
+    }
+  });
+
   document.addEventListener("keydown", (e) => {
     if (e.isComposing || e.keyCode === 229) return;
     if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {

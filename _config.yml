@@ -12,22 +12,11 @@ author:
   linkedin: "danigdominguez"
 
 # Third-party (fill with your IDs)
-formspree_endpoint: "https://formspree.io/f/REPLACE_ME" # crear formulario en formspree.io y pegar URL
+formspree_endpoint: "https://formspree.io/f/xwvybjlv"
 substack_embed_url: "https://amloii.substack.com/embed" # replace with your Substack embed base
 book_call_url: "https://cal.com/dgdominguez/intro"
 cloudflare_analytics:
   token: "" # optional: Cloudflare Web Analytics token
-
-giscus:
-  repo: "Amloii/amloii.github.io"
-  repo_id: "R_kgDOXXXXXX" # replace with your repo id from giscus.app
-  category: "Announcements"
-  category_id: "DIC_kwDOXXXXXX" # replace
-  mapping: "pathname"
-  reactions_enabled: "1"
-  input_position: "bottom"
-  theme: "noborder_light"
-  lang: "en"
 
 twitter:
   username: amloii
@@ -59,7 +48,6 @@ defaults:
     values:
       layout: post
       lang: en
-      comments: true
       ref: writing
   - scope:
       path: "_projects"

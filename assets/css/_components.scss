@@ -1341,3 +1341,116 @@
 .error-404__links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 .post-pager__next { text-align: right; }
+
+// Home — portrait + stamp arrangement (replaces stamp pack now that real photo exists)
+.home-hero-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-sm);
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.home-hero-portrait__photo {
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 1 / 1;
+}
+
+.home-hero-portrait__stamp {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transform: rotate(-3.5deg);
+}
+
+// CV — calm-mode header photo (no Riso, simple B&W)
+.cv-header-portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--rule) 22%, transparent);
+}
+
+.cv-header-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.cv-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-block: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .cv-header-portrait { width: 72px; height: 72px; }
+}
+
+// About — small portrait at top
+.about-portrait {
+  width: 100%;
+  max-width: 12rem;
+  aspect-ratio: 1 / 1;
+  margin-bottom: var(--space-md);
+}
+
+// Search modal (Pagefind)
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  background: color-mix(in srgb, var(--ink) 70%, transparent);
+  padding: 4rem 1rem;
+  overflow-y: auto;
+}
+
+.search-modal[data-open="true"] { display: block; }
+
+.search-modal__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--rule) 18%, transparent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  position: relative;
+}
+
+.search-modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--rule) 22%, transparent);
+  background: transparent;
+  border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.search-modal__close:hover { color: var(--accent); border-color: var(--accent); }
+
+// Pagefind UI overrides to match site style
+.pagefind-ui__search-input {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.pagefind-ui__results {
+  font-family: var(--font-sans);
+}

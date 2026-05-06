@@ -1,7 +1,19 @@
-<!-- Export to PNG (1200x630) for richer social previews; keep svg as blueprint -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#fbf8f2" stroke="#1f1b16" stroke-width="4"/>
-  <text x="60" y="120" fill="#b0552b" font-family="Georgia,serif" font-size="56">Post title</text>
-  <text x="60" y="200" fill="#0f0e0c" font-family="system-ui" font-size="32">Daniel Gómez Domínguez</text>
-  <text x="60" y="260" fill="#5c564c" font-family="system-ui" font-size="24">pillar · date</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Per-post OG template. Duplicate this file as assets/img/og/<slug>.svg and
+  swap the two <text data-replace="...">â€¦</text> values with the post title
+  and a kicker. The post's front matter `image:` field should point at the
+  resulting file path.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#fbf8f2"/>
+  <g transform="translate(80,140)">
+    <text data-replace="kicker" x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="20" fill="#b0552b" letter-spacing="3">BUILDING AGENTS Â· ISSUE 02</text>
+    <text data-replace="title" x="0" y="100" font-family="'Source Serif 4', Georgia, serif" font-size="64" font-weight="700" fill="#0f0e0c">Replace with post title (â‰¤ 50 chars).</text>
+    <text x="0" y="240" font-family="'JetBrains Mono', monospace" font-size="20" fill="#5c564c">amloii.github.io/writing</text>
+  </g>
+  <g transform="translate(80,520)">
+    <rect x="0" y="0" width="240" height="44" fill="none" stroke="#1e3a8a" stroke-width="2.5" rx="2"/>
+    <text x="120" y="29" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#1e3a8a" letter-spacing="2">DANIEL GÃ“MEZ Â· 2026</text>
+  </g>
 </svg>

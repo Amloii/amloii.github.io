@@ -10,9 +10,16 @@ layout: default
 
 <article class="container section cv-page">
   <header class="stack" style="margin-bottom: var(--space-md);">
-    <p class="caps-label">{{ cv.basics.label }}</p>
-    <h1>{{ cv.basics.headline }}</h1>
-    <p class="lead">{{ cv.basics.subhead }}</p>
+    <div class="cv-header-row">
+      <figure class="cv-header-portrait" aria-hidden="true" style="margin:0">
+        <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="" loading="lazy" decoding="async" width="96" height="96">
+      </figure>
+      <div class="stack" style="gap:.4rem">
+        <p class="caps-label">{{ cv.basics.label }}</p>
+        <h1 style="margin:0">{{ cv.basics.headline }}</h1>
+        <p class="lead">{{ cv.basics.subhead }}</p>
+      </div>
+    </div>
     <p style="opacity:.82;max-width:65ch">{{ cv.basics.summary }}</p>
 
     <div class="split" style="align-items:flex-start;margin-top:var(--space-md)">
@@ -21,20 +28,8 @@ layout: default
         <p>{{ cv.languages[0].name }} — {{ cv.languages[0].level }} · {{ cv.languages[1].name }} — {{ cv.languages[1].level }}</p>
       </div>
       <div class="stack">
-        {% if lg == 'es' %}
-          {% assign pdf_primary = cv.basics.pdf_es %}
-          {% assign primary_label = t.download_es %}
-        {% else %}
-          {% assign pdf_primary = cv.basics.pdf_en %}
-          {% assign primary_label = t.download %}
-        {% endif %}
-        <a class="btn btn--accent" href="{{ pdf_primary | relative_url }}">{{ primary_label }}</a>
+        <a class="btn btn--accent" href="{{ cv.basics.pdf | relative_url }}">{{ t.download }}</a>
         <div class="no-print stack" style="gap:.35rem;">
-          {% if lg == 'es' %}
-            <a class="btn btn--ghost" href="{{ cv.basics.pdf_en | relative_url }}">{{ t.download }}</a>
-          {% else %}
-            <a class="btn btn--ghost" href="{{ cv.basics.pdf_es | relative_url }}">{{ t.download_es }}</a>
-          {% endif %}
           <a class="btn btn--ghost" href="{{ cv.basics.linkedin }}">{{ t.linkedin }}</a>
           <button type="button" class="btn btn--ghost" data-print>{{ t.print }}</button>
         </div>
