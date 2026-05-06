@@ -21,7 +21,7 @@ featured_projects:
       </h1>
       <p class="home-hero__lead">{{ t.lead }}</p>
       <div class="home-hero__cta-row">
-        {% assign latest = site.posts | first %}
+        {% assign latest = site.posts | where_exp: 'p', 'p.draft != true' | first %}
         {% if latest %}
           <a class="btn btn--accent" href="{{ latest.url | relative_url }}">{{ t.read_essay }} →</a>
         {% endif %}
