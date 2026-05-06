@@ -4,10 +4,12 @@ lang: es
 ref: now
 title: Ahora
 permalink: /es/ahora/
-intro: "Ritmo mensual · Última actualización 2026-05-06"
 ---
 
 {% assign n = site.data.now.es %}
+
+<p class="caps-label" style="margin-top:.5rem">Ritmo mensual · Última actualización {{ n.updated }}</p>
+
 {% assign keys = "building,reading,writing,speaking" | split: "," %}
 
 {% for key in keys %}
