@@ -149,3 +149,10 @@
 }
 
 .cv-page .riso-halftone::before { display: none !important; }
+
+// Dark-mode SVG illustration fix — invert the SVG colors so the hardcoded
+// light-bone backgrounds and dark-ink shapes read on warm coal.
+[data-theme="dark"] .riso-frame img,
+[data-theme="dark"] .riso-frame svg {
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.85);
+}
