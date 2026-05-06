@@ -74,8 +74,7 @@ en:
     filter_label: Filter by pillar
     filter_all: All pillars
   cv:
-    download: Download PDF (EN)
-    download_es: Descargar PDF (ES)
+    download: Download CV (ES)
     print: Print this page
     snapshot: Snapshot
     capabilities: Capabilities
@@ -199,8 +198,7 @@ es:
     filter_label: Filtrar por pilar
     filter_all: Todos los pilares
   cv:
-    download: Descargar PDF (EN)
-    download_es: Descargar PDF (ES)
+    download: Descargar CV (ES)
     print: Imprimir esta página
     snapshot: Resumen ejecutivo
     capabilities: Aptitudes por dominio

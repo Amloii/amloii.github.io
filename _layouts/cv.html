@@ -21,20 +21,8 @@ layout: default
         <p>{{ cv.languages[0].name }} — {{ cv.languages[0].level }} · {{ cv.languages[1].name }} — {{ cv.languages[1].level }}</p>
       </div>
       <div class="stack">
-        {% if lg == 'es' %}
-          {% assign pdf_primary = cv.basics.pdf_es %}
-          {% assign primary_label = t.download_es %}
-        {% else %}
-          {% assign pdf_primary = cv.basics.pdf_en %}
-          {% assign primary_label = t.download %}
-        {% endif %}
-        <a class="btn btn--accent" href="{{ pdf_primary | relative_url }}">{{ primary_label }}</a>
+        <a class="btn btn--accent" href="{{ cv.basics.pdf | relative_url }}">{{ t.download }}</a>
         <div class="no-print stack" style="gap:.35rem;">
-          {% if lg == 'es' %}
-            <a class="btn btn--ghost" href="{{ cv.basics.pdf_en | relative_url }}">{{ t.download }}</a>
-          {% else %}
-            <a class="btn btn--ghost" href="{{ cv.basics.pdf_es | relative_url }}">{{ t.download_es }}</a>
-          {% endif %}
           <a class="btn btn--ghost" href="{{ cv.basics.linkedin }}">{{ t.linkedin }}</a>
           <button type="button" class="btn btn--ghost" data-print>{{ t.print }}</button>
         </div>

@@ -11,8 +11,7 @@ en:
       persistent semantic memory, hybrid RAG over vector stores, generative image
       production, and cost/latency optimization. I blend rigorous scientific thinking
       with product-minded execution across single- and multi-agent architectures.
-    pdf_en: "/assets/cv/daniel-gomez-dominguez-en.pdf"
-    pdf_es: "/assets/cv/daniel-gomez-dominguez-es.pdf"
+    pdf: "/assets/cv/daniel-gomez-dominguez-es.pdf"
     linkedin: "https://es.linkedin.com/in/danigdominguez"
 
   availability:
@@ -244,8 +243,7 @@ es:
       Diseño sistemas autónomos basados en LLM: memoria persistente semántica, RAG híbrido,
       infraestructura generativa multimodal y optimización de latencia/coste. Una mano apoyada en la ingeniería
       y la otra en la narrativa ejecutiva orientada al producto.
-    pdf_en: "/assets/cv/daniel-gomez-dominguez-en.pdf"
-    pdf_es: "/assets/cv/daniel-gomez-dominguez-es.pdf"
+    pdf: "/assets/cv/daniel-gomez-dominguez-es.pdf"
     linkedin: "https://es.linkedin.com/in/danigdominguez"
 
   availability:

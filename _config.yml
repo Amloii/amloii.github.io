@@ -12,7 +12,7 @@ author:
   linkedin: "danigdominguez"
 
 # Third-party (fill with your IDs)
-formspree_endpoint: "https://formspree.io/f/REPLACE_ME" # crear formulario en formspree.io y pegar URL
+formspree_endpoint: "https://formspree.io/f/xwvybjlv"
 substack_embed_url: "https://amloii.substack.com/embed" # replace with your Substack embed base
 book_call_url: "https://cal.com/dgdominguez/intro"
 cloudflare_analytics:
