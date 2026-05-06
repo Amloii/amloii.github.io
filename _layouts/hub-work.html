@@ -5,19 +5,42 @@ layout: default
 {% assign t = site.data.i18n[page.lang].work %}
 {% assign list = site.projects | where: "lang", page.lang | sort: "year" | reverse %}
 
+{% comment %}Collect unique domains for filter chips.{% endcomment %}
+{% assign domains = '' %}
+{% for proj in list %}
+  {% unless domains contains proj.domain %}
+    {% assign domains = domains | append: proj.domain | append: '|' %}
+  {% endunless %}
+{% endfor %}
+{% assign domain_array = domains | split: '|' %}
+
 <div class="container section">
   <header>
     <h1>{{ t.index_title }}</h1>
     <p class="lead">{{ t.index_desc }}</p>
   </header>
 
-  <div style="margin-top:2rem">
+  <ul class="work-domain-filter no-print" aria-label="{{ t.domain_filter_label }}">
+    <li><a href="#work-index">{{ t.domain_filter_all }}</a></li>
+    {% for d in domain_array %}
+      {% if d != '' %}
+        {% assign anchor = d | downcase | replace: ' ', '-' | replace: '·', '' | replace: '/', '' | replace: '--', '-' %}
+        <li><a href="#domain-{{ anchor }}">{{ d }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div id="work-index" class="work-index" style="margin-top:2rem">
     {% for proj in list %}
-      <a class="idx-row" href="{{ proj.url | relative_url }}">
+      {% assign anchor = proj.domain | downcase | replace: ' ', '-' | replace: '·', '' | replace: '/', '' | replace: '--', '-' %}
+      <a class="idx-row" href="{{ proj.url | relative_url }}" id="domain-{{ anchor }}">
         <span class="idx-row__num">{% assign idx = forloop.index %}{% if idx < 10 %}0{% endif %}{{ idx }}</span>
         <span>
           <span class="idx-row__title">{{ proj.title }}</span><br>
           <span style="opacity:.76;font-size:var(--fs-small)">{{ proj.summary }}</span>
+          {% if proj.featured_metric %}
+            <br><span style="font-family:var(--font-mono);font-size:0.82rem;color:var(--accent);margin-top:0.35rem;display:inline-block">{{ proj.featured_metric }}</span>
+          {% endif %}
         </span>
         <span class="caps-label">{{ proj.domain }}</span>
         <span class="caps-label">{{ proj.year }}</span>
