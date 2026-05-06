@@ -378,3 +378,13 @@
 .theme-toggle__icon { display: none; }
 [data-theme="light"] .theme-toggle__icon[data-theme-icon="dark"] { display: inline; }
 [data-theme="dark"]  .theme-toggle__icon[data-theme-icon="light"] { display: inline; }
+
+// Copy-to-clipboard button (used for bios, citations, etc.)
+.btn--copy[data-copied="true"] {
+  border-color: var(--riso-blue);
+  color: var(--riso-blue);
+}
+
+.btn--copy[data-copied="true"]::after {
+  content: " ✓";
+}
