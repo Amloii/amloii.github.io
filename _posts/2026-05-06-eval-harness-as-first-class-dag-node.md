@@ -3,6 +3,7 @@ title: "Eval harnesses are graph nodes, not weekend notebooks"
 layout: post
 lang: en
 ref: writing
+pair_key: eval-harness-as-first-class-dag-node
 description: "Why evaluators belong inside your agent DAG with the same SLOs as production tools — and what breaks when they don't."
 pillar: building-agents
 hero_illustration: eval-loop

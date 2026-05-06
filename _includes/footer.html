@@ -6,21 +6,15 @@
     <div class="split">
       <div>
         <p class="caps-label">{{ site.title }}</p>
-        <p class="lead" style="max-width:none">
-          {% if lg == 'es' %}
-            Director de IA · Arquitectura de sistemas agénticos, infra LLM y RAG multimodal — Madrid · EU-remote.
-          {% else %}
-            AI Director · Agentic architectures, multimodal embeddings, production LLM infra — Madrid · EU-remote.
-          {% endif %}
-        </p>
+        <p class="lead" style="max-width:none">{{ t.footer.tagline }}</p>
       </div>
       <div>
-        <p class="caps-label">Links</p>
+        <p class="caps-label">{{ t.footer.links_heading }}</p>
         <ul class="social">
           {% for net in site.data.socials %}
             <li><a href="{{ net.url }}" rel="me">{{ net.name }}</a></li>
           {% endfor %}
-          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+          <li><a href="mailto:{{ site.author.email }}">{{ t.footer.email }}</a></li>
         </ul>
       </div>
     </div>

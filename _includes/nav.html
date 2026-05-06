@@ -7,14 +7,17 @@
 
 <header class="site-nav" role="banner">
   <div class="container site-nav__inner">
-    <a class="site-nav__brand" href="{{ brand_href | relative_url }}">{{ site.title }}</a>
+    <div class="site-nav__brand-block">
+      <a class="site-nav__brand" href="{{ brand_href | relative_url }}">{{ site.title }}</a>
+      {% include lang-toggle.html %}
+    </div>
 
     <button class="site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-panel">
-      Menu
+      {{ t.nav.menu | default: 'Menu' }}
     </button>
 
     <div class="site-nav__panel" id="nav-panel" data-nav-panel data-open="false">
-      <nav aria-label="Main navigation" style="flex:1">
+      <nav aria-label="{{ t.nav.aria_main | default: 'Main navigation' }}" class="site-nav__nav">
         <ul class="site-nav__links">
           {% for row in site.data.nav_manifest.items %}
             {% if row.ref == 'home' %}{% continue %}{% endif %}
@@ -47,17 +50,18 @@
         </ul>
       </nav>
 
-      <button
-        type="button"
-        class="nav-search"
-        data-search-trigger
-        aria-label="{{ t.nav.search }}"
-        title="{{ t.nav.search }} (/)"
-      >
-        <span aria-hidden="true">⌕</span>
-      </button>
-      {% include theme-toggle.html %}
-      {% include lang-toggle.html %}
+      <div class="site-nav__utilities">
+        <button
+          type="button"
+          class="nav-search"
+          data-search-trigger
+          aria-label="{{ t.nav.search }}"
+          title="{{ t.nav.search }} (/)"
+        >
+          <span aria-hidden="true">⌕</span>
+        </button>
+        {% include theme-toggle.html %}
+      </div>
     </div>
   </div>
 </header>

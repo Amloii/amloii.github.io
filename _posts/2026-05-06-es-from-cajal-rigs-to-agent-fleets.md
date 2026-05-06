@@ -3,10 +3,11 @@ title: "De los registros de Cajal a las flotas de agentes — la trayectoria per
 layout: post
 lang: es
 ref: writing
+pair_key: from-cajal-rigs-to-agent-fleets
 description: "Doce años desde los registros de electrofisiología en Cajal hasta los stacks multiagente en producción. Los instintos que se transfirieron y los que tuve que desaprender."
 pillar: research-to-prod
 hero_illustration: rag-stack
-kicker: "Issue 03 · Carrera como método"
+kicker: "Número 03 · Carrera como método"
 draft: true
 comments: true
 image: /assets/img/og/es-from-cajal-rigs-to-agent-fleets.svg

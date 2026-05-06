@@ -3,6 +3,7 @@ title: "Vendor vs build for AI directors — a cheatsheet"
 layout: post
 lang: en
 ref: writing
+pair_key: vendor-vs-build-cheatsheet-for-ai-directors
 description: "A concrete framework for the vendor-vs-build call in agentic stacks: three questions before signing, the hybrid path most teams should take, and the procurement veto nobody warns you about."
 pillar: ai-leadership
 hero_illustration: decision-graph

@@ -18,20 +18,14 @@ layout: default
 <div class="container section stack">
   <header>
     <h1>{{ t.index_title }}</h1>
-    <p class="lead">
-      {% if lg == 'es' %}
-        Bio descargable, temas sugeridos y kit mínimo para producción de eventos.
-      {% else %}
-        Speaker kit for briefings, panels, and technical keynotes — bios, topics, and assets.
-      {% endif %}
-    </p>
+    <p class="lead">{{ t.index_lead }}</p>
   </header>
 
   <section aria-labelledby="bios-heading">
-    <h2 id="bios-heading" class="caps-label">Bios</h2>
+    <h2 id="bios-heading" class="caps-label">{{ t.bios_heading }}</h2>
 
     <article class="speaking-bio-card">
-      <p class="speaking-bio-card__heading">{{ t.bio_short }} · ~50 words</p>
+      <p class="speaking-bio-card__heading">{{ t.bio_short }} · ~50 {{ t.word_count_unit }}</p>
       <pre id="bio-short">{{ bio.fifty }}</pre>
       <div class="speaking-bio-card__copy-row no-print">
         <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-short">{{ t.copy }}</button>
@@ -39,7 +33,7 @@ layout: default
     </article>
 
     <article class="speaking-bio-card">
-      <p class="speaking-bio-card__heading">{{ t.bio_medium }} · ~120 words</p>
+      <p class="speaking-bio-card__heading">{{ t.bio_medium }} · ~120 {{ t.word_count_unit }}</p>
       <pre id="bio-medium">{{ bio.one_twenty }}</pre>
       <div class="speaking-bio-card__copy-row no-print">
         <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-medium">{{ t.copy }}</button>
@@ -47,7 +41,7 @@ layout: default
     </article>
 
     <article class="speaking-bio-card">
-      <p class="speaking-bio-card__heading">{{ t.bio_long }} · ~280 words</p>
+      <p class="speaking-bio-card__heading">{{ t.bio_long }} · ~280 {{ t.word_count_unit }}</p>
       <pre id="bio-long">{{ bio.two_eighty }}</pre>
       <div class="speaking-bio-card__copy-row no-print">
         <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-long">{{ t.copy }}</button>
@@ -73,32 +67,26 @@ layout: default
 
   <section>
     <h2>{{ t.headshots }}</h2>
-    <p class="caps-label" style="opacity:.75">
-      {% if lg == 'es' %}
-        Foto B&W para uso editorial. Si necesitas una versión en color o en alta resolución, escríbeme.
-      {% else %}
-        B&W photo for editorial use. If you need a color or higher-resolution version, drop me a note.
-      {% endif %}
-    </p>
+    <p class="caps-label" style="opacity:.75">{{ t.headshots_note }}</p>
     <div class="split" style="margin-top:1rem">
       <figure class="newsletter-card">
         <div class="riso-photo" style="width:100%;aspect-ratio:1/1;max-width:320px">
-          <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="Daniel Gómez Domínguez (Riso duotone)" loading="lazy" decoding="async" width="600" height="600">
+          <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="Daniel Gómez Domínguez ({{ t.headshot_riso }})" loading="lazy" decoding="async" width="600" height="600">
         </div>
-        <figcaption class="caps-label" style="margin-top:.5rem">Riso duotone</figcaption>
+        <figcaption class="caps-label" style="margin-top:.5rem">{{ t.headshot_riso }}</figcaption>
       </figure>
       <figure class="newsletter-card">
         <div style="width:100%;aspect-ratio:1/1;max-width:320px;overflow:hidden;border-radius:var(--radius-sm)">
-          <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="Daniel Gómez Domínguez (B&W)" loading="lazy" decoding="async" width="600" height="600" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)">
+          <img src="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" alt="Daniel Gómez Domínguez ({{ t.headshot_bw }})" loading="lazy" decoding="async" width="600" height="600" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)">
         </div>
-        <figcaption class="caps-label" style="margin-top:.5rem">B&W</figcaption>
+        <figcaption class="caps-label" style="margin-top:.5rem">{{ t.headshot_bw }}</figcaption>
       </figure>
     </div>
-    <p style="margin-top:1rem"><a href="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" download>{% if lg == 'es' %}Descargar foto original{% else %}Download original photo{% endif %}</a> · <a href="{{ sp.assets.logos.mark_svg | relative_url }}">{% if lg == 'es' %}Descargar logo (SVG){% else %}Download mark (SVG){% endif %}</a></p>
+    <p style="margin-top:1rem"><a href="{{ '/assets/img/headshot-daniel.jpg' | relative_url }}" download>{{ t.download_photo }}</a> · <a href="{{ sp.assets.logos.mark_svg | relative_url }}">{{ t.download_logo }}</a></p>
   </section>
 
   <section>
-    <h2 class="caps-label">Talks / sessions</h2>
+    <h2 class="caps-label">{{ t.talks_heading }}</h2>
     <ul>
       {% for row in talks %}
         <li><strong>{{ row.title }}</strong> — {{ row.event }} · <em>{{ row.status }}</em></li>

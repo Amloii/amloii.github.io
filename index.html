@@ -11,8 +11,6 @@ featured_projects:
 ---
 
 {% assign t = site.data.i18n.en.home %}
-{% assign meta_t = site.data.i18n.en.meta %}
-{% assign work_t = site.data.i18n.en.work %}
 
 <section class="section">
   <div class="container grid-12" style="align-items:start">
@@ -88,7 +86,7 @@ featured_projects:
             {% if post.pillar %}
               · <span class="pillar-tag">{{ post.pillar }}</span>
             {% else %}
-              · essay
+              · {{ t.label_essay }}
             {% endif %}
           </p>
           <h3 style="margin:.25rem 0;font-family:var(--font-display);font-size:1.4rem;font-weight:600;text-transform:none;letter-spacing:0;color:inherit">

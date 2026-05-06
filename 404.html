@@ -1,25 +1,74 @@
 ---
 layout: default
 permalink: /404.html
-lang: en
+lang: es
 ref: home
-title: "404 · Page not found"
-description: Lost in hyperspace retrieval index.
+title: "404 · Página no encontrada"
+description: "Perdido en el índice de recuperación del hiperespacio."
 comments: false
 ---
 
-{% assign t = site.data.i18n[page.lang].error %}
+{% assign t_en = site.data.i18n.en.error %}
+{% assign t_es = site.data.i18n.es.error %}
 
 <div class="container">
-  <div class="error-404">
-    <p class="caps-label"><span class="riso-stamp">{{ t.stamp_404 }}</span></p>
-    <h1 class="error-404__title"><span class="riso-double-print">{{ t.title_404 }}</span></h1>
-    <p class="error-404__lead">{{ t.lead_404 }}</p>
+  <div class="error-404" data-error-404>
+    <p class="caps-label"><span class="riso-stamp" data-i18n="stamp">{{ t_es.stamp_404 }}</span></p>
+    <h1 class="error-404__title"><span class="riso-double-print" data-i18n="title">{{ t_es.title_404 }}</span></h1>
+    <p class="error-404__lead" data-i18n="lead">{{ t_es.lead_404 }}</p>
     <ul class="error-404__links">
-      <li>← <a href="{{ '/' | relative_url }}">{{ t.link_home }}</a></li>
-      <li>→ <a href="{{ '/writing/' | relative_url }}">{{ t.link_writing }}</a></li>
-      <li>→ <a href="{{ '/cv/' | relative_url }}">{{ t.link_cv }}</a></li>
-      <li>↗ <a href="{{ '/contact/' | relative_url }}">{{ t.link_contact }}</a></li>
+      <li>← <a data-i18n="link_home" data-href-en="/" data-href-es="/es/" href="/es/">{{ t_es.link_home }}</a></li>
+      <li>→ <a data-i18n="link_writing" data-href-en="/writing/" data-href-es="/es/escritos/" href="/es/escritos/">{{ t_es.link_writing }}</a></li>
+      <li>→ <a data-i18n="link_cv" data-href-en="/cv/" data-href-es="/es/trayectoria/" href="/es/trayectoria/">{{ t_es.link_cv }}</a></li>
+      <li>↗ <a data-i18n="link_contact" data-href-en="/contact/" data-href-es="/es/contacto/" href="/es/contacto/">{{ t_es.link_contact }}</a></li>
     </ul>
   </div>
 </div>
+
+<script>
+  (function () {
+    var i18n = {
+      en: {
+        stamp: {{ t_en.stamp_404 | jsonify }},
+        title: {{ t_en.title_404 | jsonify }},
+        lead: {{ t_en.lead_404 | jsonify }},
+        link_home: {{ t_en.link_home | jsonify }},
+        link_writing: {{ t_en.link_writing | jsonify }},
+        link_cv: {{ t_en.link_cv | jsonify }},
+        link_contact: {{ t_en.link_contact | jsonify }},
+        meta_title: {{ t_en.meta_title_404 | jsonify }}
+      }
+    };
+
+    var lang = 'es';
+    try {
+      var stored = localStorage.getItem('lang');
+      if (stored === 'en') {
+        lang = 'en';
+      } else if (!stored) {
+        var ref = document.referrer || '';
+        if (ref && ref.indexOf('/es/') === -1 && ref.indexOf(location.host) !== -1) {
+          lang = 'en';
+        } else if (!ref) {
+          var navLang = (navigator.language || '').toLowerCase();
+          if (navLang && navLang.indexOf('es') !== 0) lang = 'en';
+        }
+      }
+    } catch (_) {}
+
+    if (lang !== 'en') return;
+
+    document.documentElement.setAttribute('lang', 'en');
+    document.title = i18n.en.meta_title;
+
+    var root = document.querySelector('[data-error-404]');
+    if (!root) return;
+    root.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.dataset.i18n;
+      if (i18n.en[key]) el.textContent = i18n.en[key];
+      if (el.tagName === 'A' && el.dataset.hrefEn) {
+        el.setAttribute('href', el.dataset.hrefEn);
+      }
+    });
+  })();
+</script>

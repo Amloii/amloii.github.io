@@ -7,6 +7,7 @@ layout: default
 {% assign lg = page.lang | default: site.lang %}
 {% assign cv = site.data.cv[lg] %}
 {% assign t = site.data.i18n[lg].cv %}
+{% assign th = site.data.i18n[lg].home %}
 
 <article class="container section cv-page">
   <header class="stack" style="margin-bottom: var(--space-md);">
@@ -42,7 +43,7 @@ layout: default
         {% include riso/career-arc.svg %}
       </figure>
     </div>
-    <p class="caps-label no-print" style="text-align:right">Research → Agents</p>
+    <p class="caps-label no-print" style="text-align:right">{{ th.career_arc_caption }}</p>
   </header>
 
   {% if cv.availability %}
@@ -58,11 +59,9 @@ layout: default
   </aside>
   {% endif %}
 
-  {% if lg == 'es' %}
-  <p class="no-print caps-label"><a href="{{ '/resume.json' | relative_url }}"><code>/resume.json</code></a> · JSON Résumé canonical</p>
-  {% else %}
-  <p class="no-print caps-label">Machine-readable résumé: <a href="{{ '/resume.json' | relative_url }}"><code>/resume.json</code></a></p>
-  {% endif %}
+  <p class="no-print caps-label">
+    {% if t.resume_json_label != "" %}{{ t.resume_json_label }} {% endif %}<a href="{{ '/resume.json' | relative_url }}"><code>/resume.json</code></a>{% if t.resume_json_blurb != "" %} · {{ t.resume_json_blurb }}{% endif %}
+  </p>
 
   <section aria-labelledby="capabilities">
     <h2 id="capabilities">{{ t.capabilities }}</h2>
@@ -144,16 +143,16 @@ layout: default
 
   <footer class="cv-hire-footer-micro section--tight" style="margin-top:var(--space-lg)">
     <div class="cv-hire-footer-micro__lane">
-      <strong>Advisory</strong>
+      <strong>{{ th.advisory_title }}</strong>
       <a href="{{ site.book_call_url }}">{{ site.book_call_url | replace: 'https://', '' | replace: 'http://', '' }}</a>
     </div>
     <div class="cv-hire-footer-micro__lane">
-      <strong>Implementation</strong>
+      <strong>{{ th.implementation_title }}</strong>
       <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
     </div>
     <div class="cv-hire-footer-micro__lane">
-      <strong>Speaking</strong>
-      <a href="{% if lg == 'es' %}{{ '/es/charlas-prensa/' | relative_url }}{% else %}{{ '/speaking-press/' | relative_url }}{% endif %}">{% if lg == 'es' %}Kit para medios →{% else %}Press kit →{% endif %}</a>
+      <strong>{{ th.speaking_title }}</strong>
+      <a href="{% if lg == 'es' %}{{ '/es/charlas-prensa/' | relative_url }}{% else %}{{ '/speaking-press/' | relative_url }}{% endif %}">{{ t.press_kit_cta }}</a>
     </div>
   </footer>
 

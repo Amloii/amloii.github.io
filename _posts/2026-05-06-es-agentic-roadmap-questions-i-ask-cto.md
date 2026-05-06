@@ -3,10 +3,11 @@ title: "Las preguntas que hago a un CTO antes de tocar su roadmap de agentes"
 layout: post
 lang: es
 ref: writing
+pair_key: agentic-roadmap-questions-i-ask-cto
 description: "Cinco preguntas que cambian la conversación cuando un CTO abre un deck con 'queremos construir agentes'."
 pillar: ai-leadership
 hero_illustration: ops-tower
-kicker: "Issue 05 · La hoja de ruta como forense"
+kicker: "Número 05 · La hoja de ruta como forense"
 draft: true
 comments: true
 image: /assets/img/og/es-agentic-roadmap-questions-i-ask-cto.svg
@@ -21,7 +22,7 @@ date: 2026-05-06
 
 ## "¿Dónde vive la memoria en este grafo?"
 
-<!-- contenido pendiente: contratos de memoria: quién escribe, quién lee, cuál es el TTL, cuál es el audit. Sin respuesta la flota de agentes se pudre. ~150 palabras. -->
+<!-- contenido pendiente: contratos de memoria: quién escribe, quién lee, cuál es el TTL, cuál es la auditoría. Sin respuesta la flota de agentes se pudre. ~150 palabras. -->
 
 ## "¿Quién es dueño del contrato de eval?"
 

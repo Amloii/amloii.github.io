@@ -3,6 +3,7 @@ title: "TIL: prompt cache vs retrieval budget"
 layout: post
 lang: en
 ref: writing
+pair_key: til-prompt-cache-vs-retrieval-budget
 description: "A short field note on the day prompt caching saved a retrieval budget — and the day it nearly cost us one."
 pillar: operators-notebook
 hero_illustration: agent-pipeline

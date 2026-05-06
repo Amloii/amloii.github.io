@@ -8,6 +8,11 @@
   "email": "mailto:{{ pv.email }}",
   "description": {{ pv.summary | strip_newlines | jsonify }},
   "url": {{ '/' | absolute_url | jsonify }},
+  {% comment %}
+    knowsAbout intentionally stays in English: schema.org consumers
+    (Google, LinkedIn) match these as canonical taxonomy labels. Localizing
+    them weakens entity disambiguation. — Decision logged 2026-05-06.
+  {% endcomment %}
   "knowsAbout": [
     "Artificial intelligence",
     "Large language models",
