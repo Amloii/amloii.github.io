@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBtn.addEventListener("click", openSearch);
   }
   document.addEventListener("keydown", (e) => {
+    if (e.isComposing || e.keyCode === 229) return;
     if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
       const t = e.target;
       const tag = t && t.tagName;
