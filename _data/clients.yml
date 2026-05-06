@@ -1,0 +1,12 @@
+# Client / employer wordmarks shown on the home page as a "trusted by" strip.
+#
+# Only entries with `approved: true` are rendered. Use wordmarks (text or SVG
+# masks) — never embed third-party logos without written permission.
+#
+# Schema:
+#   - name: "Acme Robotics"   # required
+#     url: "https://acme..."  # optional
+#     wordmark: ""            # optional, /assets/img/clients/<file>.svg (currentColor SVGs preferred)
+#     approved: true          # required true to render
+
+items: []

@@ -1,0 +1,65 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].home -%}
+
+{%- comment -%} Filter approved clients and testimonials. Empty arrays fall through. {%- endcomment -%}
+{%- assign clients = site.data.clients.items | where: "approved", true -%}
+{%- assign testimonials = site.data.testimonials[lg] | where: "approved", true -%}
+
+{%- if clients and clients.size > 0 -%}
+<section class="section social-proof social-proof--clients" aria-labelledby="clients-title">
+  <div class="container stack" style="gap:.75rem">
+    <header class="stack" style="gap:.35rem">
+      <span class="caps-label">{{ t.clients_kicker }}</span>
+      <h2 id="clients-title" style="margin:0">{{ t.clients_title }}</h2>
+    </header>
+    <ul class="social-proof__clients" role="list">
+      {%- for c in clients -%}
+        <li class="social-proof__client">
+          {%- if c.url and c.url != "" -%}
+            <a class="social-proof__client-link" href="{{ c.url }}" rel="noopener">
+              {%- if c.wordmark and c.wordmark != "" -%}
+                <img src="{{ c.wordmark | relative_url }}" alt="{{ c.name }}" loading="lazy" decoding="async">
+              {%- else -%}
+                <span class="social-proof__client-name">{{ c.name }}</span>
+              {%- endif -%}
+            </a>
+          {%- else -%}
+            {%- if c.wordmark and c.wordmark != "" -%}
+              <img class="social-proof__client-img" src="{{ c.wordmark | relative_url }}" alt="{{ c.name }}" loading="lazy" decoding="async">
+            {%- else -%}
+              <span class="social-proof__client-name">{{ c.name }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}
+
+{%- if testimonials and testimonials.size > 0 -%}
+<section class="section social-proof social-proof--testimonials" aria-labelledby="testimonials-title">
+  <div class="container stack" style="gap:.75rem">
+    <header class="stack" style="gap:.35rem">
+      <span class="caps-label">{{ t.testimonials_kicker }}</span>
+      <h2 id="testimonials-title" style="margin:0">{{ t.testimonials_title }}</h2>
+    </header>
+    <ul class="social-proof__quotes" role="list">
+      {%- for q in testimonials -%}
+        <li class="social-proof__quote">
+          <blockquote class="social-proof__blockquote">
+            <p>{{ q.quote }}</p>
+          </blockquote>
+          <footer class="social-proof__attribution">
+            {%- if q.url and q.url != "" -%}
+              <a href="{{ q.url }}" rel="noopener">{{ q.attribution }}</a>
+            {%- else -%}
+              {{ q.attribution }}
+            {%- endif -%}
+          </footer>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}

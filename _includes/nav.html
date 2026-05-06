@@ -20,7 +20,7 @@
       <nav aria-label="{{ t.nav.aria_main | default: 'Main navigation' }}" class="site-nav__nav">
         <ul class="site-nav__links">
           {% for row in site.data.nav_manifest.items %}
-            {% if row.ref == 'home' %}{% continue %}{% endif %}
+            {% if row.ref == 'home' or row.ref == 'contact' %}{% continue %}{% endif %}
             {% assign path = row.en %}
             {% if lg == 'es' %}{% assign path = row.es %}{% endif %}
             {% assign label_key = row.ref %}

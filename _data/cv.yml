@@ -14,22 +14,6 @@ en:
     pdf: "/assets/cv/daniel-gomez-dominguez-es.pdf"
     linkedin: "https://es.linkedin.com/in/danigdominguez"
 
-  availability:
-    status: selective
-    headline: "Selectively open to senior AI leadership roles"
-    roles:
-      - Director of AI
-      - Head of AI / ML
-      - AI Architect
-      - Principal AI Engineer
-      - Strategic AI Advisor
-    modes:
-      - Remote (EU)
-      - Hybrid (Madrid)
-      - On-site (Madrid)
-    timezone: "CET"
-    book_call: "https://cal.com/dgdominguez/intro"
-
   languages:
     - { name: "English", level: "Full professional" }
     - { name: "Spanish", level: "Native / bilingual" }
@@ -245,22 +229,6 @@ es:
       y la otra en la narrativa ejecutiva orientada al producto.
     pdf: "/assets/cv/daniel-gomez-dominguez-es.pdf"
     linkedin: "https://es.linkedin.com/in/danigdominguez"
-
-  availability:
-    status: selective
-    headline: "Abierto selectivamente a roles senior de IA"
-    roles:
-      - Director de IA
-      - Head de IA / ML
-      - Arquitecto(a) IA
-      - Principal AI Engineer
-      - Asesor estratégico de IA
-    modes:
-      - Remoto (UE)
-      - Híbrido (Madrid)
-      - Presencial (Madrid)
-    timezone: "CET"
-    book_call: "https://cal.com/dgdominguez/intro"
 
   languages:
     - { name: "Inglés", level: "Profesional completo" }

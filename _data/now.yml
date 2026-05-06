@@ -3,7 +3,7 @@ en:
   status:
     - "shipping · agents v3"
     - "writing · 04 essays in flight"
-    - "advisory · selectively open"
+    - "speaking · two keynotes booked"
   blocks:
     building:
       - "Architecting multimodal ingestion hardening experiments for BillionHands-scale agent stacks — memory contracts + deterministic evaluators."
@@ -20,7 +20,7 @@ es:
   status:
     - "shipping · agentes v3"
     - "writing · 04 ensayos en marcha"
-    - "advisory · abierto selectivamente"
+    - "speaking · dos keynotes confirmadas"
   blocks:
     building:
       - "Diseño de ingestas multimodales y contratos observables sobre agentes corporativos (piloto interno)."

@@ -1,0 +1,15 @@
+# Testimonials shown on the home page below "Featured in".
+#
+# Only entries with `approved: true` are rendered. Keep the file populated
+# only with material you have explicit permission to publish.
+#
+# Schema (per language root):
+#   <lang>:
+#     - quote: "..."          # required, plain text, no surrounding quotes
+#       attribution: "..."    # required, e.g. "CTO, Acme · 2025 advisory engagement"
+#       avatar: ""            # optional, /assets/img/...
+#       url: ""               # optional, link the attribution name out
+#       approved: true        # required true to render
+
+en: []
+es: []

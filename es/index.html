@@ -113,17 +113,24 @@ featured_projects:
   </div>
 </section>
 
+{% include featured-in.html %}
+
+{% include social-proof.html %}
+
 <section class="section section--paper">
   <div class="container">
-    <span class="caps-label">{{ t.work_with_me }}</span>
-    <h2 style="margin-top:.35rem">{{ t.work_with_me }}</h2>
+    <header class="stack" style="gap:.5rem;margin-bottom:1.5rem">
+      <span class="caps-label">{{ t.work_with_me }}</span>
+      <h2 style="margin:0">{{ t.work_with_me }}</h2>
+      <p class="lead">{{ t.work_with_me_lead }}</p>
+    </header>
     <div class="home-lanes">
       <article class="home-lane home-lane--n1">
         <span class="riso-stamp home-lane__stamp">N°1</span>
         <h3 class="home-lane__title">{{ t.advisory_title }}</h3>
         <p class="home-lane__proof">{{ t.advisory_proof }}</p>
         <p class="home-lane__cta">
-          <a class="btn btn--ghost" href="{{ site.book_call_url }}">{{ t.advisory_cta }}</a>
+          <a class="home-lane__link" href="{{ site.book_call_url }}">{{ t.advisory_cta }}</a>
         </p>
       </article>
       <article class="home-lane home-lane--n2">
@@ -131,7 +138,7 @@ featured_projects:
         <h3 class="home-lane__title">{{ t.implementation_title }}</h3>
         <p class="home-lane__proof">{{ t.implementation_proof }}</p>
         <p class="home-lane__cta">
-          <a class="btn btn--ghost" href="mailto:{{ site.author.email }}">{{ t.implementation_cta }}</a>
+          <a class="home-lane__link" href="mailto:{{ site.author.email }}">{{ t.implementation_cta }}</a>
         </p>
       </article>
       <article class="home-lane home-lane--n3">
@@ -139,7 +146,7 @@ featured_projects:
         <h3 class="home-lane__title">{{ t.speaking_title }}</h3>
         <p class="home-lane__proof">{{ t.speaking_proof }}</p>
         <p class="home-lane__cta">
-          <a class="btn btn--ghost" href="{{ '/es/charlas-prensa/' | relative_url }}">{{ t.speaking_cta }}</a>
+          <a class="home-lane__link" href="{{ '/es/charlas-prensa/' | relative_url }}">{{ t.speaking_cta }}</a>
         </p>
       </article>
     </div>
