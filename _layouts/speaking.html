@@ -27,21 +27,32 @@ layout: default
     </p>
   </header>
 
-  <section class="split" style="align-items:flex-start">
-    <div>
-      <h2>{{ t.bio_short }}</h2>
-      <pre class="section--tight" style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.fifty }}</pre>
-    </div>
-    <div>
-      <h2>{{ t.bio_medium }}</h2>
-      <pre class="section--tight" style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.one_twenty }}</pre>
-    </div>
-  </section>
+  <section aria-labelledby="bios-heading">
+    <h2 id="bios-heading" class="caps-label">Bios</h2>
 
-  <section>
-    <h2>{{ t.bio_long }}</h2>
-    <pre style="white-space:pre-wrap;background:var(--paper);padding:1rem;border:1px solid color-mix(in srgb,var(--rule) 16%,transparent);border-radius:var(--radius-sm)">{{ bio.two_eighty }}</pre>
-    <p class="caps-label" style="margin-top:.75rem">{{ t.copy }} — selecciona el texto y pega en Notion o Google Docs.</p>
+    <article class="speaking-bio-card">
+      <p class="speaking-bio-card__heading">{{ t.bio_short }} · ~50 words</p>
+      <pre id="bio-short">{{ bio.fifty }}</pre>
+      <div class="speaking-bio-card__copy-row no-print">
+        <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-short">{{ t.copy }}</button>
+      </div>
+    </article>
+
+    <article class="speaking-bio-card">
+      <p class="speaking-bio-card__heading">{{ t.bio_medium }} · ~120 words</p>
+      <pre id="bio-medium">{{ bio.one_twenty }}</pre>
+      <div class="speaking-bio-card__copy-row no-print">
+        <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-medium">{{ t.copy }}</button>
+      </div>
+    </article>
+
+    <article class="speaking-bio-card">
+      <p class="speaking-bio-card__heading">{{ t.bio_long }} · ~280 words</p>
+      <pre id="bio-long">{{ bio.two_eighty }}</pre>
+      <div class="speaking-bio-card__copy-row no-print">
+        <button type="button" class="btn btn--ghost btn--copy" data-copy data-copy-target="#bio-long">{{ t.copy }}</button>
+      </div>
+    </article>
   </section>
 
   <section class="split">
