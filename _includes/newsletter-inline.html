@@ -1,0 +1,15 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].home -%}
+{%- assign tw = site.data.i18n[lg].writing -%}
+{%- assign src = site.substack_embed_url -%}
+{%- unless src -%}{%- assign src = "https://REPLACE.substack.com/embed" -%}{%- endunless -%}
+<aside class="newsletter-inline no-print" aria-label="{{ t.subs_title }}">
+  <p class="newsletter-inline__kicker">{{ tw.inline_newsletter_kicker }}</p>
+  <h3 class="newsletter-inline__title">{{ t.subs_title }}</h3>
+  <p style="margin:0 0 0.6rem;color:var(--muted);font-size:0.92rem">{{ t.subs_blurb }}</p>
+  {%- if src contains 'REPLACE' -%}
+    <p class="caps-label" style="opacity:.7">Substack embed not configured.</p>
+  {%- else -%}
+    <iframe src="{{ src }}" scrolling="no" title="Newsletter signup" style="min-height:120px"></iframe>
+  {%- endif -%}
+</aside>

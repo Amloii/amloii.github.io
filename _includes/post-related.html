@@ -1,0 +1,27 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].writing -%}
+{%- assign current_url = page.url -%}
+{%- assign current_pillar = page.pillar -%}
+{%- if current_pillar -%}
+  {%- assign pool = site.posts | where: 'pillar', current_pillar -%}
+  {%- assign related_count = 0 -%}
+  {%- capture related_html -%}
+    {%- for p in pool -%}
+      {%- if p.url != current_url and related_count < 3 -%}
+        <li>
+          <a href="{{ p.url | relative_url }}">
+            <span class="post-related__date">{{ p.date | date: "%Y-%m-%d" }}</span>
+            <h3 class="post-related__title">{{ p.title }}</h3>
+          </a>
+        </li>
+        {%- assign related_count = related_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- if related_count > 0 -%}
+    <aside class="post-related">
+      <p class="post-related__heading">{{ t.related_label }}</p>
+      <ul class="post-related__list">{{ related_html }}</ul>
+    </aside>
+  {%- endif -%}
+{%- endif -%}
