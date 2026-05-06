@@ -1,0 +1,17 @@
+{% assign lg = page.lang | default: site.lang %}
+{% assign cv = site.data.cv[lg] %}
+
+<aside class="home-stamp-pack" aria-label="{% if lg == 'es' %}Estado del autor{% else %}Author status{% endif %}">
+  <span class="riso-stamp home-stamp-pack__stamp">
+    {% if lg == 'es' %}Disponible · CET{% else %}Available · CET{% endif %}
+  </span>
+  <span class="riso-stamp riso-stamp--blue home-stamp-pack__stamp">
+    {{ cv.basics.location }}
+  </span>
+  <span class="riso-stamp home-stamp-pack__stamp">
+    EU-remote
+  </span>
+  <span class="riso-stamp riso-stamp--blue home-stamp-pack__stamp">
+    N°{{ site.time | date: "%Y" }}
+  </span>
+</aside>

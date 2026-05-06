@@ -10,28 +10,33 @@ featured_projects:
   - enterprise-rag-gateway
 ---
 
-{% assign t = site.data.i18n['en'].home %}
-{% assign cv = site.data.cv.en %}
+{% assign t = site.data.i18n.en.home %}
+{% assign meta_t = site.data.i18n.en.meta %}
+{% assign work_t = site.data.i18n.en.work %}
 
 <section class="section">
   <div class="container grid-12" style="align-items:start">
     <div class="col-span-7 stack" style="gap:var(--space-md)">
       <p class="caps-label">{{ t.hero_kicker }}</p>
-      <h1 style="margin:0">{{ site.data.i18n.en.meta.home_title }}</h1>
-      <p class="lead" style="max-width:52ch">{{ site.description }}</p>
-      <div class="stack" style="gap:.75rem">
+      <h1 class="home-hero__headline">
+        <span class="riso-double-print">Agentic</span> AI, shipped.
+      </h1>
+      <p class="home-hero__lead">{{ t.lead }}</p>
+      <div class="home-hero__cta-row">
         {% assign latest = site.posts | first %}
         {% if latest %}
           <a class="btn btn--accent" href="{{ latest.url | relative_url }}">{{ t.read_essay }} →</a>
         {% endif %}
-        <a class="caps-label" href="{{ '/cv/' | relative_url }}">{{ t.cta_cv }} →</a>
+        <a class="caps-label home-hero__cta-secondary" href="{{ '/cv/' | relative_url }}">{{ t.cta_cv }} →</a>
       </div>
     </div>
     <div class="col-span-5">
-      {% include marginalia-home.html %}
+      {% include home-stamp-pack.html %}
     </div>
   </div>
 </section>
+
+{% include home-status.html %}
 
 <hr class="hairline">
 
@@ -40,10 +45,10 @@ featured_projects:
     <header class="stack" style="gap:.5rem;margin-bottom:1.5rem">
       <span class="caps-label">{{ t.selected_work }}</span>
       <h2 style="margin:0">{{ t.selected_work }}</h2>
-      <p class="lead">{{ site.data.i18n.en.work.index_desc }}</p>
+      <p class="lead">{{ t.work_intro }}</p>
     </header>
 
-    <div class="stack" style="gap:var(--space-md)">
+    <div class="stack home-work-index" style="gap:var(--space-md)">
       {% assign slugs = page.featured_projects %}
       {% for slug in slugs %}
         {% assign proj = site.projects | where: 'slug', slug | where: 'lang', 'en' | first %}
@@ -52,9 +57,9 @@ featured_projects:
             <span class="idx-row__num">{% assign idx = forloop.index %}{% if idx < 10 %}0{% endif %}{{ idx }}</span>
             <span>
               <span class="idx-row__title">{{ proj.title }}</span><br>
-              <span style="opacity:0.75;font-size:var(--fs-small)">{{ proj.summary }}</span><br>
+              <span style="opacity:0.75;font-size:var(--fs-small)">{{ proj.summary }}</span>
               {% if proj.featured_metric %}
-                <span class="pillar-tag riso-accent" style="margin-top:.25rem;display:inline-block;font-family:var(--font-mono);font-size:0.82rem">{{ proj.featured_metric }}</span>
+                <br><span class="home-work-index__metric">{{ proj.featured_metric }}</span>
               {% endif %}
             </span>
             <span class="caps-label">{{ proj.domain }}</span>
@@ -74,24 +79,35 @@ featured_projects:
   <div class="container split">
     <div>
       <span class="caps-label">{{ t.writing }}</span>
-      <h2 style="margin-top:.35rem">Fresh essays</h2>
+      <h2 style="margin-top:.35rem">{{ t.fresh_essays }}</h2>
       {% for post in site.posts limit:2 %}
         <article style="margin-top:1rem">
-          <p class="caps-label">{{ post.date | date: "%Y-%m-%d" }} · {% if post.pillar %}{{ post.pillar }}{% else %}essay{% endif %}</p>
-          <h3 style="margin:.25rem 0"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="home-essay-meta">
+            {{ post.date | date: "%Y-%m-%d" }}
+            {% if post.pillar %}
+              · <span class="pillar-tag">{{ post.pillar }}</span>
+            {% else %}
+              · essay
+            {% endif %}
+          </p>
+          <h3 style="margin:.25rem 0;font-family:var(--font-display);font-size:1.4rem;font-weight:600;text-transform:none;letter-spacing:0;color:inherit">
+            <a href="{{ post.url | relative_url }}" style="color:inherit;text-decoration:none">{{ post.title }}</a>
+          </h3>
           <p>{{ post.excerpt | strip_html | truncate: 260 }}</p>
         </article>
       {% endfor %}
       <p style="margin-top:1rem"><a href="{{ '/writing/' | relative_url }}">{{ t.view_writing_hub }} →</a></p>
     </div>
     <div>
-      <span class="caps-label">External spotlight</span>
-      <h2 style="margin-top:.35rem">Elsewhere</h2>
+      <span class="caps-label">{{ t.spotlight_kicker }}</span>
+      <h2 style="margin-top:.35rem">{{ t.spotlight_title }}</h2>
       {% assign spotlight = site.data.external_writing.featured | slice: 0, 2 %}
       {% for item in spotlight %}
         <article style="margin-top:1rem">
-          <p class="caps-label">{{ item.outlet }} · {{ item.year }}</p>
-          <h3 style="margin:.25rem 0"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+          <p class="home-essay-meta">{{ item.outlet }} · {{ item.year }}</p>
+          <h3 style="margin:.25rem 0;font-family:var(--font-display);font-size:1.4rem;font-weight:600;text-transform:none;letter-spacing:0;color:inherit">
+            <a href="{{ item.url }}" style="color:inherit;text-decoration:none">{{ item.title }}</a>
+          </h3>
         </article>
       {% endfor %}
     </div>
@@ -101,22 +117,31 @@ featured_projects:
 <section class="section section--paper">
   <div class="container">
     <span class="caps-label">{{ t.work_with_me }}</span>
-    <h2 style="margin-top:.35rem">Three lanes</h2>
-    <div class="split" style="margin-top:1rem">
-      <article class="newsletter-card section--tight">
-        <h3>Advisory</h3>
-        <p>Steer agentic roadmap, infra picks, evaluations, procurement — short, sharp cycles.</p>
-        <p><a class="btn btn--ghost" href="{{ site.book_call_url }}">{{ site.data.i18n.en.cv.book_call }}</a></p>
+    <h2 style="margin-top:.35rem">{{ t.work_with_me }}</h2>
+    <div class="home-lanes">
+      <article class="home-lane home-lane--n1">
+        <span class="riso-stamp home-lane__stamp">N°1</span>
+        <h3 class="home-lane__title">{{ t.advisory_title }}</h3>
+        <p class="home-lane__proof">{{ t.advisory_proof }}</p>
+        <p class="home-lane__cta">
+          <a class="btn btn--ghost" href="{{ site.book_call_url }}">{{ t.advisory_cta }}</a>
+        </p>
       </article>
-      <article class="newsletter-card section--tight">
-        <h3>Implementation</h3>
-        <p>Architect + hands-on prototyping for ambiguous 0→1 workloads where slide decks stall.</p>
-        <p><a class="btn btn--ghost" href="mailto:{{ site.author.email }}">Ping engineering</a></p>
+      <article class="home-lane home-lane--n2">
+        <span class="riso-stamp riso-stamp--blue home-lane__stamp">N°2</span>
+        <h3 class="home-lane__title">{{ t.implementation_title }}</h3>
+        <p class="home-lane__proof">{{ t.implementation_proof }}</p>
+        <p class="home-lane__cta">
+          <a class="btn btn--ghost" href="mailto:{{ site.author.email }}">{{ t.implementation_cta }}</a>
+        </p>
       </article>
-      <article class="newsletter-card section--tight">
-        <h3>Speaking</h3>
-        <p>Panels, CTO briefings, and classroom-style deep dives bridging science + systems.</p>
-        <p><a class="btn btn--ghost" href="{{ '/speaking-press/' | relative_url }}">Press kit</a></p>
+      <article class="home-lane home-lane--n3">
+        <span class="riso-stamp home-lane__stamp">N°3</span>
+        <h3 class="home-lane__title">{{ t.speaking_title }}</h3>
+        <p class="home-lane__proof">{{ t.speaking_proof }}</p>
+        <p class="home-lane__cta">
+          <a class="btn btn--ghost" href="{{ '/speaking-press/' | relative_url }}">{{ t.speaking_cta }}</a>
+        </p>
       </article>
     </div>
   </div>

@@ -13,7 +13,7 @@ en:
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
-    home_title: Architecting agentic AI for production organizations
+    home_title: Agentic AI, shipped.
     home_description: Portfolio, essays, and track record — AI Director specializing in agents, LLM infrastructure, RAG, and generative AI.
   home:
     hero_kicker: AI Director · Systems architecture
@@ -27,6 +27,21 @@ en:
     subs_blurb: "New essays on agents, infra, and leadership — no fluff. Cross-post rule: canonical URL always stays on this site."
     marginalia_intro: Snapshot
     cta_cv: Hiring? View full résumé
+    lead: "AI Director architecting agent fleets, LLM infra, and RAG in production. Madrid · EU-remote."
+    status_label: System status
+    fresh_essays: Fresh essays
+    spotlight_kicker: External spotlight
+    spotlight_title: Elsewhere
+    work_intro: "Three pieces from the field — agentic platforms, retrieval infra, and an applied transformer pipeline."
+    advisory_title: Advisory
+    advisory_proof: "7+ years shipping AI · short, sharp cycles."
+    advisory_cta: Book a 20-minute intro
+    implementation_title: Implementation
+    implementation_proof: "0→1 prototyping when slide decks stall."
+    implementation_cta: Ping engineering
+    speaking_title: Speaking
+    speaking_proof: ">10k subs on neuroscience channel · national press columns."
+    speaking_cta: Press kit
   work:
     index_title: Work index
     index_desc: Case studies spanning agentic AI, multimodal retrieval, recommendation, fraud & vision.
@@ -87,7 +102,7 @@ es:
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
-    home_title: Diseño sistemas de IA agéntica para organizaciones en producción
+    home_title: IA agéntica, en producción.
     home_description: Portfolio, ensayos y trayectoria — Director de IA especializado en agentes, infra LLM, RAG e IA generativa.
   home:
     hero_kicker: Director de IA · Arquitectura de sistemas
@@ -101,6 +116,21 @@ es:
     subs_blurb: "Ensayos sobre agentes, infra y liderazgo editorial. La URL canónica permanece aquí antes de reproducir en Substack."
     marginalia_intro: Resumen
     cta_cv: ¿Contratar? Ver CV completo
+    lead: "Director de IA · arquitecto de flotas agénticas, infra LLM y RAG en producción. Madrid · EU-remote."
+    status_label: Estado del sistema
+    fresh_essays: Últimos ensayos
+    spotlight_kicker: Destacados externos
+    spotlight_title: Fuera del sitio
+    work_intro: "Tres piezas del campo — plataformas agénticas, infraestructura de retrieval y un pipeline transformer aplicado."
+    advisory_title: Asesoría
+    advisory_proof: "+7 años llevando IA a producción · ciclos cortos y precisos."
+    advisory_cta: Reservar intro de 20 min
+    implementation_title: Implementación
+    implementation_proof: "Prototipado 0→1 cuando los decks ya no avanzan."
+    implementation_cta: Escribir a ingeniería
+    speaking_title: Charlas
+    speaking_proof: "+10k suscriptores en divulgación · columnas en prensa nacional."
+    speaking_cta: Kit para medios
   work:
     index_title: Índice de trabajo
     index_desc: Casos de uso de IA agéntica, recuperación multimodal, recomendación, fraude y visión.
