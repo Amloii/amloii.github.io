@@ -4,38 +4,85 @@ layout: default
 
 {% include schema-article.html %}
 
+{% assign lg = page.lang | default: site.lang %}
+{% assign tw = site.data.i18n[lg].writing %}
+
+{% comment %}
+Reading-time + word-count from rendered content.
+{% endcomment %}
+{% assign words = page.content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 220 %}
+{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+{% assign read_time = tw.minutes_format | replace: '{n}', minutes %}
+{% assign word_count = tw.words_format | replace: '{n}', words %}
+
+{% comment %}
+Inline newsletter injection: split content on '<h2 ' markers and inject
+the newsletter card after the H2 at position floor(h2_count * 0.6).
+Skip injection if the post has fewer than 3 H2s (too short to interrupt).
+{% endcomment %}
+{% assign h2_parts = page.content | split: '<h2 ' %}
+{% assign h2_count = h2_parts.size | minus: 1 %}
+
+{% if h2_count >= 3 %}
+  {% assign insert_at = h2_count | times: 0.6 | floor %}
+  {% if insert_at < 1 %}{% assign insert_at = 1 %}{% endif %}
+  {% assign first_size = insert_at | plus: 1 %}
+  {% assign first_chunk = h2_parts | slice: 0, first_size %}
+  {% assign first_html = first_chunk | join: '<h2 ' %}
+  {% assign rest_size = h2_parts.size | minus: first_size %}
+  {% assign rest_chunk = h2_parts | slice: first_size, rest_size %}
+  {% assign rest_html = rest_chunk | join: '<h2 ' %}
+{% endif %}
+
 <article class="container section">
-  <p class="pillar-tag">
-    {% assign pl = site.data.pillars | where_exp: "pillar", "pillar.id == page.pillar" | first %}
-    {% if pl %}
-      {% if page.lang == 'es' %}
-        {{ pl.title_es }}
+  <header class="post-hero">
+    {% assign pl = site.data.pillars | where: 'id', page.pillar | first %}
+    <p class="pillar-tag">
+      {% if pl %}
+        {% if lg == 'es' %}{{ pl.title_es }}{% else %}{{ pl.title_en }}{% endif %}
       {% else %}
-        {{ pl.title_en }}
+        {{ tw.notebook_label }}
       {% endif %}
-    {% else %}
-      Essay
+    </p>
+
+    {% if page.hero_illustration %}
+      <figure class="riso-frame riso-muted" style="max-height:14rem;width:100%;margin:0 0 1rem">
+        <img src="{{ '/assets/svg/riso/' | append: page.hero_illustration | append: '.svg' | relative_url }}" alt="" width="480" height="240" loading="lazy" decoding="async">
+      </figure>
     {% endif %}
-  </p>
 
-  {% if page.hero_illustration %}
-    <figure class="riso-frame riso-muted" style="max-height:16rem;width:100%;margin:0 0 1.5rem">
-      <img src="{{ '/assets/svg/riso/' | append: page.hero_illustration | append: '.svg' | relative_url }}" alt="" width="480" height="240" loading="lazy" decoding="async">
-    </figure>
-  {% endif %}
+    <h1 class="post-hero__title"><span class="riso-double-print">{{ page.title }}</span></h1>
 
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="caps-label" style="opacity:.8;margin-top:.5rem">
-      {{ page.date | date: "%Y-%m-%d" }} · {{ site.author.name }}
+    <p class="post-meta-row">
+      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+      <span>{{ read_time }}</span>
+      <span>{{ word_count }}</span>
+      <span>{{ site.author.name }}</span>
     </p>
   </header>
 
-  <div class="prose section--tight" style="margin-top:1.5rem">
-    {{ content }}
+  <div class="post-layout">
+    {% include post-toc.html %}
+
+    <div class="post-prose prose">
+      {% if h2_count >= 3 %}
+        {{ first_html }}
+        {% include newsletter-inline.html %}
+        {% if rest_chunk.size > 0 %}<h2 {{ rest_html }}{% endif %}
+      {% else %}
+        {{ page.content }}
+      {% endif %}
+    </div>
+
+    <aside class="post-sidenotes no-print" aria-hidden="true"></aside>
   </div>
 
+  {% include post-related.html %}
+  {% include post-pager.html %}
+
   {% include newsletter-footer.html %}
+
   {% if page.comments %}
     {% include giscus.html %}
   {% endif %}
