@@ -60,6 +60,16 @@ en:
     external: External writing
     pillars: Editorial pillars
     read: Read
+    contents_label: On this page
+    related_label: Related essays
+    prev_label: Previous essay
+    next_label: Next essay
+    minutes_format: "{n} min read"
+    words_format: "{n} words"
+    inline_newsletter_kicker: "If you're enjoying this"
+    notebook_label: Notebook
+    filter_label: Filter by pillar
+    filter_all: All pillars
   cv:
     download: Download PDF (EN)
     download_es: Descargar PDF (ES)
@@ -150,6 +160,16 @@ es:
     external: Fuera del sitio
     pillars: Pilares editoriales
     read: Leer
+    contents_label: En esta página
+    related_label: Ensayos relacionados
+    prev_label: Ensayo anterior
+    next_label: Siguiente ensayo
+    minutes_format: "{n} min de lectura"
+    words_format: "{n} palabras"
+    inline_newsletter_kicker: "Si te está gustando"
+    notebook_label: Cuaderno
+    filter_label: Filtrar por pilar
+    filter_all: Todos los pilares
   cv:
     download: Descargar PDF (EN)
     download_es: Descargar PDF (ES)
