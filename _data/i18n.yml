@@ -174,7 +174,7 @@ es:
     outcomes: Resultados
     stack: Stack
     role: Rol
-    metric: Highlight
+    metric: Métrica destacada
     links: Enlaces
     related_posts: Escritos relacionados
     case_study_label: "Caso de estudio"
@@ -236,7 +236,7 @@ es:
     yes_press: Peticiones de prensa con deadline
     no_recruiter: Plantillas de recruiter sin detalles del rol
     no_vendor: Propuestas comerciales sin contexto
-    no_unsolicited: Cold proposals no solicitadas
+    no_unsolicited: Propuestas en frío no solicitadas
   error:
     title_404: "404 · Has salido del índice de recuperación"
     lead_404: "La página a la que has llegado no está en ningún feed que esté corriendo. Te llevo a un ancla conocido."
