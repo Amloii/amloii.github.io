@@ -1,17 +1,36 @@
-// Print-friendly CV (Ctrl+P)
+// Print-friendly baseline — page-specific overrides land in their own phase
+// (CV calm-mode in F2, post layout in F3).
 
 @media print {
-  .site-nav,
-  .site-footer,
-  .skip-link,
-  .no-print {
-    display: none !important;
+  // Force light surface; never print warm coal.
+  :root,
+  [data-theme="dark"] {
+    --paper:        #ffffff;
+    --bone:         #ffffff;
+    --paper-warm:   #ffffff;
+    --ink:          #000000;
+    --muted:        #333333;
+    --rule:         #000000;
+    --accent:       #000000;
+    --riso-red:     #000000;
+    --riso-blue:    #000000;
   }
 
   body {
     background: #fff !important;
-    font-size: 11pt;
     color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .site-nav,
+  .site-footer,
+  .skip-link,
+  .no-print,
+  .nav-search,
+  .theme-toggle,
+  [data-search-trigger],
+  [data-theme-toggle] {
+    display: none !important;
   }
 
   a {
@@ -25,17 +44,22 @@
     word-break: break-all;
   }
 
-  .marginalia,
-  .availability-box {
-    border-color: #ccc !important;
+  .section { padding-block: 1rem !important; break-inside: avoid; }
+
+  // Silence ALL Riso decoration in print, regardless of two-pace contract.
+  .riso-paper,
+  .riso-halftone,
+  .riso-double-print,
+  .riso-stamp,
+  .riso-photo,
+  .riso-frame {
+    background: none !important;
+    text-shadow: none !important;
+    border: none !important;
+    transform: none !important;
   }
 
-  .section {
-    padding-block: 1rem !important;
-    break-inside: avoid;
-  }
-
-  .tl-item {
-    break-inside: avoid;
-  }
+  .riso-halftone::before,
+  .riso-photo::before,
+  .riso-photo::after { display: none !important; }
 }
