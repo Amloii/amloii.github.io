@@ -414,3 +414,181 @@
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+
+// Home — hero
+.home-hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.home-hero__lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 52ch;
+  margin: 0;
+  color: var(--ink);
+  opacity: 0.92;
+}
+
+.home-hero__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.home-hero__cta-secondary {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 40%, transparent);
+  padding-bottom: 2px;
+}
+
+.home-hero__cta-secondary:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+// Home — stamp pack (placeholder until F5 photo)
+.home-stamp-pack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 1.25rem;
+  align-items: center;
+  justify-items: center;
+  padding: var(--space-md) var(--space-sm);
+  min-height: 14rem;
+}
+
+.home-stamp-pack__stamp:nth-child(1) { transform: rotate(-3.5deg); }
+.home-stamp-pack__stamp:nth-child(2) { transform: rotate(2.2deg); }
+.home-stamp-pack__stamp:nth-child(3) { transform: rotate(-1.5deg); }
+.home-stamp-pack__stamp:nth-child(4) { transform: rotate(4deg); }
+
+// Home — sub-hero status
+.home-status {
+  border-block: 1px solid color-mix(in srgb, var(--rule) 12%, transparent);
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+
+.home-status__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem var(--space-md);
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  padding-block: 0.85rem;
+}
+
+.home-status__sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.home-status__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.home-status__dot { font-size: 0.85em; line-height: 1; }
+.home-status__item:nth-child(1) .home-status__dot { color: var(--riso-red); }
+.home-status__item:nth-child(2) .home-status__dot { color: var(--accent); }
+.home-status__item:nth-child(3) .home-status__dot { color: var(--riso-blue); }
+
+// Home — selected work index
+.home-work-index .idx-row__num {
+  color: var(--riso-red);
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  88%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 70%, transparent);
+}
+
+[data-theme="dark"] .home-work-index .idx-row__num {
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  78%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 60%, transparent);
+}
+
+.home-work-index__metric {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+// Home — fresh essays + spotlight kicker
+.home-essay-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.home-essay-meta .pillar-tag {
+  display: inline;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+// Home — three lanes (differentiated)
+.home-lanes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .home-lanes { grid-template-columns: 1fr; }
+}
+
+.home-lane {
+  position: relative;
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--rule) 14%, transparent);
+}
+
+.home-lane__stamp {
+  position: absolute;
+  top: -0.65rem;
+  left: var(--space-md);
+}
+
+.home-lane--n1 .home-lane__stamp { transform: rotate(-3deg); }
+.home-lane--n2 .home-lane__stamp { transform: rotate(2.5deg); }
+.home-lane--n3 .home-lane__stamp { transform: rotate(-1.5deg); }
+
+.home-lane__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.home-lane__proof {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0 0 var(--space-sm);
+}
+
+.home-lane__cta { margin-top: var(--space-sm); }
