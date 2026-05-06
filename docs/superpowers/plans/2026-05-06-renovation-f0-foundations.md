@@ -44,16 +44,18 @@
 **Files:**
 - Read: `Gemfile.lock` (if present), `_config.yml`
 
-- [ ] **Step 1: Confirm the local Jekyll toolchain works**
+- [ ] **Step 1: Confirm the Dockerized Jekyll toolchain works**
 
-Run from the worktree root:
+This project uses a Dockerized Jekyll for local development (see `docker-compose.yml`). Confirm Docker Desktop is running, then from the worktree root:
 
 ```bash
-bundle install
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle install
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
-Expected: build completes without errors. `_site/` exists. If `bundle install` fails on Windows, follow the README hint (Ruby + MSYS2 devkit, or use WSL).
+Expected: `bundle install` succeeds and persists gems to the `jekyll-gems` named volume (only happens fresh once or after a `Gemfile` change). The build then completes without errors and `_site/` is populated.
+
+**Subagent execution note:** every command in this plan that starts with `docker compose run --rm --entrypoint "" jekyll bundle exec jekyll …` is run by the subagent that owns that task. The dev server (Step 3 below, used by the human reviewer) is run from a separate shell.
 
 - [ ] **Step 2: Note the current asset hashes for regression check**
 
@@ -196,7 +198,7 @@ Overwrite `assets/css/_tokens.scss` with:
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Expected: build clean. Visit each baseline URL and compare to the screenshots from Task 0. Light mode should look pixel-identical (only the typographic display scale changed; that affects only `h1` sizes which is intentional and small).
@@ -248,7 +250,7 @@ Edit `_includes/head.html`. Find the line `<link rel="stylesheet" href="{{ '/ass
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Then check the rendered home page:
@@ -424,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 grep 'data-theme-toggle' _site/index.html
 ```
 
@@ -605,7 +607,7 @@ Overwrite `assets/css/_riso.scss` with:
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Expected: clean build.
@@ -705,7 +707,7 @@ sitemap: false
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Visit `http://localhost:4000/dev-riso-utilities/`. Inspect every utility block.
@@ -804,7 +806,7 @@ Open `dev-riso-utilities.html` (created in Task 5, still untracked). Append befo
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Visit `http://localhost:4000/dev-riso-utilities/`. Click "Copy bio". Expected:
@@ -935,7 +937,7 @@ Open `assets/js/main.js`. Inside the `DOMContentLoaded` listener, append:
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 grep 'data-search-trigger' _site/index.html
 ```
 
@@ -1038,7 +1040,7 @@ Overwrite `assets/css/_print.scss` with:
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Open `http://localhost:4000/cv/` and trigger browser print preview (Ctrl+P).
@@ -1125,7 +1127,7 @@ Any string you find that's still English where it shouldn't be: fix in the same 
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Visit `http://localhost:4000/es/trayectoria/`. Confirm:
@@ -1249,7 +1251,7 @@ intro: "Ritmo mensual · Última actualización {{ site.data.now.es.updated }}"
 Run:
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Visit `http://localhost:4000/now/`. Expected:
@@ -1294,7 +1296,7 @@ Expected: nothing — the worktree is clean (no staged, unstaged, or untracked c
 - [ ] **Step 3: Build and confirm the page is gone from `_site`**
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Then:
@@ -1363,7 +1365,7 @@ Expected: ≥ 95 score on both pages, both modes. Document any new issues introd
 - [ ] **Step 5: Run a final build**
 
 ```bash
-bundle exec jekyll build --trace
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
 ```
 
 Expected: clean, no warnings related to our changes.

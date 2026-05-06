@@ -4,7 +4,8 @@ layout: default
 
 {% include schema-project.html %}
 
-{% assign t = site.data.i18n[page.lang | default: 'en'].work %}
+{% assign lg = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lg].work %}
 
 <article class="container section">
   {% if page.hero_illustration %}

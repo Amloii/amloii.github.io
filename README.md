@@ -2,26 +2,32 @@
 
 Sitio estático con [Jekyll](https://jekyllrb.com/) optimizado para [GitHub Pages](https://pages.github.com/).
 
-## Requisitos locales (opcional)
+## Desarrollo local
 
-En Windows necesitas **Ruby + MSYS2 devkit** o WSL / Docker. Ejemplo rápido:
+Recomendado: **Docker** (sin instalar Ruby). Necesitas Docker Desktop corriendo.
+
+```powershell
+docker compose run --rm --entrypoint "" jekyll bundle install   # primera vez
+docker compose up jekyll                                         # arranca jekyll serve --livereload en :4000
+```
+
+Abre `http://localhost:4000`. La primera `bundle install` tarda ~5 min y persiste en el volumen `jekyll-gems` para builds posteriores.
+
+Build one-shot (lo que usa el subagent durante el desarrollo):
+
+```powershell
+docker compose run --rm --entrypoint "" jekyll bundle exec jekyll build --trace
+```
+
+### Alternativa nativa (sin Docker)
+
+Si prefieres Ruby instalado localmente, en Windows necesitas Ruby + MSYS2 devkit (RubyInstaller-Devkit). Una vez en PATH:
 
 ```powershell
 gem install bundler
 bundle install
 bundle exec jekyll serve
 ```
-
-Si `bundle` no está en PATH, usa la terminal del instalador Ruby o WSL.
-
-## Desarrollo
-
-```powershell
-bundle install
-bundle exec jekyll serve
-```
-
-Abre `http://localhost:4000`.
 
 ## Variables imprescindibles
 

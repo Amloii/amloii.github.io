@@ -1,0 +1,14 @@
+services:
+  jekyll:
+    image: jekyll/builder:4
+    working_dir: /srv/jekyll
+    volumes:
+      - .:/srv/jekyll
+      - jekyll-gems:/usr/gem
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    command: bundle exec jekyll serve --host 0.0.0.0 --livereload --trace
+
+volumes:
+  jekyll-gems:

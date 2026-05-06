@@ -82,6 +82,11 @@ exclude:
   - vendor
   - uploads
   - .cursor
+  - .claude
+  - .superpowers
+  - docs
+  - docker-compose.yml
+  - README.md
 
 sass:
   sass_dir: assets/css
