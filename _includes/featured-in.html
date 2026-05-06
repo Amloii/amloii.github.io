@@ -1,0 +1,65 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].home -%}
+{%- assign external = site.data.external_writing -%}
+{%- assign all = external.featured | concat: external.items -%}
+
+{%- comment -%}
+  Build a unique-by-outlet list as a delimited string, then split.
+  Record format: "<name>::<url-or-empty>::<year-or-empty>"
+  Records are joined with "@@". Names are tracked in a separate string
+  with leading/trailing pipes for safe `contains` checks.
+{%- endcomment -%}
+
+{%- assign records = "" -%}
+{%- assign seen = "|" -%}
+{%- for it in all -%}
+  {%- assign name = it.outlet | default: "" | strip -%}
+  {%- if name == "" -%}{%- continue -%}{%- endif -%}
+  {%- assign needle = "|" | append: name | append: "|" -%}
+  {%- unless seen contains needle -%}
+    {%- assign seen = seen | append: name | append: "|" -%}
+    {%- assign url = it.url | default: "" -%}
+    {%- if url == "#" -%}{%- assign url = "" -%}{%- endif -%}
+    {%- assign year = it.year | default: "" -%}
+    {%- assign rec = name | append: "::" | append: url | append: "::" | append: year -%}
+    {%- if records == "" -%}
+      {%- assign records = rec -%}
+    {%- else -%}
+      {%- assign records = records | append: "@@" | append: rec -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if records != "" -%}
+  {%- assign outlets = records | split: "@@" -%}
+<section class="section featured-in" aria-labelledby="featured-in-title">
+  <div class="container stack" style="gap:.75rem">
+    <header class="stack" style="gap:.35rem">
+      <span class="caps-label">{{ t.featured_in_kicker }}</span>
+      <h2 id="featured-in-title" style="margin:0">{{ t.featured_in_title }}</h2>
+      <p class="lead" style="margin:0">{{ t.featured_in_lead }}</p>
+    </header>
+    <ul class="featured-in__grid" role="list">
+      {%- for entry in outlets -%}
+        {%- assign parts = entry | split: "::" -%}
+        {%- assign name = parts[0] -%}
+        {%- assign url = parts[1] -%}
+        {%- assign year = parts[2] -%}
+        <li class="featured-in__item">
+          {%- if url and url != "" -%}
+            <a class="featured-in__link" href="{{ url }}" rel="noopener">
+              <span class="featured-in__outlet">{{ name }}</span>
+              {%- if year and year != "" %}<span class="featured-in__year">{{ year }}</span>{%- endif %}
+            </a>
+          {%- else -%}
+            <span class="featured-in__link featured-in__link--inert">
+              <span class="featured-in__outlet">{{ name }}</span>
+              {%- if year and year != "" %}<span class="featured-in__year">{{ year }}</span>{%- endif %}
+            </span>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}

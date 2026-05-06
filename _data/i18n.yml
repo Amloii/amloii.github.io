@@ -15,7 +15,7 @@ en:
     aria_lang_switcher: Language switcher
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
-    tagline: AI Director · Agentic architectures, multimodal embeddings, production LLM infra — Madrid · EU-remote.
+    tagline: Essays and engagements on agentic AI, LLM infrastructure, and production ML. Madrid · CET.
     links_heading: Links
     email: Email
   meta:
@@ -28,10 +28,18 @@ en:
     view_all_work: Full index
     writing: Writing
     view_writing_hub: Essays & external work
-    work_with_me: Working together
+    work_with_me: Engagements
+    work_with_me_lead: "How teams use my time when an essay isn't enough — selectively, with prep."
+    featured_in_kicker: Featured in
+    featured_in_title: Selected press & long-form
+    featured_in_lead: "Where the work and writing have shown up over the years."
+    clients_kicker: Trusted by
+    clients_title: Selected clients & employers
+    testimonials_kicker: In their words
+    testimonials_title: What collaborators have said
     subs_title: Essays by email
     subs_blurb: "New essays on agents, infra, and leadership — no fluff. Cross-post rule: canonical URL always stays on this site."
-    cta_cv: Hiring? View full résumé
+    cta_cv: Read the full CV
     lead: "AI Director architecting agent fleets, LLM infra, and RAG in production. Madrid · EU-remote."
     status_label: System status
     fresh_essays: Fresh essays
@@ -39,17 +47,17 @@ en:
     spotlight_title: Elsewhere
     work_intro: "Three pieces from the field — agentic platforms, retrieval infra, and an applied transformer pipeline."
     advisory_title: Advisory
-    advisory_proof: "7+ years shipping AI · short, sharp cycles."
-    advisory_cta: Book a 20-minute intro
+    advisory_proof: "Sparring with CTOs and Heads of AI on architecture, evals, and team shape."
+    advisory_cta: Discuss advisory →
     implementation_title: Implementation
-    implementation_proof: "0→1 prototyping when slide decks stall."
-    implementation_cta: Ping engineering
+    implementation_proof: "Hands-on 0→1 work when a deck won't get the system out the door."
+    implementation_cta: Talk to engineering →
     speaking_title: Speaking
-    speaking_proof: ">10k subs on neuroscience channel · national press columns."
-    speaking_cta: Press kit
+    speaking_proof: "Keynotes, panels, and editorial briefings on agentic AI in production."
+    speaking_cta: See speaker kit →
     label_essay: essay
     portrait_aria: Author portrait
-    stamp_availability: Available · CET
+    stamp_kicker: Madrid · CET
     career_arc_aria: Career arc
     career_arc_label: Career arc
     career_arc_caption: Research → Agents
@@ -105,7 +113,7 @@ en:
     beyond: Beyond work
     book_call: Book a 20-minute intro
     linkedin: LinkedIn
-    sticky_cta: "Hiring? Book intro call"
+    sticky_cta: "Read the essays"
     resume_json_label: "Machine-readable résumé:"
     resume_json_blurb: ""
     press_kit_cta: "Press kit →"
@@ -172,7 +180,7 @@ es:
     aria_lang_switcher: Selector de idioma
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
-    tagline: Director de IA · Arquitectura de sistemas agénticos, infra LLM y RAG multimodal — Madrid · EU-remote.
+    tagline: Ensayos y colaboraciones sobre IA agéntica, infra LLM y ML en producción. Madrid · CET.
     links_heading: Enlaces
     email: Email
   meta:
@@ -185,10 +193,18 @@ es:
     view_all_work: Índice completo
     writing: Escritos
     view_writing_hub: Ensayos y trabajo externo
-    work_with_me: Colaborar
+    work_with_me: Colaboraciones
+    work_with_me_lead: "Cómo se usa mi tiempo cuando un ensayo no basta — selectivo, con preparación."
+    featured_in_kicker: Apariciones
+    featured_in_title: Prensa y formato largo
+    featured_in_lead: "Dónde han aparecido el trabajo y los escritos a lo largo de los años."
+    clients_kicker: Clientes y equipos
+    clients_title: Algunos colaboradores
+    testimonials_kicker: En sus palabras
+    testimonials_title: Lo que han dicho colaboradores
     subs_title: Ensayos por correo
     subs_blurb: "Ensayos sobre agentes, infra y liderazgo editorial. La URL canónica permanece aquí antes de reproducir en Substack."
-    cta_cv: ¿Contratar? Ver CV completo
+    cta_cv: Ver CV completo
     lead: "Director de IA · arquitecto de flotas agénticas, infra LLM y RAG en producción. Madrid · EU-remote."
     status_label: Estado del sistema
     fresh_essays: Últimos ensayos
@@ -196,17 +212,17 @@ es:
     spotlight_title: Fuera del sitio
     work_intro: "Tres piezas del campo — plataformas agénticas, infraestructura de retrieval y un pipeline transformer aplicado."
     advisory_title: Asesoría
-    advisory_proof: "+7 años llevando IA a producción · ciclos cortos y precisos."
-    advisory_cta: Reservar intro de 20 min
+    advisory_proof: "Sparring con CTOs y Heads de IA sobre arquitectura, evals y forma del equipo."
+    advisory_cta: Hablar de asesoría →
     implementation_title: Implementación
-    implementation_proof: "Prototipado 0→1 cuando los decks ya no avanzan."
-    implementation_cta: Escribir a ingeniería
+    implementation_proof: "Trabajo 0→1 a manos cuando un deck no va a sacar el sistema a producción."
+    implementation_cta: Hablar con ingeniería →
     speaking_title: Charlas
-    speaking_proof: "+10k suscriptores en divulgación · columnas en prensa nacional."
-    speaking_cta: Kit para medios
+    speaking_proof: "Keynotes, paneles y briefings editoriales sobre IA agéntica en producción."
+    speaking_cta: Ver kit de orador →
     label_essay: ensayo
     portrait_aria: Retrato del autor
-    stamp_availability: Disponible · CET
+    stamp_kicker: Madrid · CET
     career_arc_aria: Trayectoria
     career_arc_label: Trayectoria
     career_arc_caption: Investigación → Agentes
@@ -262,7 +278,7 @@ es:
     beyond: Fuera del trabajo
     book_call: Reserva una intro de 20 minutos
     linkedin: LinkedIn
-    sticky_cta: "¿Contratar? Reserva una intro"
+    sticky_cta: "Leer los ensayos"
     resume_json_label: ""
     resume_json_blurb: "Currículum JSON canónico"
     press_kit_cta: "Kit para medios →"

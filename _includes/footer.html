@@ -1,6 +1,8 @@
 {% assign lg = page.lang | default: site.lang %}
 {% assign yr = site.time | date: "%Y" %}
 {% assign t = site.data.i18n[lg] %}
+{%- assign contact_path = '/contact/' -%}
+{%- if lg == 'es' -%}{%- assign contact_path = '/es/contacto/' -%}{%- endif -%}
 <footer class="site-footer" role="contentinfo">
   <div class="container stack">
     <div class="split">
@@ -14,6 +16,7 @@
           {% for net in site.data.socials %}
             <li><a href="{{ net.url }}" rel="me">{{ net.name }}</a></li>
           {% endfor %}
+          <li><a href="{{ contact_path | relative_url }}">{{ t.nav.contact }}</a></li>
           <li><a href="mailto:{{ site.author.email }}">{{ t.footer.email }}</a></li>
         </ul>
       </div>
