@@ -266,7 +266,7 @@ es:
 
   languages:
     - { name: "Inglés", level: "Profesional completo" }
-    - { name: "Español", level: "Nativo / bilingual" }
+    - { name: "Español", level: "Nativo / bilingüe" }
 
   core_skills:
     - Oratoria
