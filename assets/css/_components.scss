@@ -1118,4 +1118,226 @@
   margin: 0 0 0.25rem;
 }
 
+// Work — domain filter chips
+.work-domain-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: var(--space-md);
+  list-style: none;
+  padding: 0;
+}
+
+.work-domain-filter a {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--rule) 25%, transparent);
+  border-radius: 999px;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.work-domain-filter a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+// Work index — big riso-red numerals
+.work-index .idx-row__num {
+  color: var(--riso-red);
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  88%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 70%, transparent);
+}
+
+[data-theme="dark"] .work-index .idx-row__num {
+  text-shadow:
+    1.5px 1px 0  color-mix(in srgb, var(--riso-red)  78%, transparent),
+   -1.5px -1px 0 color-mix(in srgb, var(--riso-blue) 60%, transparent);
+}
+
+// Project — header stamp + featured-metric headline
+.project-stamp { margin-bottom: 0.75rem; }
+
+.project-metric-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0.5rem 0 var(--space-md);
+}
+
+// Now — 4-block layout
+.now-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .now-blocks { grid-template-columns: 1fr; }
+}
+
+.now-block {
+  position: relative;
+  padding: var(--space-md);
+  border: 1px solid color-mix(in srgb, var(--rule) 14%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+
+.now-block__stamp {
+  position: absolute;
+  top: -0.65rem;
+  left: var(--space-md);
+}
+
+.now-block:nth-child(1) .now-block__stamp { transform: rotate(-2.5deg); }
+.now-block:nth-child(2) .now-block__stamp { transform: rotate(2deg); }
+.now-block:nth-child(3) .now-block__stamp { transform: rotate(-1.5deg); }
+.now-block:nth-child(4) .now-block__stamp { transform: rotate(3deg); }
+
+.now-block__heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.now-block__items {
+  list-style: disc;
+  padding-left: 1.1rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.now-block__items li { margin-bottom: 0.4rem; }
+
+// Contact — "what I respond to" / "what I won't" blocks
+.contact-microcopy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-block: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .contact-microcopy { grid-template-columns: 1fr; }
+}
+
+.contact-microcopy__col { padding: var(--space-md); border-radius: var(--radius-sm); }
+.contact-microcopy__col--yes { border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); background: color-mix(in srgb, var(--accent) 5%, var(--paper)); }
+.contact-microcopy__col--no  { border: 1px solid color-mix(in srgb, var(--rule)   18%, transparent); background: var(--paper); }
+
+.contact-microcopy__heading {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.contact-microcopy__col--yes .contact-microcopy__heading { color: var(--accent); }
+.contact-microcopy__col--no  .contact-microcopy__heading { color: var(--muted); }
+
+.contact-microcopy__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contact-microcopy__list li { margin-bottom: 0.35rem; }
+
+// Speaking — bio card with copy button
+.speaking-bio-card {
+  position: relative;
+  padding: var(--space-md);
+  border: 1px solid color-mix(in srgb, var(--rule) 16%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  margin-bottom: var(--space-md);
+}
+
+.speaking-bio-card__heading {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.speaking-bio-card__copy-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+}
+
+.speaking-bio-card pre {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+// Error 404 — Riso-forward dry humor
+.error-404 {
+  text-align: center;
+  padding-block: var(--space-xl);
+  min-height: 60vh;
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+}
+
+.error-404__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.error-404__lead {
+  font-size: 1.15rem;
+  max-width: 50ch;
+  margin-inline: auto;
+  color: var(--muted);
+}
+
+.error-404__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) auto 0;
+}
+
+.error-404__links a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 35%, transparent);
+}
+
+.error-404__links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
 .post-pager__next { text-align: right; }
