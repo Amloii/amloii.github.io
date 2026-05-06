@@ -53,6 +53,9 @@ en:
     metric: Highlight
     links: Links
     related_posts: Related writing
+    case_study_label: "Case study"
+    domain_filter_label: Filter by domain
+    domain_filter_all: All domains
   writing:
     index_title: Writing
     index_desc: Essays, notebooks, and work published elsewhere — grouped by editorial pillars.
@@ -97,6 +100,28 @@ en:
   now:
     title: Now
     updated: Last updated
+    block_building: Building
+    block_reading: Reading
+    block_writing: Writing
+    block_speaking: Speaking
+  contact:
+    microcopy_heading_yes: "What I respond to fastest"
+    microcopy_heading_no: "What I won't reply to"
+    yes_advisory: Advisory questions with concrete context
+    yes_implementation: Implementation pitches with timelines
+    yes_speaking: Speaking enquiries with audience size and topic
+    yes_press: Press requests with deadlines
+    no_recruiter: Recruiter templates without role specifics
+    no_vendor: Vendor pitches without context
+    no_unsolicited: Unsolicited cold proposals
+  error:
+    title_404: "404 · You drifted outside the retrieval index"
+    lead_404: "The page you reached isn't in any feed I'm running. Let's get you back to a known anchor."
+    stamp_404: "HTTP 404 · No route"
+    link_home: Home port
+    link_writing: Essay feed
+    link_cv: CV
+    link_contact: Send a note instead
 
 es:
   nav:
@@ -153,6 +178,9 @@ es:
     metric: Highlight
     links: Enlaces
     related_posts: Escritos relacionados
+    case_study_label: "Caso de estudio"
+    domain_filter_label: Filtrar por dominio
+    domain_filter_all: Todos los dominios
   writing:
     index_title: Escritos
     index_desc: Ensayos, notas y publicaciones fuera — agrupadas por pilares editoriales.
@@ -197,3 +225,25 @@ es:
   now:
     title: Ahora
     updated: Última actualización
+    block_building: En curso
+    block_reading: Leyendo
+    block_writing: Escribiendo
+    block_speaking: Charlas
+  contact:
+    microcopy_heading_yes: "A qué respondo rápido"
+    microcopy_heading_no: "A qué no respondo"
+    yes_advisory: Consultas de asesoría con contexto concreto
+    yes_implementation: Propuestas de implementación con plazos
+    yes_speaking: Solicitudes de charla con tamaño de audiencia y tema
+    yes_press: Peticiones de prensa con deadline
+    no_recruiter: Plantillas de recruiter sin detalles del rol
+    no_vendor: Propuestas comerciales sin contexto
+    no_unsolicited: Cold proposals no solicitadas
+  error:
+    title_404: "404 · Has salido del índice de recuperación"
+    lead_404: "La página a la que has llegado no está en ningún feed que esté corriendo. Te llevo a un ancla conocido."
+    stamp_404: "HTTP 404 · Sin ruta"
+    link_home: Puerto base
+    link_writing: Feed de ensayos
+    link_cv: Trayectoria
+    link_contact: Enviar mensaje

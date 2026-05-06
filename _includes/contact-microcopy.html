@@ -1,0 +1,21 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].contact -%}
+<div class="contact-microcopy">
+  <div class="contact-microcopy__col contact-microcopy__col--yes">
+    <p class="contact-microcopy__heading">{{ t.microcopy_heading_yes }}</p>
+    <ul class="contact-microcopy__list">
+      <li>{{ t.yes_advisory }}</li>
+      <li>{{ t.yes_implementation }}</li>
+      <li>{{ t.yes_speaking }}</li>
+      <li>{{ t.yes_press }}</li>
+    </ul>
+  </div>
+  <div class="contact-microcopy__col contact-microcopy__col--no">
+    <p class="contact-microcopy__heading">{{ t.microcopy_heading_no }}</p>
+    <ul class="contact-microcopy__list">
+      <li>{{ t.no_recruiter }}</li>
+      <li>{{ t.no_vendor }}</li>
+      <li>{{ t.no_unsolicited }}</li>
+    </ul>
+  </div>
+</div>

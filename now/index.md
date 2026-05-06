@@ -11,13 +11,9 @@ hide_footer: false
 
 <p class="caps-label" style="margin-top:.5rem">Monthly snapshot · Last updated {{ n.updated }}</p>
 
-{% assign keys = "building,reading,writing,speaking" | split: "," %}
-
-{% for key in keys %}
-  {% assign items = n.blocks[key] %}
-  {% if items and items.size > 0 %}
-    {% for it in items %}
-- {{ it }}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
+<div class="now-blocks">
+  {% include now-block.html key="building" stamp="N°1" %}
+  {% include now-block.html key="reading"  stamp="N°2" %}
+  {% include now-block.html key="writing"  stamp="N°3" %}
+  {% include now-block.html key="speaking" stamp="N°4" %}
+</div>

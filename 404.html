@@ -3,15 +3,23 @@ layout: default
 permalink: /404.html
 lang: en
 ref: home
-title: "Page not found"
+title: "404 · Page not found"
 description: Lost in hyperspace retrieval index.
 comments: false
 ---
 
-<div class="container section stack" style="min-height:50vh;text-align:center">
-  <p class="caps-label">HTTP 404</p>
-  <h1>You drifted outside the retrieval index.</h1>
-  <p class="lead" style="max-width:48ch;margin-inline:auto;">
-    Anchor again from the <a href="{{ '/' | relative_url }}">home port</a> or skim the <a href="{{ '/writing/' | relative_url }}">essay feed</a>.
-  </p>
+{% assign t = site.data.i18n[page.lang].error %}
+
+<div class="container">
+  <div class="error-404">
+    <p class="caps-label"><span class="riso-stamp">{{ t.stamp_404 }}</span></p>
+    <h1 class="error-404__title"><span class="riso-double-print">{{ t.title_404 }}</span></h1>
+    <p class="error-404__lead">{{ t.lead_404 }}</p>
+    <ul class="error-404__links">
+      <li>← <a href="{{ '/' | relative_url }}">{{ t.link_home }}</a></li>
+      <li>→ <a href="{{ '/writing/' | relative_url }}">{{ t.link_writing }}</a></li>
+      <li>→ <a href="{{ '/cv/' | relative_url }}">{{ t.link_cv }}</a></li>
+      <li>↗ <a href="{{ '/contact/' | relative_url }}">{{ t.link_contact }}</a></li>
+    </ul>
+  </div>
 </div>
