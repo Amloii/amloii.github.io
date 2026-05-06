@@ -1,0 +1,38 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].writing -%}
+{%- assign current_pillar = page.pillar -%}
+{%- if current_pillar -%}
+  {%- assign sorted = site.posts | where: 'pillar', current_pillar | sort: 'date' -%}
+{%- else -%}
+  {%- assign sorted = site.posts | sort: 'date' -%}
+{%- endif -%}
+{%- assign idx = -1 -%}
+{%- for p in sorted -%}
+  {%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- if idx >= 0 -%}
+  {%- assign prev_idx = idx | minus: 1 -%}
+  {%- assign next_idx = idx | plus: 1 -%}
+  {%- assign prev_post = sorted[prev_idx] -%}
+  {%- assign next_post = sorted[next_idx] -%}
+  {%- if prev_post or next_post -%}
+    <nav class="post-pager" aria-label="{{ t.related_label }}">
+      <div class="post-pager__prev">
+        {%- if prev_post -%}
+          <a href="{{ prev_post.url | relative_url }}">
+            <p class="post-pager__direction">← {{ t.prev_label }}</p>
+            <p style="margin:0;font-family:var(--font-display);font-size:1rem;font-weight:600">{{ prev_post.title }}</p>
+          </a>
+        {%- endif -%}
+      </div>
+      <div class="post-pager__next">
+        {%- if next_post -%}
+          <a href="{{ next_post.url | relative_url }}">
+            <p class="post-pager__direction">{{ t.next_label }} →</p>
+            <p style="margin:0;font-family:var(--font-display);font-size:1rem;font-weight:600">{{ next_post.title }}</p>
+          </a>
+        {%- endif -%}
+      </div>
+    </nav>
+  {%- endif -%}
+{%- endif -%}

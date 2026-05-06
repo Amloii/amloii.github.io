@@ -1,0 +1,9 @@
+{%- comment -%}
+  Tufte-style sidenote.
+  Usage:
+    {% include sn.html n="1" text="The footnote text." %}
+  The marker is the visible reference; the span is shown on click (mobile)
+  and floated to the margin column (desktop ≥1100px).
+{%- endcomment -%}
+{%- assign sn_id = 'sn-' | append: include.n | append: '-' | append: page.slug -%}
+<label for="{{ sn_id }}" class="sn-marker">{{ include.n }}</label><input id="{{ sn_id }}" type="checkbox" class="sn-toggle"><span class="sn">{{ include.text }}</span>

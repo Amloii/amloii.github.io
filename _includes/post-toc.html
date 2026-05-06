@@ -1,0 +1,10 @@
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lg].writing -%}
+<aside class="post-toc no-print" aria-labelledby="toc-heading">
+  <p class="post-toc__heading" id="toc-heading">{{ t.contents_label }}</p>
+  <ul class="post-toc__list" data-post-toc></ul>
+</aside>
+<details class="post-toc-mobile no-print">
+  <summary>{{ t.contents_label }}</summary>
+  <ul class="post-toc__list" data-post-toc-mobile></ul>
+</details>
