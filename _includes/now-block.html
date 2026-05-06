@@ -1,0 +1,19 @@
+{%- comment -%}
+  Single block on the Now page.
+  Usage: {% include now-block.html key="building" stamp="N°1" %}
+{%- endcomment -%}
+{%- assign lg = page.lang | default: site.lang -%}
+{%- assign tn = site.data.i18n[lg].now -%}
+{%- assign items = site.data.now[lg].blocks[include.key] -%}
+{%- if items and items.size > 0 -%}
+{%- assign heading_key = 'block_' | append: include.key -%}
+<section class="now-block">
+  <span class="riso-stamp now-block__stamp">{{ include.stamp }}</span>
+  <h2 class="now-block__heading">{{ tn[heading_key] }}</h2>
+  <ul class="now-block__items">
+    {%- for it in items -%}
+      <li>{{ it }}</li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
