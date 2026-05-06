@@ -11,6 +11,15 @@
     );
 }
 
+[data-theme="dark"] .riso-paper {
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--rule) 8%, transparent) 0 1px,
+      transparent 1px 4px
+    );
+}
+
 // 2. Halftone — radial-gradient dot pattern, 30% opacity, used as decorative overlay.
 .riso-halftone {
   position: relative;
@@ -136,6 +145,7 @@
   text-shadow: none !important;
   border: none !important;
   transform: none !important;
+  color: inherit !important;
 }
 
 .cv-page .riso-halftone::before { display: none !important; }
