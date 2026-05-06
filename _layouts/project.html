@@ -15,17 +15,20 @@ layout: default
   {% endif %}
 
   <header>
-    <p class="caps-label">{{ page.domain }} · {{ page.year }}</p>
+    <p class="project-stamp"><span class="riso-stamp">{{ t.case_study_label }} · {{ page.year }}</span></p>
+    <p class="caps-label">{{ page.domain }}</p>
     <h1>{{ page.title }}</h1>
     {% if page.summary %}
       <p class="lead" style="max-width:none">{{ page.summary }}</p>
+    {% endif %}
+    {% if page.featured_metric %}
+      <p class="project-metric-headline"><span class="riso-double-print">{{ page.featured_metric }}</span></p>
     {% endif %}
   </header>
 
   <dl class="stack" style="margin-top:1.5rem;font-size:var(--fs-small)">
     {% if page.role %}<dt class="caps-label">{{ t.role }}</dt><dd>{{ page.role }}</dd>{% endif %}
     {% if page.stack %}<dt class="caps-label">{{ t.stack }}</dt><dd>{{ page.stack }}</dd>{% endif %}
-    {% if page.featured_metric %}<dt class="caps-label">{{ t.metric }}</dt><dd><strong>{{ page.featured_metric }}</strong></dd>{% endif %}
   </dl>
 
   <hr class="hairline">
