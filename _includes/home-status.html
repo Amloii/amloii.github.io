@@ -1,0 +1,18 @@
+{% assign lg = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lg].home %}
+{% assign n = site.data.now[lg] %}
+
+{% if n.status and n.status.size > 0 %}
+<section class="home-status no-print" aria-labelledby="home-status-label">
+  <div class="container">
+    <h2 id="home-status-label" class="home-status__sr">{{ t.status_label }}</h2>
+    <div class="home-status__row">
+      {% for s in n.status %}
+        <span class="home-status__item">
+          <span class="home-status__dot" aria-hidden="true">●</span>{{ s }}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
