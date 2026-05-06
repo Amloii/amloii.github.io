@@ -2,88 +2,110 @@
 layout: default
 ---
 
-{% assign tg = site.data.i18n[page.lang].writing %}
+{% assign lg = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lg].writing %}
+{% assign ps = site.data.pillars %}
 
 <div class="container section stack">
   <header>
-    <h1>{{ tg.index_title }}</h1>
-    <p class="lead">{{ tg.index_desc }}</p>
-    {% if page.lang == 'es' %}
+    <h1>{{ t.index_title }}</h1>
+    <p class="lead">{{ t.index_desc }}</p>
+    {% if lg == 'es' %}
       <p class="caps-label" style="opacity:0.78">
         Los ensayos canónicos viven primero en inglés · <a href="{{ '/writing/' | relative_url }}">Índice EN</a>
       </p>
     {% endif %}
   </header>
 
-  {% include newsletter-home.html %}
+  <section aria-labelledby="pillars-heading">
+    <h2 id="pillars-heading">{{ t.pillars }}</h2>
 
-  <section aria-labelledby="pillars">
-    <h2 id="pillars">{{ tg.pillars }}</h2>
-    <div class="split" style="margin-top:1rem">
-      {% assign ps = site.data.pillars %}
+    {% comment %}Pillar filter chips — anchor-based; each chip targets the section heading id.{% endcomment %}
+    <ul class="writing-pillar-filter no-print" aria-label="{{ t.filter_label }}">
+      <li><a href="#essays">{{ t.filter_all }}</a></li>
       {% for pillar in ps %}
-        <article class="newsletter-card section--tight">
-          {% if page.lang == 'es' %}
-            <p class="caps-label pillar-tag">{{ pillar.id }}</p>
-            <h3 style="margin-top:0.25rem">{{ pillar.title_es }}</h3>
-            <p>{{ pillar.blurb_es }}</p>
-          {% else %}
-            <p class="caps-label pillar-tag">{{ pillar.id }}</p>
-            <h3 style="margin-top:0.25rem">{{ pillar.title_en }}</h3>
-            <p>{{ pillar.blurb_en }}</p>
+        <li><a href="#pillar-{{ pillar.id }}">{% if lg == 'es' %}{{ pillar.title_es }}{% else %}{{ pillar.title_en }}{% endif %}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="writing-pillar-cards">
+      {% for pillar in ps %}
+        {% assign svg_filename = '' %}
+        {% if pillar.id == 'building-agents' %}{% assign svg_filename = 'agent-pipeline' %}{% endif %}
+        {% if pillar.id == 'research-to-prod' %}{% assign svg_filename = 'eval-loop' %}{% endif %}
+        {% if pillar.id == 'ai-leadership' %}{% assign svg_filename = 'decision-graph' %}{% endif %}
+        {% if pillar.id == 'operators-notebook' %}{% assign svg_filename = 'ops-tower' %}{% endif %}
+
+        <article class="writing-pillar-card" data-pillar="{{ pillar.id }}">
+          <div>
+            <p class="writing-pillar-card__id">{{ pillar.id }}</p>
+            <h3 class="writing-pillar-card__title">{% if lg == 'es' %}{{ pillar.title_es }}{% else %}{{ pillar.title_en }}{% endif %}</h3>
+            <p class="writing-pillar-card__blurb">{% if lg == 'es' %}{{ pillar.blurb_es }}{% else %}{{ pillar.blurb_en }}{% endif %}</p>
+          </div>
+          {% if svg_filename != '' %}
+            <div class="writing-pillar-card__svg" aria-hidden="true">
+              <img src="{{ '/assets/svg/riso/' | append: svg_filename | append: '.svg' | relative_url }}" alt="" loading="lazy" decoding="async">
+            </div>
           {% endif %}
         </article>
       {% endfor %}
     </div>
   </section>
 
-  <section aria-labelledby="essays">
-    <h2 id="essays" style="margin-top:2rem">{{ tg.essays }}</h2>
+  {% include newsletter-home.html %}
+
+  <section class="writing-essays" aria-labelledby="essays">
+    <h2 id="essays" style="margin-top:1rem">{{ t.essays }}</h2>
     <p style="opacity:0.74;font-size:var(--fs-small);max-width:60ch;margin-top:.35rem;">
-      Canonical URL siempre aquí; si republicas en Substack, marca la canonical hacia estos posts.</p>
+      {% if lg == 'es' %}URL canónica siempre aquí; si republicas en Substack, marca la canonical hacia estos posts.{% else %}Canonical URL stays here; if you republish on Substack, point the canonical back to this site.{% endif %}
+    </p>
 
     {% for pillar in ps %}
       {% assign pid = pillar.id %}
       {% assign bucket_posts = site.posts | where: "pillar", pid %}
       {% if bucket_posts.size > 0 %}
-        <h3 class="caps-label" style="margin-top:1.75rem">
-          {% if page.lang == 'es' %}{{ pillar.title_es }}{% else %}{{ pillar.title_en }}{% endif %}
-        </h3>
-        {% assign ix = 0 %}
-        {% for post in bucket_posts %}
-          {% assign ix = ix | plus: 1 %}
-          <a class="idx-row" href="{{ post.url | relative_url }}">
-            <span class="idx-row__num">{% if ix < 10 %}0{% endif %}{{ ix }}</span>
-            <span>
-              <span class="idx-row__title">{{ post.title }}</span><br>
-              <span style="opacity:0.78;font-size:var(--fs-small)">{{ post.excerpt | strip_html | truncate: 220 }}</span>
-            </span>
-            <span class="caps-label">{{ pillar.id }}</span>
-            <span class="caps-label">{{ post.date | date: '%Y' }}</span>
-          </a>
-        {% endfor %}
+        <div class="writing-pillar-section" id="pillar-{{ pid }}">
+          <h3 class="writing-pillar-section__heading">
+            {% if lg == 'es' %}{{ pillar.title_es }}{% else %}{{ pillar.title_en }}{% endif %}
+          </h3>
+          {% assign ix = 0 %}
+          {% for post in bucket_posts %}
+            {% assign ix = ix | plus: 1 %}
+            <a class="idx-row" href="{{ post.url | relative_url }}">
+              <span class="idx-row__num">{% if ix < 10 %}0{% endif %}{{ ix }}</span>
+              <span>
+                <span class="idx-row__title">{{ post.title }}</span><br>
+                <span style="opacity:0.78;font-size:var(--fs-small)">{{ post.excerpt | strip_html | truncate: 220 }}</span>
+              </span>
+              <span class="caps-label">{{ pillar.id }}</span>
+              <span class="caps-label">{{ post.date | date: '%Y' }}</span>
+            </a>
+          {% endfor %}
+        </div>
       {% endif %}
     {% endfor %}
 
     {% assign unassigned = site.posts | where_exp: 'p', 'p.pillar == nil' %}
     {% if unassigned.size > 0 %}
-      <h3 class="caps-label" style="margin-top:1.75rem">Notebook</h3>
-      {% assign ixu = 0 %}
-      {% for post in unassigned %}
-        {% assign ixu = ixu | plus: 1 %}
-        <a class="idx-row" href="{{ post.url | relative_url }}">
-          <span class="idx-row__num">{% if ixu < 10 %}0{% endif %}{{ ixu }}</span>
-          <span><span class="idx-row__title">{{ post.title }}</span></span>
-          <span class="caps-label">—</span>
-          <span class="caps-label">{{ post.date | date: '%Y' }}</span>
-        </a>
-      {% endfor %}
+      <div class="writing-pillar-section" id="pillar-notebook">
+        <h3 class="writing-pillar-section__heading">{{ t.notebook_label }}</h3>
+        {% assign ixu = 0 %}
+        {% for post in unassigned %}
+          {% assign ixu = ixu | plus: 1 %}
+          <a class="idx-row" href="{{ post.url | relative_url }}">
+            <span class="idx-row__num">{% if ixu < 10 %}0{% endif %}{{ ixu }}</span>
+            <span><span class="idx-row__title">{{ post.title }}</span></span>
+            <span class="caps-label">—</span>
+            <span class="caps-label">{{ post.date | date: '%Y' }}</span>
+          </a>
+        {% endfor %}
+      </div>
     {% endif %}
   </section>
 
   {% assign ew = site.data.external_writing %}
   <section aria-labelledby="external" style="margin-top:2rem">
-    <h2 id="external">{{ tg.external }}</h2>
+    <h2 id="external">{{ t.external }}</h2>
     {% if ew.featured %}
       <div class="split" style="margin-top:1rem">
         {% for item in ew.featured %}
