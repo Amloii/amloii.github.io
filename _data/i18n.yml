@@ -8,6 +8,7 @@ en:
     now: Now
     about: About
     contact: Contact
+    theme_toggle: Theme
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
@@ -80,6 +81,7 @@ es:
     now: Ahora
     about: Sobre mí
     contact: Contacto
+    theme_toggle: Tema
   footer:
     rights: © %YEAR% Daniel Gómez Domínguez
   meta:
